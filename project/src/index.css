@@ -1,0 +1,4575 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #292d24;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-ivory: #f7f5ef;
+  --color-ivory-light: #fcfaf5;
+  --color-gold: #b18b50;
+  --color-gold-light: #d8c39d;
+  --color-ink: #292d24;
+  --color-muted: #77776c;
+  --color-green: #30382c;
+  --color-border: #e3dccd;
+  --color-blue: #e7eef5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background: #f7f5ef;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f7f5ef;
+  color: #292d24;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  color: #292d24;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+p {
+  margin-top: 0;
+}
+
+::selection {
+  color: #fffdf8;
+  background: #8d744b;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f5ef;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #f7f5ef;
+  border-radius: 20px;
+  background: #c6b18b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78a5a;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #987746;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+  width: 28px;
+  height: 1px;
+  background: #b18b50;
+  content: '';
+}
+
+.section-heading {
+  font-size: clamp(2.7rem, 5vw, 4.8rem);
+  letter-spacing: -0.035em;
+}
+
+.section-description {
+  max-width: 620px;
+  color: #77776c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 22px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn-primary {
+  border: 1px solid #30382c;
+  background: #30382c;
+  color: #fffdf8;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #46513f;
+}
+
+.btn-secondary {
+  border: 1px solid #e3dccd;
+  background: transparent;
+  color: #292d24;
+}
+
+.btn-secondary:hover {
+  border-color: #b18b50;
+  background: #fcfaf5;
+}
+
+input,
+textarea,
+select {
+  max-width: 100%;
+  border-color: #e3dccd;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgb(177 139 80 / 35%);
+  outline-offset: 2px;
+}
+
+::placeholder {
+  color: #999589;
+  opacity: 1;
+}
+
+:focus-visible {
+  outline: 2px solid #b18b50;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    padding-inline: 20px;
+  }
+
+  .section-heading {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+}
+
+/* =========================================
+   ASTRO VASTU — IMMERSIVE IVORY HERO
+========================================= */
+
+.astro-hero {
+  --astro-ivory: #f7f5ef;
+  --astro-white: #fffdf8;
+  --astro-gold: #b18b50;
+  --astro-gold-light: #ddc89f;
+  --astro-ink: #292d24;
+  --astro-muted: #77776c;
+  --astro-blue: #dce7f1;
+
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 77% 32%,
+      rgb(220 231 241 / 58%),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 14% 80%,
+      rgb(221 200 159 / 18%),
+      transparent 34%
+    ),
+    var(--astro-ivory);
+  color: var(--astro-ink);
+}
+
+.astro-hero-glow {
+  position: absolute;
+  z-index: -1;
+  top: 10%;
+  right: 5%;
+  width: min(46vw, 620px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(255 255 255 / 88%),
+    rgb(220 231 241 / 32%) 44%,
+    transparent 72%
+  );
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.astro-hero-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(177 139 80 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(177 139 80 / 5%) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 42%,
+    rgb(0 0 0 / 45%) 85%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.astro-hero-watermark {
+  position: absolute;
+  z-index: -1;
+  top: 34%;
+  left: -0.05em;
+  color: rgb(177 139 80 / 4%);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(9rem, 23vw, 23rem);
+  font-weight: 600;
+  letter-spacing: -0.09em;
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+}
+
+.astro-hero-inner {
+  position: relative;
+}
+
+.astro-hero-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  color: #756343;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  animation: astro-fade-up 0.8s ease both;
+}
+
+.astro-eyebrow-star {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border: 1px solid rgb(177 139 80 / 40%);
+  border-radius: 50%;
+  color: var(--astro-gold);
+}
+
+.astro-eyebrow-divider {
+  width: 24px;
+  height: 1px;
+  background: var(--astro-gold-light);
+}
+
+.astro-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 80px);
+  padding-top: 26px;
+}
+
+.astro-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding-top: 12px;
+  padding-bottom: 38px;
+  animation: astro-fade-up 0.9s 0.1s ease both;
+}
+
+.astro-hero-overline {
+  margin-bottom: 20px;
+  color: var(--astro-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.astro-hero-title {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.7rem, 6.3vw, 6.8rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.96;
+}
+
+.astro-title-second {
+  color: var(--astro-gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.astro-title-last {
+  color: var(--astro-ink);
+  font-size: 0.76em;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+.astro-title-ornament {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 26px;
+  margin-bottom: 23px;
+}
+
+.astro-title-ornament span:first-child {
+  width: 45px;
+}
+
+.astro-title-ornament span {
+  display: block;
+  width: 6px;
+  height: 2px;
+  background: var(--astro-gold);
+}
+
+.astro-title-ornament span:first-child {
+  height: 1px;
+}
+
+.astro-hero-description {
+  max-width: 445px;
+  margin-bottom: 28px;
+  color: #72766f;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.astro-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.astro-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 7px 9px 7px 19px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.astro-button:hover {
+  transform: translateY(-3px);
+}
+
+.astro-button-primary {
+  background: var(--astro-ink);
+  color: var(--astro-white);
+  box-shadow: 0 8px 22px rgb(41 45 36 / 10%);
+}
+
+.astro-button-primary:hover {
+  background: #454a3d;
+  box-shadow: 0 12px 28px rgb(41 45 36 / 15%);
+}
+
+.astro-button-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 2px;
+  color: #e6d0a4;
+}
+
+.astro-button-secondary {
+  gap: 15px;
+  padding-left: 15px;
+  color: var(--astro-ink);
+  border-color: rgb(177 139 80 / 30%);
+  background: rgb(255 253 248 / 48%);
+}
+
+.astro-button-secondary:hover {
+  border-color: var(--astro-gold);
+  background: var(--astro-white);
+}
+
+.astro-secondary-arrow {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: #eee7d8;
+  color: #876c41;
+}
+
+.astro-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 37px;
+  color: #888579;
+  font-size: 10px;
+  letter-spacing: 0.035em;
+}
+
+.astro-note-line {
+  width: 28px;
+  height: 1px;
+  background: var(--astro-gold);
+}
+
+/* =========================================
+   PORTRAIT + 3D CELESTIAL COMPOSITION
+========================================= */
+
+.astro-hero-visual {
+  position: relative;
+  min-width: 0;
+  animation: astro-fade-in 1.1s 0.15s ease both;
+}
+
+.astro-visual-caption {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #898372;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.astro-caption-top {
+  justify-content: flex-end;
+  margin: 0 8% 13px 0;
+}
+
+.astro-caption-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a8bca9;
+  box-shadow: 0 0 0 4px rgb(168 188 169 / 18%);
+}
+
+.astro-portrait-composition {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  aspect-ratio: 0.91;
+  isolation: isolate;
+  perspective: 1200px;
+}
+
+.astro-portrait-halo {
+  position: absolute;
+  z-index: -2;
+  top: 9%;
+  left: 14%;
+  width: 72%;
+  height: 78%;
+  border: 1px solid rgb(177 139 80 / 27%);
+  border-radius: 48% 48% 43% 43%;
+  background: linear-gradient(
+    155deg,
+    rgb(255 255 255 / 65%),
+    rgb(220 231 241 / 42%) 50%,
+    rgb(221 200 159 / 20%)
+  );
+  box-shadow:
+    inset 0 0 50px rgb(255 255 255 / 70%),
+    0 20px 65px rgb(95 100 92 / 6%);
+}
+
+.astro-portrait-frame {
+  position: absolute;
+  z-index: 1;
+  top: 9%;
+  left: 22%;
+  width: 62%;
+  height: 77%;
+  overflow: hidden;
+  border: 5px solid rgb(255 253 248 / 90%);
+  border-radius: 46% 46% 3px 3px;
+  background: linear-gradient(145deg, #e9e4d8, #dbe4eb);
+  box-shadow:
+    0 28px 65px rgb(56 61 52 / 13%),
+    0 5px 15px rgb(56 61 52 / 8%),
+    inset 0 0 0 1px rgb(177 139 80 / 35%);
+  transform: rotateY(-5deg) rotateX(1deg);
+  transform-style: preserve-3d;
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+.astro-portrait-composition:hover .astro-portrait-frame {
+  transform: rotateY(0deg) translateY(-5px);
+  box-shadow:
+    0 38px 80px rgb(56 61 52 / 17%),
+    0 5px 15px rgb(56 61 52 / 8%);
+}
+
+.astro-portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.astro-portrait-composition:hover .astro-portrait-image {
+  transform: scale(1.035);
+}
+
+.astro-portrait-shade {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgb(24 28 24 / 10%) 32%,
+    rgb(24 28 24 / 82%) 100%
+  );
+  pointer-events: none;
+}
+
+.astro-portrait-label {
+  position: absolute;
+  right: 15px;
+  bottom: 19px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #fffdf8;
+}
+
+.astro-portrait-label-kicker {
+  color: #e2cca0;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.astro-portrait-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.astro-portrait-role {
+  color: rgb(255 253 248 / 78%);
+  font-size: 8px;
+  letter-spacing: 0.025em;
+}
+
+/* Orbital geometry */
+
+.astro-orbit {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgb(177 139 80 / 45%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.astro-orbit-one {
+  width: 108%;
+  height: 52%;
+  transform: translate(-50%, -50%) rotate(-39deg);
+  animation: astro-orbit-drift 22s linear infinite;
+}
+
+.astro-orbit-two {
+  width: 103%;
+  height: 48%;
+  border-color: rgb(119 147 173 / 38%);
+  transform: translate(-50%, -50%) rotate(46deg);
+  animation: astro-orbit-drift 30s linear infinite reverse;
+}
+
+.astro-orbit-three {
+  width: 85%;
+  height: 94%;
+  border-color: rgb(177 139 80 / 19%);
+  transform: translate(-50%, -50%) rotate(19deg);
+}
+
+.astro-ring {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid rgb(177 139 80 / 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.astro-ring-back {
+  top: 1%;
+  right: 4%;
+  width: 100px;
+  height: 100px;
+  border-width: 1px;
+  box-shadow: inset 0 0 20px rgb(177 139 80 / 7%);
+}
+
+.astro-ring-front {
+  bottom: 7%;
+  left: 7%;
+  width: 68px;
+  height: 68px;
+  border-color: rgb(119 147 173 / 55%);
+}
+
+.astro-floating-sphere {
+  position: absolute;
+  z-index: 4;
+  top: 13%;
+  right: 2%;
+  width: clamp(60px, 9vw, 105px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(177 139 80 / 45%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 28% 24%,
+    #fffdf8 0%,
+    #e5d5b6 24%,
+    #c6b18b 51%,
+    #a98a52 72%,
+    #e9ddc7 100%
+  );
+  box-shadow:
+    inset -9px -10px 18px rgb(107 78 37 / 24%),
+    inset 5px 5px 12px rgb(255 255 255 / 85%),
+    0 16px 30px rgb(82 71 49 / 13%);
+  animation: astro-float 6s ease-in-out infinite;
+}
+
+.astro-sphere-core {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 50%;
+}
+
+.astro-sphere-latitude {
+  position: absolute;
+  top: 32%;
+  left: -3%;
+  width: 106%;
+  height: 36%;
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 50%;
+  transform: rotate(-28deg);
+}
+
+.astro-sphere-longitude {
+  position: absolute;
+  top: -3%;
+  left: 27%;
+  width: 46%;
+  height: 106%;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  transform: rotate(28deg);
+}
+
+.astro-floating-tile {
+  position: absolute;
+  z-index: 4;
+  bottom: 17%;
+  left: 1%;
+  display: grid;
+  width: clamp(66px, 9vw, 105px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(177 139 80 / 32%);
+  border-radius: 3px;
+  background: linear-gradient(
+    145deg,
+    rgb(255 253 248 / 94%),
+    rgb(232 226 210 / 78%)
+  );
+  box-shadow:
+    8px 10px 0 rgb(177 139 80 / 8%),
+    0 18px 36px rgb(58 63 53 / 10%);
+  transform: rotate(-9deg) rotateY(-12deg);
+  animation: astro-float 7s 0.8s ease-in-out infinite;
+}
+
+.astro-tile-inner {
+  width: 74%;
+  color: var(--astro-gold);
+}
+
+.astro-floating-star {
+  position: absolute;
+  z-index: 4;
+  top: 29%;
+  left: 6%;
+  color: #ad8a4c;
+  font-size: 29px;
+  text-shadow: 0 5px 20px rgb(177 139 80 / 25%);
+  animation: astro-slow-spin 24s linear infinite;
+}
+
+.astro-caption-bottom {
+  justify-content: space-between;
+  margin: 17px 3% 0;
+}
+
+.astro-caption-bottom span:first-child {
+  color: var(--astro-gold);
+}
+
+/* =========================================
+   STATISTICS STRIP
+========================================= */
+
+.astro-hero-stats {
+  display: grid;
+  grid-template-columns: minmax(190px, 1.35fr) repeat(3, minmax(0, 1fr));
+  align-items: center;
+  margin-top: 24px;
+  padding: 22px 0 12px;
+  border-top: 1px solid rgb(177 139 80 / 27%);
+  animation: astro-fade-up 1s 0.3s ease both;
+}
+
+.astro-stats-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-right: 20px;
+}
+
+.astro-stats-kicker {
+  color: #927547;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.astro-stats-description {
+  max-width: 200px;
+  color: var(--astro-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.astro-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  min-width: 0;
+  padding: 0 16px;
+  border-left: 1px solid rgb(177 139 80 / 22%);
+}
+
+.astro-stat-index {
+  padding-top: 8px;
+  color: #a68b5d;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.astro-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.astro-stat-value {
+  color: var(--astro-ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.1rem, 3.4vw, 3.1rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.astro-stat-label {
+  color: var(--astro-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.astro-hero-bottom-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  color: #969082;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.astro-hero-bottom-mark span {
+  width: 20px;
+  height: 1px;
+  background: var(--astro-gold-light);
+}
+
+/* =========================================
+   MOTION
+========================================= */
+
+@keyframes astro-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes astro-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes astro-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+@keyframes astro-orbit-drift {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes astro-slow-spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (min-width: 1500px) {
+  .astro-hero {
+    padding-top: 145px;
+  }
+
+  .astro-hero-layout {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 900px) {
+  .astro-hero {
+    padding-top: 115px;
+  }
+
+  .astro-hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 20px;
+  }
+
+  .astro-hero-title {
+    font-size: clamp(3.2rem, 7vw, 5rem);
+  }
+
+  .astro-hero-actions {
+    align-items: flex-start;
+  }
+
+  .astro-button {
+    gap: 10px;
+    padding-left: 13px;
+    font-size: 10px;
+  }
+
+  .astro-hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 20px;
+  }
+
+  .astro-stats-intro {
+    grid-column: 1 / -1;
+    padding-bottom: 14px;
+  }
+
+  .astro-stat:first-of-type {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .astro-hero {
+    padding: 105px 20px 30px;
+  }
+
+  .astro-hero-watermark {
+    top: 34%;
+    left: -0.1em;
+    font-size: 42vw;
+  }
+
+  .astro-hero-eyebrow {
+    gap: 8px;
+    font-size: 8px;
+    letter-spacing: 0.11em;
+  }
+
+  .astro-eyebrow-star {
+    width: 25px;
+    height: 25px;
+  }
+
+  .astro-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding-top: 35px;
+  }
+
+  .astro-hero-copy {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .astro-hero-overline {
+    margin-bottom: 17px;
+    font-size: 9px;
+  }
+
+  .astro-hero-title {
+    font-size: clamp(3.6rem, 12.5vw, 5.1rem);
+    line-height: 0.97;
+  }
+
+  .astro-title-last {
+    font-size: 0.73em;
+  }
+
+  .astro-title-ornament {
+    margin-top: 22px;
+    margin-bottom: 16px;
+  }
+
+  .astro-hero-description {
+    max-width: 450px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .astro-hero-actions {
+    gap: 9px;
+  }
+
+  .astro-button {
+    min-height: 48px;
+  }
+
+  .astro-hero-note {
+    margin-top: 24px;
+    font-size: 9px;
+  }
+
+  .astro-hero-visual {
+    width: min(100%, 470px);
+    margin-inline: auto;
+    margin-top: 8px;
+  }
+
+  .astro-portrait-composition {
+    width: 100%;
+    aspect-ratio: 0.96;
+  }
+
+  .astro-portrait-frame {
+    left: 21%;
+    width: 64%;
+  }
+
+  .astro-floating-sphere {
+    right: 0;
+  }
+
+  .astro-floating-tile {
+    left: 0;
+  }
+
+  .astro-caption-top {
+    margin-right: 3%;
+    font-size: 7px;
+  }
+
+  .astro-caption-bottom {
+    font-size: 7px;
+  }
+
+  .astro-hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 26px;
+    padding-top: 20px;
+  }
+
+  .astro-stats-intro {
+    padding-bottom: 6px;
+  }
+
+  .astro-stats-description {
+    max-width: none;
+  }
+
+  .astro-stat {
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 9px;
+  }
+
+  .astro-stat:first-of-type {
+    padding-left: 0;
+  }
+
+  .astro-stat-index {
+    padding-top: 0;
+    font-size: 8px;
+  }
+
+  .astro-stat-value {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .astro-stat-label {
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+
+  .astro-hero-bottom-mark {
+    margin-top: 24px;
+    font-size: 7px;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-hero *,
+  .astro-hero *::before,
+  .astro-hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   FLOATING 3D ASTRO STATISTICS
+========================================= */
+
+.astro-stats-section {
+  position: relative;
+  margin-top: 48px;
+  padding-top: 27px;
+  border-top: 1px solid rgb(177 139 80 / 30%);
+  perspective: 1200px;
+}
+
+.astro-stats-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.astro-stats-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #927547;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.astro-stats-kicker-line {
+  width: 28px;
+  height: 1px;
+  background: #b18b50;
+}
+
+.astro-stats-heading p {
+  margin: 0;
+  color: #77776c;
+  font-size: 11px;
+}
+
+.astro-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  perspective: 1200px;
+}
+
+.astro-stat-card {
+  --card-edge: rgb(177 139 80 / 30%);
+
+  position: relative;
+  min-width: 0;
+  min-height: 205px;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid var(--card-edge);
+  border-radius: 4px;
+  background:
+    radial-gradient(
+      circle at 85% 12%,
+      rgb(220 231 241 / 85%),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      rgb(255 253 248 / 96%),
+      rgb(246 241 229 / 88%)
+    );
+  box-shadow:
+    0 2px 0 rgb(177 139 80 / 15%),
+    0 10px 0 -4px rgb(177 139 80 / 8%),
+    0 18px 32px rgb(70 64 47 / 7%),
+    inset 0 1px 0 rgb(255 255 255 / 95%);
+  transform:
+    perspective(900px)
+    rotateX(2deg)
+    rotateY(0deg)
+    translateY(0);
+  transform-style: preserve-3d;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+  animation: astro-stat-enter 0.75s both;
+  animation-delay: calc(var(--stat-index, 0) * 140ms);
+}
+
+.astro-stat-card-2 {
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgb(220 231 241 / 92%),
+      transparent 45%
+    ),
+    linear-gradient(145deg, #fffdf8, #f0f0e8);
+}
+
+.astro-stat-card-3 {
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgb(226 216 194 / 65%),
+      transparent 45%
+    ),
+    linear-gradient(145deg, #fffdf8, #f3eee3);
+}
+
+.astro-stat-card:hover {
+  border-color: rgb(177 139 80 / 75%);
+  box-shadow:
+    0 3px 0 rgb(177 139 80 / 20%),
+    0 10px 0 -4px rgb(177 139 80 / 10%),
+    0 28px 50px rgb(70 64 47 / 13%),
+    inset 0 1px 0 #fff;
+  transform:
+    perspective(900px)
+    rotateX(0deg)
+    rotateY(-3deg)
+    translateY(-7px);
+}
+
+.astro-stat-card-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgb(255 255 255 / 65%) 48%,
+    transparent 70%
+  );
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.astro-stat-card:hover .astro-stat-card-shine {
+  opacity: 1;
+  animation: astro-stat-shine 0.9s ease forwards;
+}
+
+.astro-stat-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateZ(22px);
+}
+
+.astro-stat-index {
+  color: #99835e;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.astro-stat-symbol {
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  border: 1px solid rgb(177 139 80 / 35%);
+  border-radius: 50%;
+  color: #a17e45;
+  font-size: 20px;
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease;
+}
+
+.astro-stat-card:hover .astro-stat-symbol {
+  background: rgb(255 255 255 / 65%);
+  transform: rotate(45deg);
+}
+
+.astro-stat-number-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 23px;
+  transform: translateZ(35px);
+}
+
+.astro-stat-value {
+  display: inline-block;
+  color: #292d24;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+  font-variant-numeric: lining-nums;
+  animation: astro-stat-number-in 0.8s both;
+  animation-delay: calc(var(--stat-index, 0) * 140ms + 180ms);
+}
+
+.astro-stat-orbit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b18b50;
+  box-shadow:
+    0 0 0 5px rgb(177 139 80 / 12%),
+    0 0 18px rgb(177 139 80 / 25%);
+  animation: astro-stat-pulse 2.8s ease-in-out infinite;
+}
+
+.astro-stat-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 8px;
+  color: #686a60;
+  font-size: 11px;
+  font-weight: 500;
+  transform: translateZ(18px);
+}
+
+.astro-stat-card-bottom {
+  position: absolute;
+  right: 20px;
+  bottom: 17px;
+  left: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  transform: translateZ(14px);
+}
+
+.astro-stat-progress {
+  width: 35px;
+  height: 2px;
+  overflow: hidden;
+  background: rgb(177 139 80 / 20%);
+}
+
+.astro-stat-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #b18b50;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: astro-stat-progress-in 1s 0.4s ease forwards;
+  animation-delay: calc(var(--stat-index, 0) * 140ms + 350ms);
+}
+
+.astro-stat-card-caption {
+  color: #9a8c71;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: right;
+}
+
+.astro-stat-watermark {
+  position: absolute;
+  right: -5px;
+  bottom: 4px;
+  color: rgb(177 139 80 / 7%);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 0.9;
+  pointer-events: none;
+  user-select: none;
+  transform: translateZ(-8px);
+}
+
+@keyframes astro-stat-enter {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(9deg) translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateX(2deg) translateY(0);
+  }
+}
+
+@keyframes astro-stat-number-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) translateZ(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(35px);
+  }
+}
+
+@keyframes astro-stat-shine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes astro-stat-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 5px rgb(177 139 80 / 12%);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgb(177 139 80 / 5%);
+  }
+}
+
+@keyframes astro-stat-progress-in {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .astro-stats-grid {
+    gap: 12px;
+  }
+
+  .astro-stat-card {
+    min-height: 190px;
+    padding: 15px;
+  }
+
+  .astro-stat-card-bottom {
+    right: 14px;
+    left: 14px;
+  }
+
+  .astro-stat-card-caption {
+    font-size: 6px;
+    letter-spacing: 0.07em;
+  }
+}
+
+@media (max-width: 600px) {
+  .astro-stats-section {
+    margin-top: 34px;
+    padding-top: 23px;
+  }
+
+  .astro-stats-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 19px;
+  }
+
+  .astro-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .astro-stat-card {
+    min-height: 164px;
+    padding: 18px;
+  }
+
+  .astro-stat-number-row {
+    margin-top: 12px;
+  }
+
+  .astro-stat-value {
+    font-size: 3.4rem;
+  }
+
+  .astro-stat-card-bottom {
+    right: 18px;
+    bottom: 17px;
+    left: 18px;
+  }
+
+  .astro-stat-watermark {
+    font-size: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-stat-card,
+  .astro-stat-value,
+  .astro-stat-progress span,
+  .astro-stat-orbit-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .astro-stat-progress span {
+    transform: scaleX(1);
+  }
+}
+
+
+/* Distinct premium palettes for the statistics cards */
+.astro-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  perspective: 1200px;
+  margin-top: 30px;
+}
+
+.astro-stat-card {
+  --card-bg: #e6eee3;
+  --card-text: #283c2d;
+  --card-accent: #66866b;
+  --card-glow: rgba(102, 134, 107, 0.18);
+
+  position: relative;
+  isolation: isolate;
+  min-height: 255px;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      var(--card-glow),
+      transparent 45%
+    ),
+    linear-gradient(145deg, #fff 0%, var(--card-bg) 100%);
+  color: var(--card-text);
+  box-shadow:
+    0 8px 18px rgba(41, 45, 36, 0.045),
+    0 20px 45px rgba(41, 45, 36, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transform: translateY(0) rotateX(0deg);
+  transform-style: preserve-3d;
+  animation: astro-card-reveal 0.8s both;
+  animation-delay: calc(var(--stat-index, 0) * 140ms);
+  transition:
+    transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 450ms ease,
+    border-color 450ms ease;
+}
+
+/* Card 1: sage green */
+.astro-stat-card-1 {
+  --card-bg: #e3ecdf;
+  --card-text: #29412f;
+  --card-accent: #65876b;
+  --card-glow: rgba(101, 135, 107, 0.24);
+}
+
+/* Card 2: soft celestial lavender */
+.astro-stat-card-2 {
+  --card-bg: #e9e5f4;
+  --card-text: #3c315b;
+  --card-accent: #8a78b7;
+  --card-glow: rgba(138, 120, 183, 0.25);
+}
+
+/* Card 3: warm champagne peach */
+.astro-stat-card-3 {
+  --card-bg: #f5e7d8;
+  --card-text: #62452e;
+  --card-accent: #b18b50;
+  --card-glow: rgba(177, 139, 80, 0.25);
+}
+
+.astro-stat-card:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(-2deg);
+  border-color: var(--card-accent);
+  box-shadow:
+    0 15px 25px rgba(41, 45, 36, 0.07),
+    0 30px 55px var(--card-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Subtle reflective light */
+.astro-stat-card-shine {
+  position: absolute;
+  z-index: -1;
+  inset: -80% -40%;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 58%
+  );
+  transform: translateX(-65%) rotate(8deg);
+  transition: transform 850ms ease;
+}
+
+.astro-stat-card:hover .astro-stat-card-shine {
+  transform: translateX(65%) rotate(8deg);
+}
+
+.astro-stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.astro-stat-index {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--card-accent);
+}
+
+.astro-stat-symbol {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--card-accent) 30%, transparent);
+  border-radius: 50%;
+  color: var(--card-accent);
+  font-size: 23px;
+  animation: astro-symbol-float 4s ease-in-out infinite;
+}
+
+.astro-stat-number-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.astro-stat-value {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(58px, 6vw, 78px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  color: var(--card-text);
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.45);
+}
+
+.astro-stat-orbit-dot {
+  width: 8px;
+  height: 8px;
+  margin-top: -22px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  box-shadow: 0 0 0 5px var(--card-glow);
+  animation: astro-dot-pulse 2.5s ease-in-out infinite;
+}
+
+.astro-stat-label {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-top: 9px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(23px, 2.3vw, 29px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--card-text);
+}
+
+.astro-stat-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.astro-stat-progress {
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card-accent) 18%, transparent);
+}
+
+.astro-stat-progress span {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--card-accent);
+  transform-origin: left;
+  animation: astro-progress-grow 1.2s ease-out both;
+  animation-delay: calc(var(--stat-index, 0) * 180ms + 250ms);
+}
+
+.astro-stat-card-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--card-accent);
+}
+
+.astro-stat-watermark {
+  position: absolute;
+  z-index: -1;
+  right: -5px;
+  bottom: 12px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 145px;
+  font-weight: 600;
+  line-height: 0.8;
+  letter-spacing: -0.1em;
+  color: var(--card-text);
+  opacity: 0.045;
+  pointer-events: none;
+  transition: transform 500ms ease, opacity 500ms ease;
+}
+
+.astro-stat-card:hover .astro-stat-watermark {
+  transform: translateY(-5px) scale(1.05);
+  opacity: 0.085;
+}
+
+/* Section heading typography */
+.astro-stats-heading p {
+  margin-top: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: #77776d;
+}
+
+.astro-stats-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #8b744e;
+}
+
+.astro-stats-kicker-line {
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: #b18b50;
+}
+
+@keyframes astro-card-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) rotateX(8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes astro-symbol-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(8deg); }
+}
+
+@keyframes astro-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--card-glow); }
+  50% { box-shadow: 0 0 0 8px var(--card-glow); }
+}
+
+@keyframes astro-progress-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (max-width: 900px) {
+  .astro-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .astro-stat-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .astro-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .astro-stat-card,
+  .astro-stat-card:last-child {
+    grid-column: auto;
+    min-height: 225px;
+    padding: 23px;
+  }
+
+  .astro-stat-value {
+    font-size: 68px;
+  }
+
+  .astro-stat-label {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-stat-card,
+  .astro-stat-symbol,
+  .astro-stat-orbit-dot,
+  .astro-stat-progress span {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   APPROACH SECTION — EDITORIAL DESIGN SYSTEM
+========================================= */
+
+.approach-section {
+  color: #292d24;
+  scroll-margin-top: 90px;
+}
+
+.approach-section h2,
+.approach-section h3,
+.approach-section h4,
+.approach-section p {
+  overflow-wrap: break-word;
+}
+
+/* Discipline panels */
+.discipline-card {
+  isolation: isolate;
+  box-shadow: 0 12px 36px rgba(55, 49, 35, 0.035);
+}
+
+.discipline-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.42),
+    transparent 55%
+  );
+}
+
+.discipline-sage {
+  color: #344b3b;
+  border-color: #cad8c9;
+  background: linear-gradient(145deg, #edf2e9, #e1e9df);
+}
+
+.discipline-blue {
+  color: #344858;
+  border-color: #cbd9e2;
+  background: linear-gradient(145deg, #eef3f6, #e1eaf0);
+}
+
+.discipline-gold {
+  color: #6c5431;
+  border-color: #e2d2b7;
+  background: linear-gradient(145deg, #f6efe2, #eee3d0);
+}
+
+.discipline-watermark {
+  opacity: 0.075;
+  transform: rotate(-12deg);
+  transition:
+    transform 700ms ease,
+    opacity 500ms ease;
+}
+
+.discipline-card:hover .discipline-watermark {
+  opacity: 0.13;
+  transform: rotate(0deg) scale(1.08);
+}
+
+/* Acharya profile image */
+.approach-portrait {
+  background: #ded6c5;
+}
+
+.approach-portrait img {
+  transition: transform 1.2s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.approach-profile:hover .approach-portrait img {
+  transform: scale(1.035);
+}
+
+/* Foundation cards */
+.foundation-card {
+  box-shadow: 0 10px 30px rgba(55, 49, 35, 0.025);
+}
+
+.foundation-card::after {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 34px;
+  height: 2px;
+  content: "";
+  background: #b18b50;
+  opacity: 0;
+  transition:
+    width 350ms ease,
+    opacity 350ms ease;
+}
+
+.foundation-card:hover::after {
+  width: 60px;
+  opacity: 1;
+}
+
+/* Gentle entrance animation */
+@media (prefers-reduced-motion: no-preference) {
+  .approach-intro {
+    animation: approach-enter 700ms ease both;
+  }
+
+  .discipline-card {
+    animation: approach-enter 700ms ease both;
+  }
+
+  .discipline-card:nth-child(2) {
+    animation-delay: 100ms;
+  }
+
+  .discipline-card:nth-child(3) {
+    animation-delay: 200ms;
+  }
+
+  .approach-profile {
+    animation: approach-enter 850ms ease both;
+  }
+}
+
+@keyframes approach-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet and mobile refinements */
+@media (max-width: 767px) {
+  .approach-section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  .approach-profile {
+    border-radius: 24px;
+  }
+
+  .approach-portrait {
+    min-height: 440px;
+  }
+
+  .discipline-card {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 420px) {
+  .approach-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .approach-portrait {
+    min-height: 390px;
+  }
+
+  .approach-portrait > div:first-of-type {
+    margin: 16px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .approach-section *,
+  .approach-section *::before,
+  .approach-section *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================
+   GLOBAL WEBSITE DESIGN SYSTEM
+   Premium Astro Vastu
+========================================= */
+
+:root {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-accent: 'Manrope', sans-serif;
+
+  --color-ivory: #f7f5ef;
+  --color-ivory-light: #fcfaf5;
+  --color-gold: #b18b50;
+  --color-gold-light: #d8c39d;
+  --color-ink: #292d24;
+  --color-muted: #707268;
+  --color-green: #30382c;
+  --color-border: #e3dccd;
+  --color-blue: #e7eef5;
+
+  --color-sage: #e3ecdf;
+  --color-lavender: #e9e5f4;
+  --color-champagne: #f5e7d8;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-ink);
+  background: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Typography across the whole website */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(3.4rem, 7vw, 6.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+}
+
+h3 {
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+}
+
+h4 {
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+.font-display {
+  font-family: var(--font-heading);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+  font-weight: 700;
+}
+
+/* Consistent section layouts */
+
+.section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 36px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #927547;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.section-heading {
+  margin-bottom: 22px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.section-description {
+  max-width: 650px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* Premium buttons */
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 0 25px;
+  border-radius: 4px;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.btn-primary {
+  border: 1px solid var(--color-green);
+  background: var(--color-green);
+  color: #fffdf8;
+  box-shadow: 0 7px 20px rgb(41 45 36 / 9%);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: #46513f;
+  box-shadow: 0 12px 28px rgb(41 45 36 / 14%);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-border);
+  background: rgb(255 253 248 / 65%);
+  color: var(--color-ink);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+  background: var(--color-ivory-light);
+}
+
+/* Form elements */
+
+input,
+textarea,
+select {
+  max-width: 100%;
+  border-color: var(--color-border);
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgb(177 139 80 / 35%);
+  outline-offset: 2px;
+}
+
+::placeholder {
+  color: #999589;
+  opacity: 1;
+}
+
+::selection {
+  color: #fffdf8;
+  background: #8d744b;
+}
+
+/* =========================================
+   STATISTICS — THREE DISTINCT 3D CARDS
+   This block replaces conflicting card styles
+========================================= */
+
+.astro-stats-section {
+  position: relative;
+  margin-top: 45px;
+  padding-top: 28px;
+  border-top: 1px solid rgb(177 139 80 / 28%);
+  perspective: 1200px;
+}
+
+.astro-stats-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.astro-stats-heading p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.astro-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  perspective: 1200px;
+}
+
+.astro-stat-card {
+  --card-bg: #e3ecdf;
+  --card-text: #29412f;
+  --card-accent: #65876b;
+  --card-glow: rgb(101 135 107 / 22%);
+
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  min-height: 245px;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 16px;
+  background:
+    radial-gradient(
+      circle at 85% 12%,
+      var(--card-glow),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #fffdfb, var(--card-bg));
+  color: var(--card-text);
+  box-shadow:
+    0 3px 0 rgb(177 139 80 / 12%),
+    0 12px 26px rgb(41 45 36 / 6%),
+    inset 0 1px 0 rgb(255 255 255 / 95%);
+  transform: translateY(0) rotateX(0deg);
+  transform-style: preserve-3d;
+  animation: astro-global-card-enter 750ms both;
+  animation-delay: calc(var(--stat-index, 0) * 130ms);
+  transition:
+    transform 400ms ease,
+    box-shadow 400ms ease,
+    border-color 400ms ease;
+}
+
+/* Card 1 — Sage green */
+.astro-stat-card-1 {
+  --card-bg: #e3ecdf;
+  --card-text: #29412f;
+  --card-accent: #65876b;
+  --card-glow: rgb(101 135 107 / 24%);
+}
+
+/* Card 2 — Celestial lavender */
+.astro-stat-card-2 {
+  --card-bg: #e9e5f4;
+  --card-text: #3c315b;
+  --card-accent: #8875b5;
+  --card-glow: rgb(138 120 183 / 25%);
+}
+
+/* Card 3 — Champagne peach */
+.astro-stat-card-3 {
+  --card-bg: #f5e7d8;
+  --card-text: #62452e;
+  --card-accent: #b18b50;
+  --card-glow: rgb(177 139 80 / 25%);
+}
+
+.astro-stat-card:hover {
+  border-color: var(--card-accent);
+  box-shadow:
+    0 5px 0 rgb(177 139 80 / 12%),
+    0 25px 45px var(--card-glow),
+    inset 0 1px 0 #fff;
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+}
+
+.astro-stat-card-shine {
+  position: absolute;
+  z-index: -1;
+  inset: -50% -70%;
+  background: linear-gradient(
+    115deg,
+    transparent 43%,
+    rgb(255 255 255 / 70%) 50%,
+    transparent 57%
+  );
+  transform: translateX(-60%) rotate(8deg);
+  pointer-events: none;
+  transition: transform 850ms ease;
+}
+
+.astro-stat-card:hover .astro-stat-card-shine {
+  transform: translateX(60%) rotate(8deg);
+}
+
+.astro-stat-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateZ(18px);
+}
+
+.astro-stat-index {
+  color: var(--card-accent);
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.astro-stat-symbol {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--card-accent) 35%, transparent);
+  border-radius: 50%;
+  color: var(--card-accent);
+  font-size: 23px;
+  animation: astro-global-symbol-float 4s ease-in-out infinite;
+}
+
+.astro-stat-number-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 23px;
+  transform: translateZ(28px);
+}
+
+.astro-stat-value {
+  color: var(--card-text);
+  font-family: var(--font-heading);
+  font-size: clamp(3.8rem, 5.2vw, 5.2rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+  text-shadow: 0 3px 0 rgb(255 255 255 / 45%);
+}
+
+.astro-stat-orbit-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: -20px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  box-shadow: 0 0 0 5px var(--card-glow);
+  animation: astro-global-dot-pulse 2.6s ease-in-out infinite;
+}
+
+.astro-stat-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 10px;
+  color: var(--card-text);
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  transform: translateZ(16px);
+}
+
+.astro-stat-card-bottom {
+  position: absolute;
+  right: 24px;
+  bottom: 19px;
+  left: 24px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  transform: translateZ(12px);
+}
+
+.astro-stat-progress {
+  display: block;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card-accent) 22%, transparent);
+}
+
+.astro-stat-progress span {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--card-accent);
+  transform-origin: left;
+  animation: astro-global-progress 1.1s ease-out both;
+  animation-delay: calc(var(--stat-index, 0) * 140ms + 250ms);
+}
+
+.astro-stat-card-caption {
+  color: var(--card-accent);
+  font-family: var(--font-accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.astro-stat-watermark {
+  position: absolute;
+  z-index: -1;
+  right: -5px;
+  bottom: 10px;
+  color: var(--card-text);
+  font-family: var(--font-heading);
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 0.8;
+  opacity: 0.045;
+  pointer-events: none;
+  transition: transform 400ms ease, opacity 400ms ease;
+}
+
+.astro-stat-card:hover .astro-stat-watermark {
+  opacity: 0.08;
+  transform: translateY(-5px) scale(1.04);
+}
+
+@keyframes astro-global-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotateX(7deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes astro-global-symbol-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes astro-global-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--card-glow); }
+  50% { box-shadow: 0 0 0 8px var(--card-glow); }
+}
+
+@keyframes astro-global-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Mobile and tablet adjustments */
+
+@media (max-width: 900px) {
+  .section-container {
+    padding-inline: 26px;
+  }
+
+  .astro-stats-grid {
+    gap: 15px;
+  }
+
+  .astro-stat-card {
+    min-height: 225px;
+    padding: 18px;
+  }
+
+  .astro-stat-card-bottom {
+    right: 18px;
+    left: 18px;
+  }
+
+  .astro-stat-card-caption {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .section-container {
+    padding-inline: 20px;
+  }
+
+  .section-heading {
+    font-size: clamp(2.5rem, 10vw, 3.6rem);
+  }
+
+  .section-description,
+  p {
+    font-size: 15px;
+  }
+
+  .astro-stats-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .astro-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .astro-stat-card {
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .astro-stat-value {
+    font-size: 4.2rem;
+  }
+
+  .astro-stat-label {
+    font-size: 1.7rem;
+  }
+
+  .astro-stat-card-bottom {
+    right: 22px;
+    left: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-stat-card,
+  .astro-stat-symbol,
+  .astro-stat-orbit-dot,
+  .astro-stat-progress span {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .astro-stat-progress span {
+    transform: scaleX(1);
+  }
+}
+/* Enquiry section layout */
+.seven-enquiry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  overflow: hidden;
+  border: 1px solid rgba(188, 157, 105, 0.25);
+  border-radius: 1.5rem;
+  background: #f8f5ed;
+  box-shadow: 0 24px 80px rgba(41, 45, 36, 0.1);
+}
+
+/* Dark introduction panel */
+.seven-enquiry-copy {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(226, 197, 144, 0.12),
+      transparent 38%
+    ),
+    linear-gradient(145deg, #30372a 0%, #20271e 100%);
+}
+
+/* Ivory form panel */
+.seven-enquiry-form {
+  min-width: 0;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: #f8f5ed;
+}
+
+/* Form fields */
+.enquiry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.35rem;
+}
+
+.enquiry-field label {
+  color: #525346;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.enquiry-field input,
+.enquiry-field select,
+.enquiry-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #ded7c8;
+  border-radius: 0.65rem;
+  padding: 0.9rem 1rem;
+  background: #fffdf8;
+  color: #292d24;
+  font: inherit;
+  font-size: 0.875rem;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background 200ms ease;
+}
+
+.enquiry-field input::placeholder,
+.enquiry-field textarea::placeholder {
+  color: #a09b8d;
+}
+
+.enquiry-field input:focus,
+.enquiry-field select:focus,
+.enquiry-field textarea:focus {
+  border-color: #b9975b;
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(185, 151, 91, 0.14);
+}
+
+.enquiry-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Champagne-gold submit button */
+.enquiry-submit {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 1px solid #c9aa75;
+  border-radius: 0.7rem;
+  padding: 1rem 1.25rem;
+  background: #30372a;
+  color: #fff9ed;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+  cursor: pointer;
+}
+
+.enquiry-submit:hover {
+  background: #e2c590;
+  color: #292d24;
+}
+
+.enquiry-submit:active {
+  transform: translateY(1px);
+}
+
+.enquiry-submit:focus-visible,
+.enquiry-copy:focus-visible {
+  outline: 2px solid #b9975b;
+  outline-offset: 4px;
+}
+
+/* Prepared enquiry result */
+.enquiry-result {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid #e1d5be;
+  border-radius: 0.85rem;
+  background: #fffdf8;
+}
+
+.enquiry-message-preview {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid #ded7c8;
+  border-radius: 0.6rem;
+  padding: 0.9rem;
+  background: #f8f5ed;
+  color: #525346;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.enquiry-copy {
+  margin-top: 0.85rem;
+  border-radius: 0.55rem;
+  padding: 0.7rem 1rem;
+  background: #e8dcc5;
+  color: #30372a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.enquiry-copy:hover {
+  background: #ddc49a;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .seven-enquiry {
+    grid-template-columns: 1fr;
+  }
+
+  .seven-enquiry-copy,
+  .seven-enquiry-form {
+    padding: clamp(1.5rem, 6vw, 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .seven-enquiry {
+    border-radius: 1rem;
+  }
+
+  .enquiry-field {
+    margin-bottom: 1.1rem;
+  }
+
+  .enquiry-submit {
+    padding: 0.9rem 1rem;
+    font-size: 0.65rem;
+  }
+}
+/* =========================================
+   SEVEN LAYERS — CELESTIAL EDITORIAL DESIGN
+========================================= */
+
+.seven-layers-section {
+  color: #292d24;
+  scroll-margin-top: 80px;
+}
+
+.seven-layers-section button,
+.seven-layers-section a,
+.seven-layers-section input,
+.seven-layers-section select,
+.seven-layers-section textarea {
+  font: inherit;
+}
+
+.seven-layers-section button,
+.seven-layers-section a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.seven-layers-section a {
+  text-decoration: none;
+}
+
+.seven-layers-section button:focus-visible,
+.seven-layers-section a:focus-visible,
+.seven-layers-section input:focus-visible,
+.seven-layers-section select:focus-visible,
+.seven-layers-section textarea:focus-visible {
+  outline: 2px solid #a18150;
+  outline-offset: 4px;
+}
+
+/* Mandala stage */
+
+.mandala-scene {
+  perspective: 1100px;
+  isolation: isolate;
+}
+
+.mandala-core {
+  transform-style: preserve-3d;
+  animation: mandala-float 7s ease-in-out infinite;
+}
+
+.mandala-svg {
+  overflow: visible;
+  filter: drop-shadow(0 5px 10px rgba(131, 104, 57, 0.08));
+}
+
+.mandala-halo {
+  animation: halo-pulse 6s ease-in-out infinite;
+}
+
+.mandala-halo-two {
+  animation-delay: -3s;
+}
+
+.mandala-orbit {
+  transform: rotateX(64deg) rotateZ(0deg);
+  animation: mandala-orbit 32s linear infinite;
+}
+
+.mandala-orbit-two {
+  transform: rotateX(70deg) rotateZ(35deg);
+  animation-direction: reverse;
+  animation-duration: 25s;
+}
+
+.mandala-label {
+  backdrop-filter: blur(14px);
+}
+
+@keyframes mandala-float {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg) rotateY(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(2deg) rotateY(3deg);
+  }
+}
+
+@keyframes mandala-orbit {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes halo-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    scale: 0.98;
+  }
+  50% {
+    opacity: 1;
+    scale: 1.025;
+  }
+}
+
+/* Layer selector: editorial list, not cards */
+
+.layer-selector {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-top: 1px solid #d8cfbd;
+  border-bottom: 1px solid #d8cfbd;
+}
+
+.layer-selector-item {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 158px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 13px;
+  padding: 18px 13px;
+  overflow: hidden;
+  border: 0;
+  border-right: 1px solid #ded6c8;
+  background: transparent;
+  color: #77776c;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 300ms ease,
+    color 300ms ease,
+    transform 300ms ease;
+}
+
+.layer-selector-item:last-child {
+  border-right: 0;
+}
+
+.layer-selector-item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  content: "";
+  background: var(--layer-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms ease;
+}
+
+.layer-selector-item:hover,
+.layer-selector-item.is-active {
+  background: color-mix(in srgb, var(--layer-tint) 42%, transparent);
+  color: #292d24;
+}
+
+.layer-selector-item.is-active::before {
+  transform: scaleX(1);
+}
+
+.layer-selector-number {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--layer-accent);
+}
+
+.layer-selector-icon {
+  display: flex;
+  width: 37px;
+  height: 37px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8cfbd;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--layer-accent);
+  transition:
+    transform 400ms ease,
+    background 300ms ease,
+    border-color 300ms ease;
+}
+
+.layer-selector-item:hover .layer-selector-icon,
+.layer-selector-item.is-active .layer-selector-icon {
+  transform: rotate(-8deg) scale(1.08);
+  border-color: var(--layer-accent);
+  background: var(--layer-tint);
+}
+
+.layer-selector-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.layer-selector-arrow {
+  position: absolute;
+  top: 19px;
+  right: 10px;
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.layer-selector-item:hover .layer-selector-arrow,
+.layer-selector-item.is-active .layer-selector-arrow {
+  opacity: 0.85;
+  transform: translate(0, 0);
+}
+
+/* Active layer: 3D feature stage */
+
+.active-layer-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(28px, 6vw, 86px);
+  align-items: center;
+  min-height: 465px;
+  margin-top: 22px;
+  padding: clamp(25px, 5vw, 66px);
+  overflow: hidden;
+  border: 1px solid #ded4c2;
+  border-radius: 27px;
+  background:
+    radial-gradient(
+      ellipse at 17% 35%,
+      color-mix(in srgb, var(--layer-tint) 78%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(120deg, rgba(252, 250, 245, 0.95), rgba(246, 242, 232, 0.9));
+  box-shadow: 0 25px 75px rgba(57, 50, 35, 0.055);
+  animation: layer-reveal 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes layer-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.active-layer-art {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 370px;
+  aspect-ratio: 1;
+  place-items: center;
+  margin-inline: auto;
+  perspective: 1000px;
+}
+
+.active-layer-art-ring {
+  position: absolute;
+  inset: 2%;
+  border: 1px solid color-mix(in srgb, var(--layer-accent) 38%, transparent);
+  border-radius: 50%;
+  transform: rotateX(62deg);
+  animation: layer-ring-turn 24s linear infinite;
+}
+
+.active-layer-art-ring-two {
+  inset: 12%;
+  border-style: dashed;
+  transform: rotateX(70deg) rotateZ(35deg);
+  animation-direction: reverse;
+  animation-duration: 30s;
+}
+
+@keyframes layer-ring-turn {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.active-layer-art-disc {
+  display: grid;
+  width: 68%;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--layer-accent) 30%, transparent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.95), transparent 65%),
+    var(--layer-tint);
+  color: var(--layer-accent);
+  box-shadow:
+    0 30px 60px rgba(61, 53, 39, 0.09),
+    inset 0 0 35px rgba(255, 255, 255, 0.5);
+  transform: rotateX(8deg) rotateY(-9deg);
+  transition: transform 600ms ease;
+}
+
+.active-layer-panel:hover .active-layer-art-disc {
+  transform: rotateX(0deg) rotateY(0deg) translateY(-4px);
+}
+
+.layer-art-svg {
+  width: 75%;
+  height: 75%;
+  overflow: visible;
+  filter: drop-shadow(0 3px 8px rgba(45, 42, 33, 0.07));
+}
+
+.active-layer-art-index {
+  position: absolute;
+  right: 4%;
+  bottom: 15%;
+  display: grid;
+  width: 59px;
+  height: 59px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--layer-accent) 35%, #fff);
+  border-radius: 50%;
+  background: #faf7ef;
+  color: var(--layer-accent);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+  box-shadow: 0 12px 35px rgba(57, 50, 35, 0.1);
+}
+
+.active-layer-art-caption {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: max-content;
+  max-width: 100%;
+  color: #858274;
+  font-size: 9px;
+  letter-spacing: 0.17em;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.active-layer-copy {
+  min-width: 0;
+}
+
+.layer-step-button,
+.layer-next-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: 1px solid #cfc4af;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  color: #705832;
+  cursor: pointer;
+  transition:
+    color 250ms ease,
+    background 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.layer-step-button {
+  width: 44px;
+}
+
+.layer-next-button {
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.layer-step-button:hover,
+.layer-next-button:hover {
+  transform: translateY(-2px);
+  border-color: #292d24;
+  background: #292d24;
+  color: #fff9ed;
+}
+
+/* Consultation journey */
+
+.consultation-journey {
+  position: relative;
+}
+
+.journey-step {
+  position: relative;
+  min-width: 0;
+  padding: 0 4px 10px;
+}
+
+.journey-step-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  border-bottom: 1px solid #d9cfbc;
+}
+
+.journey-step-number {
+  align-self: flex-start;
+  color: #a18150;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.journey-step-icon {
+  display: grid;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  border: 1px solid #d9cfbc;
+  border-radius: 50%;
+  background: rgba(252, 250, 245, 0.72);
+  color: #927444;
+  transition:
+    transform 400ms ease,
+    background 300ms ease;
+}
+
+.journey-step:hover .journey-step-icon {
+  transform: translateY(-4px) rotate(7deg);
+  background: #eee4d0;
+}
+
+.journey-connector {
+  position: absolute;
+  top: 25px;
+  right: -19px;
+  z-index: 2;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid #d9cfbc;
+  border-radius: 50%;
+  background: #f7f5ef;
+  color: #a18150;
+}
+
+/* Pricing feature */
+
+.consultation-pricing {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(177, 139, 80, 0.36);
+  border-radius: 28px;
+  background: #f8f5ed;
+  box-shadow: 0 30px 90px rgba(49, 43, 31, 0.09);
+}
+
+.pricing-topline {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px clamp(22px, 4vw, 48px);
+  border-bottom: 1px solid rgba(218, 205, 182, 0.2);
+  background: #30382c;
+  color: #e2c590;
+}
+
+.pricing-topline-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 249, 237, 0.7);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.pricing-main {
+  position: relative;
+  min-height: 530px;
+  padding: clamp(30px, 5vw, 64px);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 80%, rgba(177, 139, 80, 0.15), transparent 45%),
+    linear-gradient(140deg, #30382c, #22281f);
+  isolation: isolate;
+}
+
+.pricing-main > *:not(.pricing-orbit) {
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-orbit {
+  position: absolute;
+  z-index: 0;
+  width: 370px;
+  height: 370px;
+  border: 1px solid rgba(226, 197, 144, 0.14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pricing-orbit-one {
+  right: -170px;
+  bottom: -160px;
+}
+
+.pricing-orbit-two {
+  right: -125px;
+  bottom: -115px;
+  border-style: dashed;
+  transform: rotateX(65deg);
+}
+
+.pricing-cta {
+  display: inline-flex;
+  min-height: 53px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 23px;
+  border: 1px solid #e2c590;
+  border-radius: 999px;
+  background: #e2c590;
+  color: #292d24;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.pricing-cta:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: #f7e5c1;
+}
+
+.pricing-inclusions {
+  padding: clamp(28px, 4.5vw, 55px);
+}
+
+.deliverables-row {
+  padding: 30px clamp(22px, 4vw, 48px);
+  border: 1px solid #ddd4c4;
+  border-radius: 23px;
+  background: rgba(252, 250, 245, 0.7);
+}
+
+.deliverable-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #e0d7c8;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  color: #947341;
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease;
+}
+
+.deliverable-item:hover {
+  transform: translateY(-3px);
+  border-color: #b18b50;
+}
+
+/* FAQ accordion */
+
+.faq-list {
+  border-top: 1px solid #d8cfbd;
+}
+
+.faq-item {
+  border-bottom: 1px solid #d8cfbd;
+}
+
+.faq-question {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 35px 1fr 35px;
+  align-items: center;
+  gap: 14px;
+  padding: 23px 0;
+  border: 0;
+  background: transparent;
+  color: #292d24;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-index {
+  color: #a18150;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.faq-question-text {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.25;
+}
+
+.faq-toggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #d8cfbd;
+  border-radius: 50%;
+  color: #947341;
+  transition:
+    transform 300ms ease,
+    background 300ms ease;
+}
+
+.faq-open .faq-toggle {
+  transform: rotate(180deg);
+  background: #eee4d0;
+}
+
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 350ms ease;
+}
+
+.faq-open .faq-answer-wrap {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer p {
+  padding: 0 45px 24px 49px;
+  color: #77776c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Enquiry section */
+
+.seven-enquiry {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  overflow: hidden;
+  border: 1px solid #354033;
+  border-radius: 28px;
+  background: #30382c;
+  box-shadow: 0 30px 90px rgba(49, 43, 31, 0.12);
+}
+
+.seven-enquiry-copy {
+  position: relative;
+  padding: clamp(28px, 5vw, 60px);
+  background:
+    radial-gradient(ellipse at 0% 100%, rgba(177, 139, 80, 0.2), transparent 55%),
+    #30382c;
+}
+
+.seven-enquiry-form {
+  min-width: 0;
+  padding: clamp(25px, 4vw, 48px);
+  background: #f8f5ed;
+}
+
+.enquiry-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.enquiry-field label {
+  color: #77776c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.enquiry-field input,
+.enquiry-field select,
+.enquiry-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d9cfbc;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 13px 14px;
+  color: #292d24;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  transition:
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.enquiry-field input::placeholder,
+.enquiry-field textarea::placeholder {
+  color: #a19c8e;
+}
+
+.enquiry-field input:focus,
+.enquiry-field select:focus,
+.enquiry-field textarea:focus {
+  border-color: #a18150;
+  outline: none;
+  background: #fffdf8;
+  box-shadow: 0 0 0 3px rgba(177, 139, 80, 0.12);
+}
+
+.enquiry-field textarea {
+  resize: vertical;
+}
+
+.enquiry-submit {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 19px;
+  border: 1px solid #30382c;
+  border-radius: 10px;
+  background: #30382c;
+  color: #fff9ed;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.enquiry-submit:hover {
+  transform: translateY(-2px);
+  background: #b18b50;
+  color: #fff;
+}
+
+.enquiry-result {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #d9cfbc;
+  border-radius: 13px;
+  background: #fffdf8;
+}
+
+.enquiry-message-preview {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px solid #e0d7c8;
+  border-radius: 8px;
+  background: #f7f5ef;
+  color: #55584b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.enquiry-copy {
+  margin-top: 12px;
+  padding: 10px 15px;
+  border: 1px solid #cfc4af;
+  border-radius: 999px;
+  background: transparent;
+  color: #705832;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Responsive tablet */
+
+@media (max-width: 1023px) {
+  .layer-selector-item {
+    min-height: 145px;
+    padding: 16px 9px;
+  }
+
+  .layer-selector-title {
+    font-size: 9px;
+  }
+
+  .active-layer-panel {
+    gap: 28px;
+  }
+
+  .journey-connector {
+    right: -18px;
+  }
+
+  .pricing-main {
+    min-height: 470px;
+  }
+}
+
+/* Mobile layer navigation */
+
+@media (max-width: 700px) {
+  .layer-selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-bottom: 0;
+  }
+
+  .layer-selector-item {
+    display: grid;
+    min-height: 94px;
+    grid-template-columns: 27px 34px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 5px;
+    padding: 14px 10px;
+    border-right: 1px solid #ded6c8;
+    border-bottom: 1px solid #ded6c8;
+  }
+
+  .layer-selector-item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .layer-selector-number {
+    grid-row: 1 / 3;
+  }
+
+  .layer-selector-icon {
+    grid-row: 1 / 3;
+    width: 33px;
+    height: 33px;
+  }
+
+  .layer-selector-title {
+    grid-column: 3;
+    align-self: end;
+    font-size: 10px;
+  }
+
+  .layer-selector-arrow {
+    display: none;
+  }
+
+  .active-layer-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 28px 23px;
+  }
+
+  .active-layer-art {
+    width: min(100%, 270px);
+  }
+
+  .active-layer-art-caption {
+    bottom: -8px;
+  }
+
+  .active-layer-copy {
+    padding-top: 10px;
+  }
+
+  .consultation-journey {
+    gap: 34px;
+  }
+
+  .journey-step {
+    padding-bottom: 8px;
+  }
+
+  .journey-step-top {
+    justify-content: flex-start;
+    gap: 22px;
+  }
+
+  .journey-step-number {
+    align-self: center;
+  }
+
+  .journey-connector {
+    top: auto;
+    right: 12px;
+    bottom: -17px;
+    transform: rotate(90deg);
+  }
+
+  .pricing-topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pricing-main {
+    min-height: auto;
+  }
+
+  .seven-enquiry {
+    grid-template-columns: 1fr;
+  }
+
+  .seven-enquiry-copy {
+    padding-bottom: 35px;
+  }
+
+  .seven-enquiry-form {
+    padding: 25px 20px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 390px) {
+  .layer-selector-item {
+    grid-template-columns: 22px 29px minmax(0, 1fr);
+    column-gap: 7px;
+    padding: 12px 7px;
+  }
+
+  .layer-selector-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .layer-selector-title {
+    font-size: 9px;
+  }
+
+  .faq-question {
+    grid-template-columns: 25px 1fr 30px;
+    gap: 8px;
+  }
+
+  .faq-answer p {
+    padding-left: 33px;
+    padding-right: 10px;
+  }
+
+  .pricing-cta {
+    width: 100%;
+    padding-inline: 12px;
+    font-size: 9px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .seven-layers-section *,
+  .seven-layers-section *::before,
+  .seven-layers-section *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.seven-enquiry-form .enquiry-field {
+  margin-bottom: 0;
+}
+
+.seven-enquiry-form .enquiry-field input,
+.seven-enquiry-form .enquiry-field select,
+.seven-enquiry-form .enquiry-field textarea {
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .seven-enquiry-copy {
+    min-width: 0;
+  }
+
+  .seven-enquiry-form {
+    min-width: 0;
+  }
+}
+
+/* COMPLETE CONSULTATION ENQUIRY */
+.consultation-enquiry {
+  overflow: hidden;
+  border: 1px solid #d8c9a9;
+  border-radius: 2rem;
+  background: #f8f5ed;
+  box-shadow: 0 25px 80px rgba(41, 45, 36, 0.08);
+}
+
+.consultation-enquiry-header {
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px clamp(22px, 4vw, 60px);
+  border-bottom: 1px solid rgba(226, 197, 144, 0.18);
+  background: #30372a;
+  color: #e2c590;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.consultation-header-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 249, 237, 0.8);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.consultation-enquiry-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.consultation-enquiry-intro {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: clamp(30px, 5vw, 68px);
+  background:
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(226, 197, 144, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #30372a, #252c22);
+  color: #fff9ed;
+}
+
+.consultation-decoration {
+  position: absolute;
+  right: -115px;
+  bottom: 5px;
+  display: flex;
+  width: 365px;
+  height: 365px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(226, 197, 144, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.consultation-decoration > div {
+  display: flex;
+  width: 265px;
+  height: 265px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(226, 197, 144, 0.12);
+  border-radius: 50%;
+}
+
+.consultation-decoration > div > div {
+  display: flex;
+  width: 165px;
+  height: 165px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(226, 197, 144, 0.16);
+  border-radius: 50%;
+  color: rgba(226, 197, 144, 0.38);
+}
+
+.consultation-eyebrow {
+  margin: 0;
+  color: #e2c590;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.consultation-eyebrow-light {
+  color: #a98247;
+}
+
+.consultation-display-title {
+  position: relative;
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.8rem, 4.3vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.consultation-intro-description {
+  position: relative;
+  max-width: 490px;
+  margin-top: 28px;
+  color: rgba(255, 249, 237, 0.78);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.consultation-price {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 18px;
+  margin-top: 46px;
+}
+
+.consultation-price-amount {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.4rem, 5.5vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  color: #e8cc96;
+}
+
+.consultation-price-label {
+  color: rgba(255, 249, 237, 0.8);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.consultation-enquiry-cta {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 35px;
+  border: 1px solid #e8cc96;
+  border-radius: 999px;
+  padding: 17px 24px;
+  background: #e8cc96;
+  color: #293326;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.consultation-enquiry-cta:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: #e8cc96;
+}
+
+.consultation-intro-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 55px;
+  padding-top: 23px;
+  border-top: 1px solid rgba(255, 249, 237, 0.17);
+}
+
+.consultation-sun-icon {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(226, 197, 144, 0.45);
+  border-radius: 50%;
+  color: #e2c590;
+}
+
+.consultation-acharya-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.consultation-acharya-speciality {
+  margin-top: 5px;
+  color: rgba(255, 249, 237, 0.6);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+/* RIGHT PANEL */
+.consultation-enquiry-details {
+  min-width: 0;
+  background: #f8f5ed;
+  color: #293326;
+}
+
+.consultation-inclusions {
+  padding: clamp(28px, 4.5vw, 60px);
+  border-bottom: 1px solid #ded3bf;
+}
+
+.consultation-inclusion-list {
+  display: grid;
+  gap: 19px;
+  margin-top: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.consultation-inclusion-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: #465044;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.consultation-check {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #e5eadd;
+  color: #5a7155;
+}
+
+.consultation-material-cost {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid #d9cdb7;
+}
+
+.consultation-wallet-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #ece3d1;
+  color: #947341;
+}
+
+.consultation-material-label {
+  color: #947341;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.consultation-material-price {
+  margin-top: 3px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: #293326;
+}
+
+.consultation-material-note {
+  margin-top: 20px;
+  color: #77776c;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* FORM AREA */
+.consultation-form-area {
+  padding: clamp(28px, 4.5vw, 60px);
+  scroll-margin-top: 2rem;
+}
+
+.consultation-form-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.consultation-form-heading h3,
+.consultation-success h3 {
+  margin-top: 8px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.consultation-form-heading > div > p:last-child,
+.consultation-success > p:not(.consultation-eyebrow) {
+  margin-top: 10px;
+  color: #77776c;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.consultation-step {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d9cfbc;
+  border-radius: 50%;
+  color: #947341;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.consultation-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.consultation-input-group {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.consultation-input-group > span {
+  color: #525346;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.consultation-input-group input,
+.consultation-input-group select,
+.consultation-input-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #ded7c8;
+  border-radius: 9px;
+  padding: 12px 13px;
+  background: #fffdf8;
+  color: #293326;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.consultation-input-group input,
+.consultation-input-group select {
+  min-height: 47px;
+}
+
+.consultation-input-group input::placeholder,
+.consultation-input-group textarea::placeholder {
+  color: #a09b8d;
+}
+
+.consultation-input-group input:focus,
+.consultation-input-group select:focus,
+.consultation-input-group textarea:focus {
+  border-color: #b9975b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(185, 151, 91, 0.14);
+}
+
+.consultation-message-field {
+  margin-top: 20px;
+}
+
+.consultation-input-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.consultation-submit {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+  border: 1px solid #30372a;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: #30372a;
+  color: #fff9ed;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.consultation-submit:hover:not(:disabled) {
+  border-color: #e2c590;
+  background: #e2c590;
+  color: #293326;
+}
+
+.consultation-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.consultation-submit:focus-visible,
+.consultation-enquiry-cta:focus-visible {
+  outline: 2px solid #b9975b;
+  outline-offset: 4px;
+}
+
+.consultation-privacy-note {
+  margin-top: 15px;
+  color: #858274;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.consultation-form-error {
+  margin-top: 16px;
+  border: 1px solid #edc7c1;
+  border-radius: 8px;
+  padding: 11px 13px;
+  background: #fff2ef;
+  color: #9b3025;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.consultation-success {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.consultation-success-icon {
+  display: flex;
+  width: 66px;
+  height: 66px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  border: 1px solid #d8c49d;
+  border-radius: 50%;
+  background: #eee5d4;
+  color: #947341;
+}
+
+.consultation-success .consultation-submit {
+  margin-top: 26px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .consultation-enquiry-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .consultation-enquiry-intro {
+    min-height: 570px;
+  }
+
+  .consultation-enquiry-details {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-enquiry {
+    border-radius: 20px;
+  }
+
+  .consultation-enquiry-header {
+    min-height: 60px;
+    padding: 16px 19px;
+    font-size: 8px;
+    letter-spacing: 0.13em;
+  }
+
+  .consultation-header-note {
+    gap: 5px;
+    font-size: 9px;
+  }
+
+  .consultation-enquiry-intro {
+    min-height: auto;
+    padding: 32px 24px;
+  }
+
+  .consultation-display-title {
+    font-size: clamp(2.65rem, 11vw, 3.5rem);
+  }
+
+  .consultation-intro-description {
+    font-size: 14px;
+  }
+
+  .consultation-price {
+    gap: 8px 12px;
+    margin-top: 35px;
+  }
+
+  .consultation-price-amount {
+    font-size: clamp(3.1rem, 12vw, 4.2rem);
+  }
+
+  .consultation-enquiry-cta {
+    gap: 10px;
+    padding: 15px 17px;
+    font-size: 9px;
+  }
+
+  .consultation-intro-footer {
+    margin-top: 40px;
+  }
+
+  .consultation-inclusions,
+  .consultation-form-area {
+    padding: 30px 23px;
+  }
+
+  .consultation-material-price {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .consultation-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consultation-enquiry-cta,
+  .consultation-submit {
+    transition: none;
+  }
+}
+
+/* Compact, centered enquiry card */
+.consultation-enquiry {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.consultation-enquiry-header {
+  border-radius: 22px 22px 0 0;
+}
+
+.consultation-enquiry-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  overflow: hidden;
+  border: 1px solid #d9cfbc;
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+}
+
+.consultation-enquiry-intro,
+.consultation-enquiry-details {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 42px);
+}
+
+.consultation-enquiry-intro {
+  position: relative;
+}
+
+.consultation-display-title {
+  font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+  line-height: 1.06;
+}
+
+.consultation-intro-description,
+.consultation-material-note {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.consultation-price-amount {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+}
+
+.consultation-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.consultation-form-area {
+  margin-top: 28px;
+}
+
+.consultation-enquiry input,
+.consultation-enquiry select,
+.consultation-enquiry textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .consultation-enquiry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-enquiry-intro,
+  .consultation-enquiry-details {
+    padding: 25px 20px;
+  }
+
+  .consultation-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-display-title {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+}
