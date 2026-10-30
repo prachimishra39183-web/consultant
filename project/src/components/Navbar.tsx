@@ -162,3 +162,29 @@ export default function Navbar() {
     </header>
   );
 }
+
+export function MovingExpertiseBar() {
+  const services = [
+    'Astro Vastu',
+    'Astrology',
+    'Numerology',
+    'Personal Consultation',
+  ];
+
+  return (
+    <div className="expertise-marquee" aria-label="Astro Vastu, Astrology and Numerology">
+      <div className="expertise-track">
+        {[0, 1].map((copy) => (
+          <div className="expertise-group" key={copy} aria-hidden={copy === 1}>
+            {services.map((service) => (
+              <span className="expertise-item" key={service}>
+                <span>{service}</span>
+                <span className="expertise-star">✦</span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

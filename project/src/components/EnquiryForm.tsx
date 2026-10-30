@@ -104,151 +104,12 @@ export default function EnquiryForm({
       className="consultation-enquiry mt-24 scroll-mt-24 sm:mt-32 lg:mt-40"
     >
       {/* Top header strip */}
-      <div className="consultation-enquiry-header">
-        <span>The complete consultation</span>
-
-        <span className="consultation-header-note">
-          <Sparkles size={15} strokeWidth={1.4} />
-          Personalised assessment
-        </span>
-      </div>
-
-      <div className="consultation-enquiry-grid">
-        {/* LEFT: Consultation overview */}
-        <div className="consultation-enquiry-intro">
-          <div className="consultation-decoration" aria-hidden="true">
-            <div>
-              <div>
-                <Sparkles size={46} strokeWidth={0.65} />
-              </div>
-            </div>
-          </div>
-
-          <div className="relative z-10">
-            <p className="consultation-eyebrow">
-              Complete 7-layer Astro Vastu
-            </p>
-
-            <h2 className="consultation-display-title">
-              A personal plan
-              <br />
-              for your property.
-            </h2>
-
-            <p className="consultation-intro-description">
-              Begin a personalised consultation with Acharya Sunil Mahatma.
-              Share your requirements and take the first step towards
-              understanding your space.
-            </p>
-
-            <div className="consultation-price">
-              <span className="consultation-price-amount">₹75,000</span>
-              <span className="consultation-price-label">
-                Consultation fee
-              </span>
-            </div>
-
-            <a
-              href="#consultation-form"
-              className="consultation-enquiry-cta"
-            >
-              Enquire about your property
-              <ArrowUpRight size={18} />
-            </a>
-          </div>
-
-          <div className="consultation-intro-footer">
-            <div className="consultation-sun-icon">
-              <Sparkles size={21} strokeWidth={1.1} />
-            </div>
-
-            <div>
-              <p className="consultation-acharya-name">
-                Acharya Sunil Mahatma
-              </p>
-              <p className="consultation-acharya-speciality">
-                Astro Vastu · Astrology · Numerology
-              </p>
-            </div>
-          </div>
-        </div>
-
+      
         {/* RIGHT: Inclusions and actual enquiry form */}
         <div className="consultation-enquiry-details">
-          <div className="consultation-inclusions">
-            <p className="consultation-eyebrow consultation-eyebrow-light">
-              Personal attention. A clearly defined engagement.
-            </p>
+         
 
-            <ul className="consultation-inclusion-list">
-              {inclusions.map((item) => (
-                <li key={item}>
-                  <span className="consultation-check">
-                    <Check size={14} strokeWidth={1.8} />
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="consultation-material-cost">
-              <div className="consultation-wallet-icon">
-                <Wallet size={22} strokeWidth={1.3} />
-              </div>
-
-              <div>
-                <p className="consultation-material-label">
-                  Estimated material cost
-                </p>
-                <p className="consultation-material-price">
-                  ₹55,000–₹60,000
-                </p>
-              </div>
-            </div>
-
-            <p className="consultation-material-note">
-              Materials are separate from the consultation fee. The estimate
-              depends on the property. Materials must be purchased separately
-              online, strictly from Mahavastu.
-            </p>
-          </div>
-
-          <div
-            id="consultation-form"
-            className="consultation-form-area scroll-mt-8"
-          >
-            {status === 'success' ? (
-              <div className="consultation-success">
-                <div className="consultation-success-icon">
-                  <CheckCircle2 size={34} strokeWidth={1.2} />
-                </div>
-
-                <p className="consultation-eyebrow consultation-eyebrow-light">
-                  Enquiry submitted
-                </p>
-
-                <h3>Thank you.</h3>
-
-                <p>
-                  Your enquiry has been received. We appreciate your interest
-                  and will get back to you.
-                </p>
-
-                <button
-                  type="button"
-                  className="consultation-submit"
-                  onClick={() => {
-                    setForm(emptyForm(defaultInterest));
-                    setStatus('idle');
-                    setValidationError(null);
-                  }}
-                >
-                  Send another enquiry
-                  <ArrowUpRight size={17} />
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit} noValidate>
                 <div className="consultation-form-heading">
                   <div>
                     <p className="consultation-eyebrow consultation-eyebrow-light">
@@ -350,10 +211,9 @@ export default function EnquiryForm({
                   enquiry.
                 </p>
               </form>
-            )}
-          </div>
+           
         </div>
-      </div>
+    
     </section>
   );
 }

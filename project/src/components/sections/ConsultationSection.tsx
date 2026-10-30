@@ -14,6 +14,10 @@ import {
   Sparkles,
   Wallet,
   Send,
+   Clock,
+  CreditCard,
+  CalendarDays,
+  X,
 } from 'lucide-react';
 
 const JOURNEY = [
@@ -80,6 +84,10 @@ export default function ConsultationPage() {
     details: '',
   });
   const [formMessage, setFormMessage] = useState('');
+  const [bookingOpen, setBookingOpen] = useState(false);
+const [bookingType, setBookingType] = useState<'regular' | 'urgent'>('regular');
+const [paymentVerified, setPaymentVerified] = useState(false);
+const [selectedSlot, setSelectedSlot] = useState('');
 
   function updateField(
     field: keyof typeof formData,
@@ -204,11 +212,14 @@ export default function ConsultationPage() {
                 </span>
               </div>
 
-              <a href="#seven-layer-enquiry" className="pricing-cta mt-9">
-                Enquire about your property
-                <ArrowUpRight size={17} />
-              </a>
-
+              <button
+  type="button"
+  onClick={() => setBookingOpen(true)}
+  className="pricing-cta mt-9"
+>
+  Book a consultation
+  <ArrowUpRight size={17} />
+</button>
               <div
                 className="pricing-orbit pricing-orbit-one"
                 aria-hidden="true"
@@ -269,6 +280,239 @@ export default function ConsultationPage() {
             </div>
           </div>
         </section>
+                  
+                  
+{bookingOpen && (
+  <div
+    className="fixed inset-0 z-[999] flex items-center justify-center overflow-y-auto bg-[#211b20]/70 p-4 backdrop-blur-md"
+    onClick={() => setBookingOpen(false)}
+  >
+    <div
+      className="relative my-auto w-full max-w-2xl overflow-hidden rounded-[28px] border border-[#dfc9a9] bg-[#F8F5EC] text-[#382B36] shadow-2xl"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Header */}
+      <div className="relative border-b border-[#e4d6c3] px-6 py-7 sm:px-9">
+        <button
+          type="button"
+          onClick={() => setBookingOpen(false)}
+          aria-label="Close booking form"
+          className="absolute right-5 top-5 rounded-full bg-white p-2 text-[#493B30] shadow-sm transition hover:bg-[#eaded0]"
+        >
+          <X size={18} />
+        </button>
+
+        <span className="text-[10px] font-bold uppercase tracking-[.25em] text-[#9B704D]">
+          Private consultation
+        </span>
+
+        <h2 className="mt-3 pr-8 font-serif text-3xl sm:text-4xl">
+          Reserve your session.
+        </h2>
+
+        <p className="mt-3 max-w-lg text-sm leading-6 text-[#76665D]">
+          Choose your preferred consultation, complete payment, and then
+          select an available date and time.
+        </p>
+
+        <div className="mt-6 grid grid-cols-3 gap-2">
+          {[
+            { n: '01', label: 'Choose' },
+            { n: '02', label: 'Payment' },
+            { n: '03', label: 'Book slot' },
+          ].map((step, i) => (
+            <div key={step.n} className="rounded-xl bg-[#EDE2D6] p-3">
+              <span className="text-[10px] font-bold text-[#9B704D]">
+                {step.n}
+              </span>
+              <p className="mt-1 text-xs font-semibold">{step.label}</p>
+              <div
+                className={`mt-3 h-1 rounded-full ${
+                  i === 0 || (i === 1 && paymentVerified)
+                    ? 'bg-[#A77C5C]'
+                    : 'bg-[#D9CABC]'
+                }`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-7 p-6 sm:p-9">
+        {/* Choose consultation */}
+        <div>
+          <h3 className="text-sm font-bold">Choose your consultation</h3>
+          <p className="mt-1 text-xs text-[#76665D]">
+            Select the option that suits your schedule.
+          </p>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <button
+              type="button"
+              onClick={() => setBookingType('regular')}
+              className={`rounded-2xl border p-5 text-left transition ${
+                bookingType === 'regular'
+                  ? 'border-[#A77C5C] bg-[#E8D9D2] shadow-md ring-1 ring-[#A77C5C]/20'
+                  : 'border-[#E0D2C2] bg-[#FFFEFA] hover:border-[#B68B55]'
+              }`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <Clock size={20} className="text-[#946746]" />
+                {bookingType === 'regular' && (
+                  <Check size={17} className="text-[#80583F]" />
+                )}
+              </div>
+              <p className="mt-4 text-sm font-bold">Regular consultation</p>
+              <p className="mt-2 font-serif text-3xl">₹5,100</p>
+              <p className="mt-2 text-xs leading-5 text-[#76665D]">
+                Standard appointment scheduling.
+              </p>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setBookingType('urgent')}
+              className={`rounded-2xl border p-5 text-left transition ${
+                bookingType === 'urgent'
+                  ? 'border-[#A77C5C] bg-[#E8D9D2] shadow-md ring-1 ring-[#A77C5C]/20'
+                  : 'border-[#E0D2C2] bg-[#FFFEFA] hover:border-[#B68B55]'
+              }`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <ShieldCheck size={20} className="text-[#946746]" />
+                {bookingType === 'urgent' && (
+                  <Check size={17} className="text-[#80583F]" />
+                )}
+              </div>
+              <p className="mt-4 text-sm font-bold">Urgent consultation</p>
+              <p className="mt-2 font-serif text-3xl">₹6,100</p>
+              <p className="mt-2 text-xs leading-5 text-[#76665D]">
+                Priority scheduling, subject to availability.
+              </p>
+            </button>
+          </div>
+        </div>
+
+        {/* Payment */}
+            
+{/* PAYMENT PANEL */}
+<div className="rounded-2xl border border-[#DCC9AA] bg-[#F0E5D8] p-5 sm:p-6">
+  <div className="flex items-center gap-3">
+    <div className="grid h-11 w-11 place-items-center rounded-xl bg-[#E0CCB3] text-[#80583F]">
+      <CreditCard size={21} />
+    </div>
+
+    <div className="flex-1">
+      <p className="text-sm font-bold">Scan & Pay</p>
+      <p className="mt-1 text-xs text-[#76665D]">
+        {bookingType === 'urgent'
+          ? 'Urgent consultation'
+          : 'Regular consultation'}
+      </p>
+    </div>
+
+    <p className="font-serif text-2xl">
+      ₹{bookingType === 'urgent' ? '6,100' : '5,100'}
+    </p>
+  </div>
+
+  <div className="mt-6 rounded-2xl border border-[#E5D7C6] bg-[#FFFEFA] p-5 text-center">
+    <p className="text-xs font-semibold text-[#493B30]">
+      Scan this QR code using any UPI app
+    </p>
+
+    <img
+      src="/qr.jpeg"
+      alt="UPI payment QR code"
+      className="mx-auto mt-4 h-52 w-52 rounded-xl border border-[#E5D7C6] object-contain p-2"
+    />
+
+    <p className="mt-4 font-serif text-3xl text-[#493B30]">
+      ₹{bookingType === 'urgent' ? '6,100' : '5,100'}
+    </p>
+
+    <p className="mt-2 text-xs leading-5 text-[#76665D]">
+      Pay the exact amount shown above. Verify the payment before booking your appointment.
+    </p>
+  </div>
+
+  <button
+    type="button"
+    onClick={() => {
+      alert(
+        'Payment verification must be connected before the calendar can be unlocked.'
+      );
+    }}
+    className="mt-5 flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#B68A68] to-[#946746] px-5 py-4 text-sm font-bold text-white shadow-[0_5px_0_#704D37] transition hover:brightness-105"
+  >
+    I have completed payment
+    <ArrowUpRight size={17} />
+  </button>
+
+  <p className="mt-4 text-center text-[11px] text-[#76665D]">
+    Your appointment calendar should unlock only after payment is verified.
+  </p>
+</div>
+
+        {/* Calendar: locked until verified payment */}
+        <div
+          className={`rounded-2xl border p-5 sm:p-6 ${
+            paymentVerified
+              ? 'border-[#C7AE8B] bg-[#FFFEFA]'
+              : 'border-dashed border-[#D4BBAE] bg-[#E8D9D2]/60'
+          }`}
+        >
+          <div className="flex items-center gap-3">
+            <CalendarDays size={23} className="text-[#946746]" />
+            <div>
+              <h3 className="text-sm font-bold">Choose your date and time</h3>
+              <p className="mt-1 text-xs text-[#76665D]">
+                {paymentVerified
+                  ? 'Select an available appointment slot.'
+                  : 'Available after payment verification.'}
+              </p>
+            </div>
+          </div>
+
+          {!paymentVerified ? (
+            <div className="mt-5 rounded-xl border border-[#D4BBAE] bg-[#F8F5EC] p-5 text-center">
+              <CalendarDays
+                size={30}
+                className="mx-auto text-[#A77C5C]"
+              />
+              <p className="mt-3 text-sm font-semibold">
+                Calendar locked
+              </p>
+              <p className="mt-1 text-xs leading-5 text-[#76665D]">
+                Complete payment to access available dates and times.
+              </p>
+            </div>
+          ) : (
+            <div className="mt-5">
+              <label
+                htmlFor="consultation-slot"
+                className="mb-2 block text-xs font-semibold"
+              >
+                Available appointment
+              </label>
+              <select
+                id="consultation-slot"
+                value={selectedSlot}
+                onChange={(e) => setSelectedSlot(e.target.value)}
+                className="w-full rounded-xl border border-[#D4BBAE] bg-white p-3 text-sm outline-none focus:border-[#A77C5C]"
+              >
+                <option value="">Choose an available slot</option>
+              </select>
+              <p className="mt-2 text-xs text-[#76665D]">
+                Connect your calendar service to display real available slots.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
         {/* WHAT THE CLIENT RECEIVES */}
         <section className="deliverables-row mt-12 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">

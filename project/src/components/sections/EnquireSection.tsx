@@ -124,7 +124,7 @@ export default function EnquiryForm({
               PERSONAL ATTENTION. THOUGHTFUL GUIDANCE.
             </p>
 
-            <h2 className="consultation-display-title">
+            <h2 className="consultation-display-title text-white">
               Your space
               <br />
               has a story.
@@ -138,14 +138,6 @@ export default function EnquiryForm({
               property and what you are looking for. Begin a conversation
               with Acharya Sunil Mahatma about your Astro Vastu requirements.
             </p>
-
-            <a
-              href="#enquiry-form"
-              className="consultation-enquiry-cta"
-            >
-              Make an enquiry
-              <ArrowUpRight size={18} />
-            </a>
           </div>
 
           <div className="consultation-intro-footer">
