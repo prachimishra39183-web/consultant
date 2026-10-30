@@ -58,7 +58,7 @@ const stats = [
     glow: 'shadow-orange-500/20',
   },
   {
-    label: 'New Enquiries',
+    label: 'Neew Enquiries',
     value: '—',
     detail: 'Awaiting follow-up',
     icon: Inbox,
