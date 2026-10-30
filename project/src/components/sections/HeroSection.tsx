@@ -113,7 +113,7 @@ export default function HeroSection() {
                   src="/img0.jpg"
                   alt="Acharya Sunil Mahatma, Mahavastu consultant"
                   className="astro-portrait-image"
-                  fetchPriority="high"
+                  fetchpriority="high"
                 />
                 <div className="astro-portrait-shade" />
                 <div className="astro-portrait-label">
