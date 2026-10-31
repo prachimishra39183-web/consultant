@@ -14,7 +14,7 @@ import AdminHome from '@/components/sections/AdminHome';
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-ivory-50 font-sans text-ink-700 antialiased">
+    <div className="min-h-screen bg-transparent">
       <Navbar />
       <MovingExpertiseBar />
       <main>

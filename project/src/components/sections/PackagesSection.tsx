@@ -54,7 +54,7 @@ export default function PackagesSection() {
       id="packages"
       eyebrow="Premium Services"
       title="Service Packages"
-      className="bg-ivory-100"
+      className=""
     >
       <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {servicePackages.map((pkg) => (

@@ -175,7 +175,6 @@ function MandalaArtwork() {
     <svg
       viewBox="0 0 500 500"
       role="img"
-      aria-label="Conceptual illustration of the Vastu Purusha Mandala"
       className="mandala-svg h-full w-full"
       fill="none"
     >
@@ -377,10 +376,10 @@ export default function SevenLayersSection() {
   }
 
   return (
-    <section
-      id="seven-layers"
-      className="seven-layers-section relative isolate overflow-hidden px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36"
-    >
+  <section
+  id="seven-layers"
+  className="seven-layers-section relative isolate overflow-hidden px-5 pt-8 pb-12 sm:px-8 sm:pt-12 sm:pb-16 lg:px-12 lg:pt-16 lg:pb-20"
+>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-48 top-36 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#dbe7e3]/55 blur-3xl"
@@ -391,6 +390,7 @@ export default function SevenLayersSection() {
       />
 
       <div className="mx-auto max-w-7xl">
+        
         {/* OPENING */}
         <div className="seven-intro grid items-center gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
           <div>
@@ -468,13 +468,10 @@ export default function SevenLayersSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-center text-[10px] italic leading-6 text-[#858274]">
-          Conceptual illustration of the Vastu Purusha Mandala; not a property
-          assessment.
-        </p>
+      
 
         {/* INTERACTIVE LAYER NAVIGATION */}
-        <div id="layer-journey" className="mt-24 scroll-mt-24 sm:mt-32 lg:mt-40">
+        <div id="layer-journey" className="mt-12 scroll-mt-24 sm:mt-16 lg:mt-20">
           <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#947341]">
@@ -595,24 +592,6 @@ export default function SevenLayersSection() {
               </div>
             </div>
           </div>
-        </div>
-
-       
-
-      
-
-        {/* DISCLAIMER */}
-        <div className="mt-12 flex items-start gap-3 border-t border-[#d4caba] pt-6">
-          <span className="mt-0.5 text-[#947341]">
-            <ShieldCheck size={17} strokeWidth={1.4} />
-          </span>
-          <p className="max-w-5xl text-[11px] leading-6 text-[#858274]">
-            Traditional spiritual and Vastu guidance; not a substitute for
-            medical, financial or professional advice. No specific health,
-            wealth or other outcomes are guaranteed. Traditional energetic and
-            planetary interpretations describe the practice and are not
-            scientifically established effects.
-          </p>
         </div>
       </div>
     </section>

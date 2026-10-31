@@ -25,7 +25,7 @@ export default function EnquiryDialog({ title, defaultInterest, onClose }: Enqui
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="enquiry-dialog-title">
       <div className="absolute inset-0 bg-ink-900/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-ivory-50 p-6 shadow-2xl md:p-10">
+      <div className="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl  p-6 shadow-2xl md:p-10">
         <div className="mb-8 flex items-start justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-bronze-700">Enquiry</p>

@@ -1,20 +1,22 @@
 
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: #292d24;
   background: #f7f5ef;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-accent: 'Outfit', sans-serif;
 
   --color-ivory: #f7f5ef;
   --color-ivory-light: #fcfaf5;
@@ -27,6 +29,29 @@
   --color-blue: #e7eef5;
 }
 
+/* Premium editorial headings */
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-heading);
+}
+
+/* Clean, modern body text */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+/* Navigation, labels and small accent text */
+.font-accent {
+  font-family: var(--font-accent);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -37,16 +62,7 @@ html {
   background: #f7f5ef;
 }
 
-body {
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-  background: #f7f5ef;
-  color: #292d24;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
-}
+
 
 button,
 input,
@@ -243,7 +259,7 @@ select:focus {
 ========================================= */
 
 .astro-hero {
-  --astro-ivory: #f7f5ef;
+
   --astro-white: #fffdf8;
   --astro-gold: #b18b50;
   --astro-gold-light: #ddc89f;
@@ -976,6 +992,7 @@ select:focus {
     rotate: 360deg;
   }
 }
+
 
 /* =========================================
    RESPONSIVE
@@ -2109,49 +2126,277 @@ select:focus {
 ========================================= */
 
 /* Luxury ivory background */
+
+/* =========================================
+   PREMIUM ASTRO VASTU — WARM LUXURY THEME
+   Ivory · Antique Gold · Bronze · Terracotta
+========================================= */
+
+/* ==========================================
+   ASTRO VASTU — PREMIUM 3D LUXURY BACKGROUND
+   Ivory | Antique Gold | Bronze | Terracotta
+========================================== */
+
+:root {
+  --color-ivory: #FFFCF5;
+  --color-ivory-deep: #F4E7D3;
+  --color-gold: #B58A45;
+  --color-gold-light: #E8CC91;
+  --color-bronze: #87502F;
+  --color-orange: #C96D3B;
+  --color-ink: #34271F;
+  --color-muted: #796B5D;
+  --color-border: rgba(151, 111, 58, 0.20);
+}
+
+/* Main canvas */
+html {
+  min-height: 100%;
+  background: #F8F0E2;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  margin: 0;
+
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
   background:
+    /* Rich antique gold illumination */
     radial-gradient(
-      ellipse at 8% 12%,
-      rgba(219, 231, 211, 0.62),
-      transparent 32%
+      ellipse at 5% 8%,
+      rgba(205, 157, 75, 0.40) 0%,
+      rgba(205, 157, 75, 0.12) 25%,
+      transparent 43%
     ),
+
+    /* Burnt orange ambient glow */
     radial-gradient(
-      ellipse at 92% 20%,
-      rgba(237, 216, 207, 0.58),
-      transparent 30%
+      ellipse at 100% 18%,
+      rgba(202, 105, 58, 0.24) 0%,
+      rgba(202, 105, 58, 0.07) 27%,
+      transparent 45%
     ),
+
+    /* Champagne centre glow */
     radial-gradient(
-      ellipse at 78% 68%,
-      rgba(224, 216, 239, 0.48),
-      transparent 34%
+      ellipse at 62% 42%,
+      rgba(235, 210, 163, 0.36) 0%,
+      transparent 43%
     ),
+
+    /* Bronze lower-left atmosphere */
     radial-gradient(
-      ellipse at 12% 88%,
-      rgba(241, 221, 192, 0.52),
-      transparent 30%
+      ellipse at 0% 72%,
+      rgba(153, 99, 55, 0.19) 0%,
+      transparent 36%
     ),
+
+    /* Warm peach lower-right */
+    radial-gradient(
+      ellipse at 95% 90%,
+      rgba(224, 157, 111, 0.25) 0%,
+      transparent 38%
+    ),
+
+    /* Subtle central ivory light */
+    radial-gradient(
+      ellipse at 48% 0%,
+      rgba(255, 255, 255, 0.92) 0%,
+      transparent 48%
+    ),
+
+    /* Base */
     linear-gradient(
       135deg,
       #FFFCF5 0%,
-      #F7F3EA 48%,
-      #F4EFE5 100%
+      #FAF1E2 32%,
+      #F2E3CC 66%,
+      #FBF4E9 100%
     );
 
   background-attachment: fixed;
-  color: var(--color-ink);
+  background-repeat: no-repeat;
 }
 
-/* Optional elegant texture */
+/* ==========================================
+   3D AMBIENT ORBS
+========================================== */
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.16;
 
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+  background-image:
+    /* Large gold 3D sphere */
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 250, 225, 0.92) 0%,
+      rgba(234, 204, 145, 0.76) 15%,
+      rgba(190, 139, 61, 0.34) 36%,
+      rgba(181, 138, 69, 0.08) 57%,
+      transparent 70%
+    ),
+
+    /* Terracotta glass orb */
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 240, 218, 0.85) 0%,
+      rgba(220, 143, 99, 0.54) 20%,
+      rgba(184, 101, 57, 0.18) 49%,
+      transparent 72%
+    ),
+
+    /* Smaller champagne orb */
+    radial-gradient(
+      circle at 28% 25%,
+      rgba(255, 255, 246, 0.94) 0%,
+      rgba(233, 211, 168, 0.58) 32%,
+      rgba(190, 149, 88, 0.12) 62%,
+      transparent 73%
+    );
+
+  background-size:
+    290px 290px,
+    210px 210px,
+    135px 135px;
+
+  background-position:
+    5% 180px,
+    91% 43%,
+    78% 83%;
+
+  background-repeat: no-repeat;
+  opacity: 0.76;
+}
+
+/* ==========================================
+   FLOATING GEOMETRIC RINGS & SOFT LIGHT
+========================================== */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    /* Large delicate orbital ring */
+    radial-gradient(
+      circle,
+      transparent 58%,
+      rgba(181, 138, 69, 0.23) 58.4%,
+      rgba(255, 255, 255, 0.58) 58.8%,
+      transparent 59.5%
+    ) 78% 12% / 300px 300px no-repeat,
+
+    /* Secondary orbit */
+    radial-gradient(
+      circle,
+      transparent 66%,
+      rgba(151, 93, 49, 0.17) 66.4%,
+      rgba(255, 255, 255, 0.46) 66.8%,
+      transparent 67.5%
+    ) 4% 67% / 220px 220px no-repeat,
+
+    /* Fine golden architectural lines */
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 79px,
+      rgba(181, 138, 69, 0.045) 80px,
+      transparent 81px,
+      transparent 160px
+    );
+
+  opacity: 0.8;
+}
+
+/* Keep your React app above the decorative layers */
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* ==========================================
+   POLISHED DETAILS
+========================================== */
+
+::selection {
+  background: rgba(181, 138, 69, 0.28);
+  color: #34271F;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F0E2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #E1C48B,
+    #B58A45,
+    #87502F
+  );
+  border: 2px solid #F8F0E2;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #87502F;
+}
+
+/* Mobile performance */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before {
+    opacity: 0.48;
+    background-size:
+      180px 180px,
+      135px 135px,
+      90px 90px;
+  }
+
+  body::after {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Mobile optimisation */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before {
+    opacity: 0.07;
+  }
 }
 
 html {
@@ -2160,15 +2405,7 @@ html {
   scroll-padding-top: 90px;
 }
 
-body {
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--color-ink);
-  background: var(--color-ivory);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+
 
 * {
   box-sizing: border-box;
@@ -2942,11 +3179,21 @@ select:focus {
 
 .seven-layers-section button,
 .seven-layers-section a {
-  -webkit-tap-highlight-color: transparent;
+
+  color: #180204;
 }
 
 .seven-layers-section a {
   text-decoration: none;
+}
+.seven-layers-section .layer-card {
+  background: linear-gradient(
+    145deg,
+    #493526 0%,
+    #36271F 100%
+  );
+  border: 1px solid rgba(228, 201, 145, 0.3);
+  color: #FFF5E4;
 }
 
 .seven-layers-section button:focus-visible,
@@ -5015,5 +5262,102 @@ select:focus {
 @media (prefers-reduced-motion: reduce) {
   .expertise-track {
     animation: none;
+  }
+}
+
+/* Fix card content stacking and alignment */
+.astro-stat-card {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+/* Decorative shine stays behind the content */
+.astro-stat-card-shine {
+  z-index: 0;
+}
+
+/* Keep all card content above decorative layers */
+.astro-stat-card-top,
+.astro-stat-number-row,
+.astro-stat-label,
+.astro-stat-card-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+/* Align number and label */
+.astro-stat-number-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.astro-stat-value {
+  display: block;
+  line-height: 1.1;
+}
+
+.astro-stat-label {
+  display: block;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Keep the progress stroke separate from the caption */
+.astro-stat-card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.astro-stat-progress {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  flex-shrink: 0;
+}
+
+.astro-stat-progress > span {
+  display: block;
+  height: 100%;
+}
+
+.astro-stat-card-caption {
+  display: block;
+  position: relative;
+  width: 100%;
+  line-height: 1.6;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Correct the invalid transition property */
+.astro-stat-symbol {
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease;
+}
+
+@media (max-width: 640px) {
+  .astro-stat-card {
+    padding: 16px;
+  }
+
+  .astro-stat-number-row {
+    margin-top: 16px;
+  }
+
+  .astro-stat-card-bottom {
+    padding-top: 18px;
+    gap: 10px;
   }
 }

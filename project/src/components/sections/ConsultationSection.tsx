@@ -75,6 +75,8 @@ const FAQS = [
 ];
 
 export default function ConsultationPage() {
+  const [enquiryId, setEnquiryId] = useState<string | null>(null);
+const [submitting, setSubmitting] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formData, setFormData] = useState({
     name: '',
@@ -99,24 +101,74 @@ const [selectedSlot, setSelectedSlot] = useState('');
     }));
   }
 
-  function handleEnquiry(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  
+async function handleEnquiry(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  setSubmitting(true);
+  setFormMessage('');
 
-    const message = [
-      'CONSULTATION ENQUIRY — ACHARYA SUNIL MAHATMA',
-      '',
-      `Name: ${formData.name}`,
-      `Phone or email: ${formData.contact}`,
-      `Property type: ${formData.propertyType}`,
-      `Property location: ${formData.location}`,
-      `Property details: ${formData.details || 'Not provided'}`,
-      '',
-      'Consultation fee: ₹75,000',
-      'Estimated materials: ₹55,000–₹60,000, charged separately.',
-    ].join('\n');
+  try {
+    const response = await fetch('/api/consultation/enquiry', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-    setFormMessage(message);
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Enquiry submission failed.');
+    }
+
+    setEnquiryId(data.enquiry.id);
+
+    setFormMessage('Your enquiry has been submitted successfully.');
+
+  } catch (error) {
+    setFormMessage(
+      error instanceof Error ? error.message : 'Something went wrong.'
+    );
+  } finally {
+    setSubmitting(false);
   }
+}
+
+
+async function createConsultationBooking() {
+  if (!enquiryId) {
+    alert('Please submit your enquiry first.');
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/consultation/booking', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        enquiryId,
+        bookingType,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Booking creation failed.');
+    }
+
+    return data.booking;
+
+  } catch (error) {
+    alert(
+      error instanceof Error ? error.message : 'Unable to create booking.'
+    );
+    return null;
+  }
+}
 
   return (
     <>
@@ -125,7 +177,7 @@ const [selectedSlot, setSelectedSlot] = useState('');
         
 
         {/* FOUR-STAGE JOURNEY */}
-        <section className="mt-24 sm:mt-32 lg:mt-40">
+        <section className="mt-4 sm:mt-5 lg:mt-2">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#947341]">
               The consultation process
@@ -172,7 +224,7 @@ const [selectedSlot, setSelectedSlot] = useState('');
 
         {/* PRICING FEATURE */}
         <section
-          id="consultation-fee"
+          id="consultation"
           className="consultation-pricing mt-28 scroll-mt-24 sm:mt-36 lg:mt-44"
         >
           <div className="pricing-topline">

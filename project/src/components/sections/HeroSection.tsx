@@ -9,13 +9,20 @@ const STATS = [
 
 export default function HeroSection() {
   return (
-    <section
-      id="top"
-      className="astro-hero relative isolate min-h-screen overflow-hidden px-5 pb-10 pt-28 sm:px-8 lg:px-12"
-    >
+   <section
+  id="top"
+  className="astro-hero relative isolate min-h-screen overflow-hidden px-5 pb-10 pt-20 sm:px-8 sm:pt-24 lg:px-12 lg:pt-28"
+>
       {/* Ambient decorative shapes */}
       <div className="astro-hero-glow" aria-hidden="true" />
       <div className="astro-hero-grid" aria-hidden="true" />
+      {/* Decorative celestial details */}
+
+<div className="astro-hero-emblem" aria-hidden="true">
+  <div className="astro-emblem-ring astro-emblem-ring-one" />
+  <div className="astro-emblem-ring astro-emblem-ring-two" />
+ 
+</div>
       <div className="astro-hero-watermark" aria-hidden="true">
         VASTU
       </div>
@@ -23,31 +30,31 @@ export default function HeroSection() {
       <div className="astro-hero-inner mx-auto w-full max-w-[1400px]">
         {/* Top label */}
         <div className="astro-hero-eyebrow">
-          <span className="astro-eyebrow-star">
-            <Sparkles size={14} />
-          </span>
-          <span>Mahavastu consultant</span>
-          <span className="astro-eyebrow-divider" />
-          <span>Certified Acharya</span>
-        </div>
+  <span className="astro-eyebrow-star">
+    <Sparkles size={14} />
+  </span>
+  <span>MAHAVASTU CONSULTANT</span>
+  <span className="astro-eyebrow-divider" />
+  <span>CERTIFIED ACHARYA</span>
+</div>
 
         <div className="astro-hero-layout">
           {/* Left: editorial headline */}
           <div className="astro-hero-copy">
-            <p className="astro-hero-overline">
-              A more harmonious way to live
-            </p>
+  <p className="astro-hero-overline">
+    <span className="astro-overline-dot" />
+    A MORE HARMONIOUS WAY TO LIVE
+  </p>
 
-            <h1 className="astro-hero-title">
-              Your space.
-              <br />
-              <span className="astro-title-second">Your nature.</span>
-              <br />
-              <span className="astro-title-last">
-                A considered path.
-              </span>
-            </h1>
-
+           <h1 className="astro-hero-title">
+    Your space.
+    <br />
+    <span className="astro-title-second">Your nature.</span>
+    <br />
+    <span className="astro-title-last">
+      A considered path<span className="astro-title-period">.</span>
+    </span>
+  </h1>
             <div className="astro-title-ornament" aria-hidden="true">
               <span />
               <span />

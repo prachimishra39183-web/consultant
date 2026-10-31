@@ -95,9 +95,9 @@ const FOUNDATION_STEPS = [
 export default function ApproachSection() {
   return (
     <section
-      id="approach"
-      className="approach-section relative isolate overflow-hidden px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
-    >
+  id="seven-layers"
+  className="relative overflow-hidden pt-16 sm:pt-20 lg:pt-24"
+>
       {/* Decorative atmosphere */}
       <div
         aria-hidden="true"
@@ -396,22 +396,7 @@ export default function ApproachSection() {
         </div>
 
         {/* CLOSING STATEMENT */}
-        <div className="mt-9 flex flex-col gap-3 border-t border-[#cfc5b3]/80 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-2xl font-serif text-lg italic leading-relaxed text-[#55584b] sm:text-xl">
-            The recommendations come after the person, the property and their
-            relationship have been considered.
-          </p>
-          <a
-            href="#consultation-enquiry"
-            className="group inline-flex shrink-0 items-center gap-3 self-start rounded-full border border-[#b18b50]/55 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#705832] transition hover:bg-[#292d24] hover:text-[#fffaf0] sm:self-center"
-          >
-            Begin a conversation
-            <ArrowUpRight
-              size={16}
-              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </a>
-        </div>
+       
       </div>
     </section>
   );
