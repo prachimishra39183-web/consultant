@@ -53,7 +53,7 @@ export default function AdminDashboard() {
 
       <button
         type="button"
-        onClick={() => navigate('/admin')}
+        onClick={() => navigate('/')}
         className="absolute left-6 top-6 flex items-center gap-2 text-sm text-[#68715E] hover:text-[#344333]"
       >
         <ArrowLeft size={17} />
