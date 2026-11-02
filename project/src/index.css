@@ -34,11 +34,7 @@ select {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-  background: #f7f5ef;
-}
+
 
 
 
@@ -2122,175 +2118,7 @@ select:focus {
    ASTRO VASTU — PEARL WHITE & GOLD THEME
 ========================================== */
 
-:root {
-  --color-ivory: #F8F2E5;
-  --color-ivory-light: #FFFEFB;
-  --color-ivory-deep: #EFE2C7;
 
-  --color-gold: #B18B50;
-  --color-gold-light: #E7D3A8;
-  --color-gold-pale: #F3E8CF;
-  --color-bronze: #876B3D;
-
-  --color-ink: #30291E;
-  --color-muted: #776D5C;
-  --color-border: rgba(177, 139, 80, 0.28);
-
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  --font-accent: 'Outfit', sans-serif;
-}
-
-/* Main document */
-html {
-  min-height: 100%;
-  background: #FFFEFB;
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-/* Global pearl and champagne background */
-body {
-  position: relative;
-  isolation: isolate;
-  min-height: 100vh;
-  margin: 0;
-
-  color: var(--color-ink);
-  font-family: var(--font-body);
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  background:
-    radial-gradient(
-      ellipse at 4% 12%,
-      rgba(211, 179, 115, 0.28) 0%,
-      rgba(231, 211, 169, 0.13) 27%,
-      transparent 49%
-    ),
-    radial-gradient(
-      ellipse at 98% 32%,
-      rgba(226, 205, 161, 0.25) 0%,
-      transparent 43%
-    ),
-    radial-gradient(
-      ellipse at 50% 65%,
-      rgba(255, 255, 252, 0.95) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 12% 100%,
-      rgba(200, 169, 109, 0.19) 0%,
-      transparent 43%
-    ),
-    linear-gradient(
-      135deg,
-      #F4E8CF 0%,
-      #FFFEFB 25%,
-      #F8F1E3 52%,
-      #FFFEFB 74%,
-      #F0E2C5 100%
-    );
-
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-/* ==========================================
-   SOFT GOLDEN ORBS — NO ORANGE
-========================================== */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 255, 244, 0.95) 0%,
-      rgba(239, 220, 177, 0.72) 22%,
-      rgba(195, 157, 91, 0.20) 48%,
-      transparent 72%
-    ) 4% 150px / 300px 300px no-repeat,
-
-    radial-gradient(
-      circle,
-      rgba(255, 255, 251, 0.98) 0%,
-      rgba(229, 207, 161, 0.52) 34%,
-      rgba(190, 154, 92, 0.12) 60%,
-      transparent 74%
-    ) 94% 45% / 250px 250px no-repeat,
-
-    radial-gradient(
-      circle,
-      rgba(255, 255, 250, 0.95) 0%,
-      rgba(232, 213, 173, 0.48) 38%,
-      transparent 73%
-    ) 76% 85% / 175px 175px no-repeat;
-
-  opacity: 0.78;
-}
-
-/* ==========================================
-   TYPOGRAPHY
-========================================== */
-
-h1,
-h2,
-h3,
-h4,
-.font-serif {
-  font-family: var(--font-heading);
-}
-
-body,
-button,
-input,
-textarea,
-select {
-  font-family: var(--font-body);
-}
-
-.font-accent {
-  font-family: var(--font-accent);
-}
-
-/* ==========================================
-   GOLD DETAILS
-========================================== */
-
-.gold-divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #B18B50 22%,
-    #E8D5A8 50%,
-    #B18B50 78%,
-    transparent
-  );
-}
-
-.pearl-surface {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 253, 0.96),
-    rgba(248, 241, 225, 0.94)
-  );
-
-  border: 1px solid rgba(177, 139, 80, 0.32);
-
-  box-shadow:
-    0 20px 55px rgba(119, 91, 43, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.98);
-
-  backdrop-filter: blur(14px);
-}
 
 /* Gold accent button */
 .button-gold {
@@ -2453,33 +2281,7 @@ body::after {
    POLISHED DETAILS
 ========================================== */
 
-::selection {
-  background: rgba(181, 138, 69, 0.28);
-  color: #34271F;
-}
 
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F8F0E2;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    #E1C48B,
-    #B58A45,
-    #87502F
-  );
-  border: 2px solid #F8F0E2;
-  border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #87502F;
-}
 
 /* Mobile performance */
 @media (max-width: 768px) {
@@ -5500,25 +5302,6 @@ select:focus {
 }
 
 /* Main page backgrounds */
-html,
-body {
-  background-color: #fffdf8;
-  color: var(--color-ink);
-}
-
-body {
-  background-image:
-    radial-gradient(
-      circle at 10% 5%,
-      rgba(216, 195, 157, 0.12),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 90% 35%,
-      rgba(177, 139, 80, 0.06),
-      transparent 28%
-    );
-}
 
 /* Main sections */
 section,
@@ -5532,59 +5315,13 @@ section,
 }
 
 /* White cards with subtle golden depth */
-.astro-card,
-.stat-card,
-.layer-card,
-.package-card,
-.expertise-card,
-.award-card,
-.profile-card {
-  background: linear-gradient(
-    145deg,
-    #ffffff 0%,
-    #fffdf8 75%,
-    #f9f3e7 100%
-  );
-  border: 1px solid rgba(177, 139, 80, 0.24);
-  box-shadow:
-    0 10px 30px rgba(50, 40, 20, 0.045),
-    0 4px 12px var(--theme-gold-shadow);
-  color: var(--color-ink);
-}
+.
 
 /* Hover effect */
-.astro-card:hover,
-.stat-card:hover,
-.layer-card:hover,
-.package-card:hover,
-.expertise-card:hover,
-.award-card:hover,
-.profile-card:hover {
-  border-color: rgba(177, 139, 80, 0.55);
-  box-shadow:
-    0 18px 38px rgba(50, 40, 20, 0.075),
-    0 8px 20px rgba(177, 139, 80, 0.13);
-}
 
-/* Headings */
-h1,
-h2,
-h3,
-h4 {
-  color: var(--color-ink);
-}
 
-.astro-hero h1,
-.astro-section h2,
-.section-title {
-  text-wrap: balance;
-}
 
-.gold-text,
-.accent-text,
-.highlight-text {
-  color: var(--color-gold);
-}
+
 
 /* Buttons */
 button,
@@ -5706,4 +5443,392 @@ footer a:hover {
   .btn {
     transition-duration: 0.01ms;
   }
+}
+
+/* =========================================
+   PURE WHITE + SHINY GOLD THEME
+   Add this at the END of index.css
+========================================= */
+
+:root {
+  --color-ivory: #ffffff;
+  --color-ivory-light: #ffffff;
+  --color-gold: #c49a42;
+  --color-gold-light: #f5df9b;
+  --color-ink: #24231f;
+  --color-muted: #77736a;
+  --color-green: #ffffff;
+  --color-border: #eee5d1;
+
+  --gold-bright: #f8e7a8;
+  --gold-metallic: #d4af37;
+  --gold-deep: #a87920;
+  --pure-white: #ffffff;
+}
+
+/* Main page backgrounds */
+html,
+body,
+#root {
+  background: #ffffff !important;
+  color: #24231f;
+}
+
+/* Remove dark and coloured section backgrounds */
+section,
+main,
+.page,
+.page-wrapper {
+  background-color: #ffffff;
+}
+
+/* Gold text */
+.text-gold,
+.accent-text {
+  color: #c49a42;
+}
+
+/* Gold buttons */
+button,
+.btn,
+.button-primary {
+  border-color: #c49a42;
+}
+
+.btn-gold,
+.button-gold {
+  color: #24231f;
+  background: linear-gradient(
+    115deg,
+    #b88a32 0%,
+    #f8e7a8 28%,
+    #d4af37 52%,
+    #fff0b8 72%,
+    #b88a32 100%
+  );
+  border: 1px solid #d4af37;
+  box-shadow: 0 5px 20px rgba(196, 154, 66, 0.16);
+}
+
+/* Elegant gold hover effect */
+.btn-gold:hover,
+.button-gold:hover {
+  box-shadow: 0 8px 28px rgba(196, 154, 66, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Gold borders and fine details */
+.gold-border {
+  border-color: #d4af37;
+}
+
+/* White cards with subtle gold depth */
+.card,
+.service-card,
+.package-card {
+  background: #ffffff;
+  border-color: #eee5d1;
+  box-shadow: 0 8px 28px rgba(120, 91, 34, 0.06);
+}
+
+/* Keep text readable */
+h1,
+h2,
+h3,
+h4,
+p {
+  color: inherit;
+}
+
+/* Clean white selection */
+::selection {
+  background: #f5df9b;
+  color: #24231f;
+}
+
+/* =====================================
+   MAHAVASTU LUXURY WHITE-GOLD FOOTER
+===================================== */
+
+.maha-footer {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #292820;
+  border-top: 1px solid #e8d7a7;
+  isolation: isolate;
+}
+
+.footer-gold-line {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #a87920,
+    #f9e9ae,
+    #d4af37,
+    #fff4c8,
+    #a87920
+  );
+  background-size: 200% 100%;
+  animation: footer-gold-shimmer 7s linear infinite;
+}
+
+@keyframes footer-gold-shimmer {
+  to {
+    background-position: 200% 0;
+  }
+}
+
+.footer-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 1fr 1.2fr;
+  gap: 46px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 68px 6% 54px;
+}
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #292820;
+  text-decoration: none;
+}
+
+.footer-logo-image {
+  width: 68px;
+  height: 58px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-logo h2 {
+  margin: 0 0 7px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.footer-logo span {
+  color: #a87920;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.footer-description {
+  margin: 24px 0;
+  color: #77736a;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-link {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #a87920;
+  border: 1px solid #e6d3a1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fff, #fffaf0);
+  transition: 0.3s ease;
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #b58a30, #f0d989, #a87920);
+  border-color: #d4af37;
+  box-shadow: 0 5px 20px rgba(196, 154, 66, 0.24);
+  transform: translateY(-3px);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-column h3 {
+  margin: 4px 0 10px;
+  color: #a87920;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.footer-column > a:not(.footer-cta) {
+  color: #706d64;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-column > a:not(.footer-cta):hover {
+  color: #b58a30;
+  transform: translateX(4px);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  color: #706d64;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-contact p svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #b58a30;
+}
+
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 9px;
+  padding: 13px 19px;
+  color: #292820;
+  background: linear-gradient(
+    115deg,
+    #c39a43,
+    #f8e8ad,
+    #d4af37,
+    #fff0b8,
+    #b58a30
+  );
+  background-size: 200% 100%;
+  border: 1px solid #d4af37;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease;
+}
+
+.footer-cta:hover {
+  background-position: 100% 0;
+  box-shadow: 0 7px 24px rgba(196, 154, 66, 0.24);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 6%;
+  border-top: 1px solid #eee6d5;
+  background: linear-gradient(180deg, #fff, #fffdf8);
+}
+
+.footer-bottom p,
+.footer-back-top {
+  margin: 0;
+  color: #898477;
+  font-size: 11px;
+}
+
+.footer-back-top {
+  color: #a87920;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-back-top:hover {
+  color: #d4af37;
+}
+
+/* Responsive layout */
+@media (max-width: 1000px) {
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 42px 30px;
+    padding: 52px 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 42px 24px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 24px;
+  }
+
+  .footer-logo h2 {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-gold-line {
+    animation: none;
+  }
+}
+
+/* Show the shared website background behind the hero */
+.astro-hero {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Remove the old grid and large watermark */
+.astro-hero-grid,
+.astro-hero-watermark {
+  display: none !important;
+}
+
+/* Keep the glow subtle and golden */
+.astro-hero-glow {
+  background: radial-gradient(
+    ellipse at 70% 45%,
+    rgba(212, 175, 55, 0.10),
+    transparent 65%
+  ) !important;
+}
+
+/* Keep the celestial details above the background */
+.astro-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.astro-hero-emblem {
+  pointer-events: none;
+}
+.astro-hero {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.astro-hero-grid {
+  display: none !important;
 }

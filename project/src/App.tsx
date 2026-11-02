@@ -8,15 +8,29 @@ import SevenLayersSection from '@/components/sections/SevenLayersSection';
 import PackagesSection from '@/components/sections/PackagesSection';
 import ConsultationSection from '@/components/sections/ConsultationSection';
 import EnquireSection from '@/components/sections/EnquireSection';
+import Footer from '@/components/sections/Footer';
 
 import AdminDashboard from '@/components/sections/AdminDashboard';
 import AdminHome from '@/components/sections/AdminHome';
 
+
 function HomePage() {
   return (
-    <div className="min-h-screen bg-transparent">
+    <div
+      className="min-h-screen relative"
+      style={{
+        backgroundImage:
+          'linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url("/bgi.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        backgroundRepeat: 'repeat-y',
+        backgroundAttachment: 'fixed',
+        backgroundColor: '#ffffff',
+      }}
+    >
       <Navbar />
       <MovingExpertiseBar />
+
       <main>
         <HeroSection />
         <ApproachSection />
@@ -25,30 +39,28 @@ function HomePage() {
         <ConsultationSection />
         <EnquireSection />
       </main>
+
+      <Footer />
     </div>
   );
 }
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public website */}
         <Route path="/" element={<HomePage />} />
 
-        {/* Admin login */}
         <Route path="/admin/login" element={<AdminDashboard />} />
 
-        {/* Admin dashboard */}
         <Route path="/admin/dashboard" element={<AdminHome />} />
 
-        {/* Redirect /admin to the dashboard */}
         <Route
           path="/admin"
           element={<Navigate to="/admin/dashboard" replace />}
         />
 
-        {/* Unknown routes */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

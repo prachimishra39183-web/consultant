@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'Seven Layers', href: '#seven-layers' },
   { label: 'Packages', href: '#packages' },
   { label: 'Consultation', href: '#consultation' },
-   { label: 'Enquire',    href:'#consultation-enquiry' },
+  { label: 'Enquire', href: '#consultation-enquiry' },
   { label: 'Admin', href: '/admin/login' },
 ];
 

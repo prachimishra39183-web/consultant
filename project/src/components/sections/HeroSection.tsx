@@ -9,10 +9,19 @@ const STATS = [
 
 export default function HeroSection() {
   return (
-   <section
+   
+<section
   id="top"
   className="astro-hero relative isolate min-h-screen overflow-hidden px-5 pb-10 pt-20 sm:px-8 sm:pt-24 lg:px-12 lg:pt-28"
+  style={{
+    backgroundImage:
+      'linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), url("/bgi.jpeg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
 >
+
       {/* Ambient decorative shapes */}
       <div className="astro-hero-glow" aria-hidden="true" />
       <div className="astro-hero-grid" aria-hidden="true" />

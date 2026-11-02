@@ -95,7 +95,7 @@ const FOUNDATION_STEPS = [
 export default function ApproachSection() {
   return (
     <section
-  id="seven-layers"
+  id="approach"
   className="relative overflow-hidden pt-16 sm:pt-20 lg:pt-24"
 >
       {/* Decorative atmosphere */}
@@ -244,76 +244,141 @@ export default function ApproachSection() {
             </div>
 
             {/* PROFILE COPY */}
-            <div className="flex flex-col justify-center px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
-              <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#cbb58e]/55 bg-[#eee6d5]/55 px-3 py-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#a18150]" />
-                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#80643a]">
-                  Certified Acharya · MahaVastu
-                </span>
-              </div>
+            
+<div className="flex flex-col justify-center px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
 
-              <h2 className="font-serif text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-[#292d24] sm:text-4xl lg:text-5xl">
-                Rooted in tradition.
-                <span className="mt-1 block font-normal italic text-[#a18150]">
-                  Attentive to the individual.
-                </span>
-              </h2>
+  {/* PROFESSIONAL INTRODUCTION */}
+  <div className="mb-6">
+    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d4af37]/60 bg-gradient-to-r from-[#fff9e9] via-white to-[#f8edcf] px-4 py-2 shadow-[0_3px_14px_rgba(177,139,80,0.12)]">
+      <Gem size={15} className="text-[#a87920]" />
+      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8c682c]">
+        Certified Acharya · MahaVastu
+      </span>
+    </div>
 
-              <div className="my-5 h-px w-full bg-gradient-to-r from-[#b18b50]/65 via-[#d9cfbc] to-transparent" />
+    <h2 className="font-serif text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-[#292d24] sm:text-4xl lg:text-5xl">
+      Rooted in tradition.
+      <span className="mt-1 block bg-gradient-to-r from-[#a87920] via-[#d4af37] to-[#98702b] bg-clip-text font-normal italic text-transparent">
+        Attentive to the individual.
+      </span>
+    </h2>
+  </div>
 
-              <div className="space-y-3 text-sm leading-7 text-[#66675c]">
-                <p>
-                  A Mahavastu consultant,pharmist and certified Acharya from Mahavastu,
-                  Sunil Mahatma brings together Astro Vastu, astrology guidance
-                  and numerology in his personal consultation practice.
-                </p>
-                <p>
-                  His approach starts with your horoscope and Prakriti before
-                  considering the land and building. Recommendations are then
-                  tailored to the person, the property and the needs identified
-                  during assessment.
-                </p>
-              </div>
+  {/* EXPERTISE HIGHLIGHTS */}
+  <div className="mb-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
 
-              <blockquote className="relative my-5 border-l-2 border-[#b18b50] py-1 pl-5 sm:pl-6">
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-1 -top-5 font-serif text-4xl text-[#b18b50]/50"
-                >
-                  “
-                </span>
-                <p className="font-serif text-xl italic leading-snug text-[#393d31] sm:text-2xl">
-                  Not a standard set of remedies. A considered plan for your
-                  space.
-                </p>
-              </blockquote>
+    <div className="group relative overflow-hidden rounded-xl border border-[#d4af37]/45 bg-gradient-to-br from-white via-[#fffdf7] to-[#f8edcf] p-4 shadow-[0_5px_20px_rgba(177,139,80,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(177,139,80,0.18)]">
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#d4af37]/40 bg-white text-[#a87920] shadow-sm">
+        <Sparkles size={19} strokeWidth={1.5} />
+      </div>
+      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#a87920]">
+        Expertise
+      </p>
+      <h3 className="mt-1 font-serif text-xl font-medium text-[#292d24]">
+        Palmist
+      </h3>
+      <p className="mt-1 text-xs leading-5 text-[#777064]">
+        Personal palm-reading guidance
+      </p>
+      <div className="absolute right-0 top-0 h-20 w-20 rounded-full bg-[#e8d39b]/20 blur-2xl" />
+    </div>
 
-              {/* ACHARYA MILESTONE */}
-              <div className="rounded-xl border border-[#d9cfbc] bg-white/55 p-4">
-                <div className="flex gap-4">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#e9dfca] text-[#947341]">
-                    <Gem size={17} strokeWidth={1.35} />
-                  </div>
-                  <div>
-                    <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-[#947341]">
-                      A milestone in the journey
-                    </p>
-                    <h4 className="mt-1.5 font-serif text-lg font-medium text-[#292d24] sm:text-xl">
-                      MahaVastu Advanced 2026
-                    </h4>
-                    <p className="mt-1.5 text-xs leading-5 text-[#66675c]">
-                      Honoured with the title of Acharya at MahaVastu Advanced
-                      2026 by Dr. Khushdeep Bansal.
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <div className="group relative overflow-hidden rounded-xl border border-[#d4af37]/45 bg-gradient-to-br from-white via-[#fffdf7] to-[#f8edcf] p-4 shadow-[0_5px_20px_rgba(177,139,80,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(177,139,80,0.18)]">
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#d4af37]/40 bg-white text-[#a87920] shadow-sm">
+        <Gem size={19} strokeWidth={1.5} />
+      </div>
+      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#a87920]">
+        Recognition
+      </p>
+      <h3 className="mt-1 font-serif text-xl font-medium text-[#292d24]">
+        Certified Acharya
+      </h3>
+      <p className="mt-1 text-xs leading-5 text-[#777064]">
+        MahaVastu professional
+      </p>
+      <div className="absolute right-0 top-0 h-20 w-20 rounded-full bg-[#e8d39b]/20 blur-2xl" />
+    </div>
 
-              <div className="mt-5 flex items-center gap-2 text-[8px] font-bold uppercase tracking-[0.19em] text-[#77776c]">
-                <UserRound size={15} strokeWidth={1.4} />
-                <span>A personal, assessment-led practice</span>
-              </div>
-            </div>
+    <div className="group relative overflow-hidden rounded-xl border border-[#d4af37]/45 bg-gradient-to-br from-white via-[#fffdf7] to-[#f8edcf] p-4 shadow-[0_5px_20px_rgba(177,139,80,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(177,139,80,0.18)]">
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#d4af37]/40 bg-white text-[#a87920] shadow-sm">
+        <Sparkles size={19} strokeWidth={1.5} />
+      </div>
+      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#a87920]">
+        Specialisation
+      </p>
+      <h3 className="mt-1 font-serif text-xl font-medium text-[#292d24]">
+        Astro Vastu
+      </h3>
+      <p className="mt-1 text-xs leading-5 text-[#777064]">
+        Astrology and numerology
+      </p>
+      <div className="absolute right-0 top-0 h-20 w-20 rounded-full bg-[#e8d39b]/20 blur-2xl" />
+    </div>
+
+  </div>
+
+  {/* GOLD DIVIDER */}
+  <div className="my-2 h-px w-full bg-gradient-to-r from-[#b18b50] via-[#ead9a7] to-transparent" />
+
+  {/* INTRODUCTION */}
+  <div className="space-y-3 text-sm leading-7 text-[#55564d]">
+    <p>
+      A <strong className="font-semibold text-[#98702b]">Mahavastu consultant, palmist and Certified Acharya</strong>,
+      Sunil Mahatma brings together Astro Vastu, astrology guidance
+      and numerology in his personal consultation practice.
+    </p>
+
+    <p>
+      His approach starts with your horoscope and Prakriti before
+      considering the land and building. Recommendations are tailored
+      to the person, the property and the needs identified during assessment.
+    </p>
+  </div>
+
+  {/* SIGNATURE QUOTE */}
+  <blockquote className="relative my-5 rounded-r-xl border-l-2 border-[#c49a43] bg-gradient-to-r from-[#fff9e9] to-transparent py-3 pl-5 pr-3 sm:pl-6">
+    <span
+      aria-hidden="true"
+      className="absolute -left-1 -top-4 font-serif text-4xl text-[#b18b50]/60"
+    >
+      “
+    </span>
+    <p className="font-serif text-xl italic leading-snug text-[#393d31] sm:text-2xl">
+      Not a standard set of remedies. A considered plan for your space.
+    </p>
+  </blockquote>
+
+  {/* ACHARYA MILESTONE */}
+  <div className="relative overflow-hidden rounded-xl border border-[#d4af37]/50 bg-gradient-to-br from-white via-[#fffdf7] to-[#f6e8c3] p-4 shadow-[0_6px_24px_rgba(177,139,80,0.12)]">
+    <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#e3c46d]/20 blur-2xl" />
+
+    <div className="relative flex gap-4">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#d4af37]/40 bg-white text-[#947341] shadow-sm">
+        <Gem size={20} strokeWidth={1.35} />
+      </div>
+
+      <div>
+        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#947341]">
+          A milestone in the journey
+        </p>
+        <h4 className="mt-1.5 font-serif text-lg font-medium text-[#292d24] sm:text-xl">
+          MahaVastu Advanced 2026
+        </h4>
+        <p className="mt-1.5 text-xs leading-5 text-[#66675c]">
+          Honoured with the title of Acharya at MahaVastu Advanced
+          2026 by Dr. Khushdeep Bansal.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div className="mt-5 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#77776c]">
+    <UserRound size={15} strokeWidth={1.4} className="text-[#a87920]" />
+    <span>A personal, assessment-led practice</span>
+  </div>
+
+</div>
+
           </div>
         </div>
 
