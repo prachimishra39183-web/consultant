@@ -9,6 +9,7 @@ import {
   Sun,
   UserRound,
   Waves,
+  Hand,
   ScanLine,
   Orbit,
   Leaf,
@@ -45,15 +46,16 @@ const DISCIPLINES = [
     accent: 'discipline-gold',
     symbol: '◇',
   },
-   {
+   
+{
   number: '04',
-  title: 'Online consultation',
-  subtitle: 'Planetary guidance, wherever you are',
+  title: 'Palmist',
+  subtitle: 'Discover the story within your hands',
   description:
-    'Connect through an online consultation to discuss your birth chart, planetary influences and personalised astrological guidance from the comfort of your home.',
-  icon: Orbit,
+    'Explore the lines, mounts and unique patterns of your palms through personalised palmistry guidance. Gain insights into your strengths, tendencies and life path with an individual consultation.',
+  icon: Hand,
   accent: 'discipline-blue',
-  symbol: '☼',
+  symbol: '✋',
 },
 ];
 
