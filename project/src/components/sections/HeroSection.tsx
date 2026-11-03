@@ -79,28 +79,37 @@ export default function HeroSection() {
               bringing Astro Vastu, astrology and numerology
               together around you and your space.
             </p>
+               <div className="astro-hero-actions">
+  <a
+    href="#consultation-enquiry"
+    className="astro-button astro-button-primary"
+  >
+    <span>Request a consultation</span>
 
-            <div className="astro-hero-actions">
-              <a
-               href="#consultation-enquiry"
-                className="astro-button astro-button-primary"
-              >
-                Request a consultation
-                <span className="astro-button-icon">
-                  <ArrowUpRight size={17} />
-                </span>
-              </a>
+    <span className="astro-button-icon">
+      <ArrowUpRight
+        size={17}
+        strokeWidth={2}
+        color="#e6d0a4"
+      />
+    </span>
+  </a>
 
-              <a
-                href="#seven-layers"
-                className="astro-button astro-button-secondary"
-              >
-                Explore the 7 layers
-                <span className="astro-secondary-arrow">
-                  <ArrowDown size={15} />
-                </span>
-              </a>
-            </div>
+  <a
+    href="#seven-layers"
+    className="astro-button astro-button-secondary"
+  >
+    <span>Explore the 7 layers</span>
+
+    <span className="astro-secondary-arrow">
+      <ArrowDown
+        size={15}
+        strokeWidth={2}
+        color="#947341"
+      />
+    </span>
+  </a>
+</div>
 
             <div className="astro-hero-note">
               <span className="astro-note-line" />

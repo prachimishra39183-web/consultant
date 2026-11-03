@@ -207,14 +207,15 @@ export default function ApproachSection() {
 
           <div className="relative grid items-center gap-8 p-5 sm:p-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-10 lg:p-10">
             {/* IMAGE PANEL */}
-            <div className="approach-portrait relative mx-auto w-full max-w-[340px] overflow-hidden rounded-[22px] border border-[#b18b50]/50 bg-[#30271e] shadow-[0_14px_35px_rgba(0,0,0,0.35)]">
-              <div className="relative aspect-[4/5] max-h-[420px]">
-                <img
-                  src="/img1.jpg"
-                  alt="Acharya Sunil Mahatma"
-                  className="absolute inset-0 h-full w-full object-cover object-center"
-                  loading="lazy"
-                />
+           <div className="approach-portrait relative mx-auto w-full max-w-[440px] overflow-hidden rounded-[22px] border border-[#b18b50]/50 bg-[#30271e] shadow-[0_14px_35px_rgba(0,0,0,0.35)]">
+  <div className="relative aspect-[4/5] max-h-[560px]">
+    <img
+      src="/img1.jpg"
+      alt="Acharya Sunil Mahatma"
+      className="absolute inset-0 h-full w-full object-cover object-center"
+      loading="lazy"
+    />
+ 
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#17140f]/90 via-transparent to-[#17140f]/20" />
 
