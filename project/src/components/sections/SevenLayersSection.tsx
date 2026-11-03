@@ -396,7 +396,7 @@ export default function SevenLayersSection() {
           <div>
             <div className="mb-6 inline-flex items-center gap-3">
               <span className="h-px w-10 bg-[#b18b50]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#947341]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-red">
                 The balancing framework
               </span>
             </div>

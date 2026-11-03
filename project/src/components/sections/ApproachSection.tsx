@@ -116,14 +116,14 @@ return (
         <div>
           <div className="mb-4 inline-flex items-center gap-3">
             <span className="h-px w-10 bg-[#b18b50]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.28em] !text-black">
+            <span className="text-[10px] font-bold uppercase tracking-[0.28em] !text-red">
               A personal approach
             </span>
           </div>
 
-          <h2 className="max-w-3xl font-serif text-4xl font-medium leading-[1.02] tracking-[-0.04em] !text-black sm:text-5xl lg:text-6xl">
+          <h2 className="max-w-3xl font-serif text-4xl font-medium leading-[1.02] tracking-[-0.04em] !text-white sm:text-5xl lg:text-6xl">
             The person and the place,
-            <span className="block font-normal italic !text-black">
+            <span className="block font-normal italic !text-white">
               read together.
             </span>
           </h2>
@@ -390,14 +390,14 @@ return (
         <div>
           <div className="mb-4 inline-flex items-center gap-3">
             <span className="h-px w-10 bg-[#b18b50]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.28em] !text-black">
+            <span className="text-[10px] font-bold uppercase tracking-[0.28em] !text-red">
               Before the recommendations
             </span>
           </div>
 
-          <h2 className="max-w-2xl font-serif text-4xl font-medium leading-[1.04] tracking-[-0.04em] !text-black sm:text-5xl lg:text-6xl">
+          <h2 className="max-w-2xl font-serif text-4xl font-medium leading-[1.04] tracking-[-0.04em] !text-white sm:text-5xl lg:text-6xl">
             First, understand
-            <span className="block italic !text-black">
+            <span className="block italic !text-white">
               the whole picture.
             </span>
           </h2>
