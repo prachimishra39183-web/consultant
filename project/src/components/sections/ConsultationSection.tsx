@@ -339,12 +339,12 @@ async function createConsultationBooking() {
     className="fixed inset-0 z-[999] flex items-center justify-center overflow-y-auto bg-[#211b20]/70 p-4 backdrop-blur-md"
     onClick={() => setBookingOpen(false)}
   >
-    <div
-      className="relative my-auto w-full max-w-2xl overflow-hidden rounded-[28px] border border-[#dfc9a9] bg-[#F8F5EC] text-[#382B36] shadow-2xl"
-      onClick={(e) => e.stopPropagation()}
-    >
+   <div
+  className="relative my-auto w-full max-w-2xl overflow-hidden rounded-[28px] border border-[#b18b50]/40 bg-[#1e1c18] text-[#f4ead8] shadow-2xl"
+  onClick={(e) => e.stopPropagation()}
+>
       {/* Header */}
-      <div className="relative border-b border-[#e4d6c3] px-6 py-7 sm:px-9">
+      <div className="relative border-b border-[#b18b50]/25 bg-[#25231e] px-6 py-7 sm:px-9">
         <button
           type="button"
           onClick={() => setBookingOpen(false)}
@@ -569,7 +569,7 @@ async function createConsultationBooking() {
         {/* WHAT THE CLIENT RECEIVES */}
        
 {/* WHAT THE CLIENT RECEIVES */}
-<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#b18b50]/30 bg-[#1e1c18] p-6 shadow-[0_20px_55px_rgba(35,27,17,0.16)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
+<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#b18b50]/30 !bg-[#1e1c18] p-6 shadow-[0_20px_55px_rgba(35,27,17,0.16)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
   <div>
     <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#c6a15b]">
       Your consultation documents
