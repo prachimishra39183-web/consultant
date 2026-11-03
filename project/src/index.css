@@ -4605,32 +4605,7 @@ footer a {
   color: #e2c27e;
 }
 
-/* Explore navigation — vertical layout */
-.nav-links,
-.navbar-links,
-nav .nav-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-}
 
-/* Our Expertise — vertical layout */
-.expertise-track,
-.expertise-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-/* Each expertise item on its own line */
-.expertise-item {
-  display: block;
-  width: 100%;
-  white-space: normal;
-  text-align: left;
-}
 /* Eyebrows and supporting highlights */
 .font-accent,
 .section-eyebrow,
