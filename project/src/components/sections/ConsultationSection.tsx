@@ -567,135 +567,168 @@ async function createConsultationBooking() {
 )}
 
         {/* WHAT THE CLIENT RECEIVES */}
-        <section className="deliverables-row mt-12 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-          <div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#947341]">
-              Your consultation documents
+       
+{/* WHAT THE CLIENT RECEIVES */}
+<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#b18b50]/30 bg-[#1e1c18] p-6 shadow-[0_20px_55px_rgba(35,27,17,0.16)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
+  <div>
+    <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#c6a15b]">
+      Your consultation documents
+    </span>
+
+    <h2 className="mt-4 font-serif text-3xl font-medium leading-tight text-[#f4ead8] sm:text-4xl">
+      Clarity before you begin.
+    </h2>
+
+    <p className="mt-4 max-w-sm text-sm leading-7 text-[#c5b9a5]">
+      Clear, personalised documentation to help you understand your
+      consultation findings and recommendations.
+    </p>
+  </div>
+
+  <div className="grid gap-4 sm:grid-cols-2">
+    {/* WRITTEN FINDINGS */}
+    <div className="deliverable-item group flex gap-4 rounded-2xl border border-[#b18b50]/30 bg-[#292620] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#d6b16a]/60 hover:bg-[#302c24]">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c6a15b]/40 bg-[#373126] text-[#d6b16a]">
+        <ShieldCheck size={20} strokeWidth={1.4} />
+      </div>
+
+      <div>
+        <h3 className="font-serif text-xl text-[#f4ead8]">
+          Written findings
+        </h3>
+
+        <p className="mt-2 text-sm leading-6 text-[#c5b9a5]">
+          Your written findings explain the personal plan and the
+          reason for each recommended remedy.
+        </p>
+      </div>
+    </div>
+
+    {/* MATERIAL DOCUMENT */}
+    <div className="deliverable-item group flex gap-4 rounded-2xl border border-[#b18b50]/30 bg-[#292620] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#d6b16a]/60 hover:bg-[#302c24]">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c6a15b]/40 bg-[#373126] text-[#d6b16a]">
+        <Layers3 size={20} strokeWidth={1.4} />
+      </div>
+
+      <div>
+        <h3 className="font-serif text-xl text-[#f4ead8]">
+          Material document
+        </h3>
+
+        <p className="mt-2 text-sm leading-6 text-[#c5b9a5]">
+          A tailored material document identifies the materials
+          and placements recommended for your property.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* MATERIAL DETAILS */}
+  <div className="rounded-xl border border-[#b18b50]/20 bg-[#25231e] p-4 lg:col-start-2">
+    <p className="text-sm leading-7 text-[#c5b9a5]">
+      Selections may include metal studs and strips, devta items,
+      precious stone dust as per your astrological chart,
+      flooring-specific remedies, idols and room-appropriate frames.
+    </p>
+  </div>
+</section>
+
+{/* FAQ */}
+<section className="mt-28 grid gap-10 lg:mt-36 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+  {/* FAQ INTRO */}
+  <div>
+    <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#947341]">
+      Common questions
+    </span>
+
+    <h2 className="mt-5 font-serif text-4xl font-medium leading-tight tracking-tight text-[#29241d] sm:text-5xl">
+      Clarity before you begin.
+    </h2>
+
+    <p className="mt-5 max-w-sm text-sm leading-7 text-[#71685a]">
+      Understand the scope, visits and materials before enquiring
+      about a consultation.
+    </p>
+
+    <div className="mt-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#947341]">
+      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#b18b50]/40">
+        <Gem size={16} />
+      </span>
+
+      <span>Personalised consultation</span>
+    </div>
+  </div>
+
+  {/* FAQ ACCORDION */}
+  <div className="faq-list space-y-3">
+    {FAQS.map((faq, index) => {
+      const isOpen = openFaq === index;
+
+      return (
+        <div
+          className={`faq-item overflow-hidden rounded-2xl border transition-all duration-300 ${
+            isOpen
+              ? 'faq-open border-[#b18b50]/60 bg-[#292620] shadow-[0_12px_30px_rgba(35,27,17,0.12)]'
+              : 'border-[#b18b50]/30 bg-[#1e1c18] hover:border-[#b18b50]/55'
+          }`}
+          key={faq.question}
+        >
+          <button
+            type="button"
+            className="faq-question flex w-full items-center gap-4 px-5 py-5 text-left sm:px-6"
+            aria-expanded={isOpen}
+            onClick={() => setOpenFaq(isOpen ? null : index)}
+          >
+            <span
+              className={`faq-index font-mono text-xs tracking-widest ${
+                isOpen ? 'text-[#d6b16a]' : 'text-[#a18b65]'
+              }`}
+            >
+              {String(index + 1).padStart(2, '0')}
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl font-medium leading-tight sm:text-4xl">
-              Clarity before you begin.
-            </h2>
-          </div>
+            <span
+              className={`faq-question-text flex-1 font-serif text-lg sm:text-xl ${
+                isOpen ? 'text-[#f4ead8]' : 'text-[#e5d8c2]'
+              }`}
+            >
+              {faq.question}
+            </span>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="deliverable-item">
-              <ShieldCheck size={20} strokeWidth={1.4} />
+            <span
+              className={`faq-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition duration-300 ${
+                isOpen
+                  ? 'rotate-180 border-[#c6a15b]/50 bg-[#373126] text-[#d6b16a]'
+                  : 'border-[#b18b50]/30 bg-[#292620] text-[#b9a27a]'
+              }`}
+            >
+              <ChevronDown size={17} />
+            </span>
+          </button>
 
-              <div>
-                <h3 className="font-serif text-xl">
-                  Written findings
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-[#77776c]">
-                  Your written findings explain the personal plan and the
-                  reason for each recommended remedy.
+          <div
+            className={`faq-answer-wrap grid transition-all duration-300 ${
+              isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+            }`}
+            aria-hidden={!isOpen}
+          >
+            <div className="min-h-0 overflow-hidden">
+              <div className="faq-answer border-t border-[#b18b50]/20 px-5 pb-5 pt-4 sm:px-6">
+                <p className="text-sm leading-7 text-[#c5b9a5]">
+                  {faq.answer}
                 </p>
               </div>
             </div>
-
-            <div className="deliverable-item">
-              <Layers3 size={20} strokeWidth={1.4} />
-
-              <div>
-                <h3 className="font-serif text-xl">
-                  Material document
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-[#77776c]">
-                  A tailored material document identifies the materials
-                  and placements recommended for your property.
-                </p>
-              </div>
-            </div>
           </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
 
-          <p className="text-sm leading-7 text-[#77776c] lg:col-start-2">
-            Selections may include metal studs and strips, devta items,
-            precious stone dust as per your astrological chart,
-            flooring-specific remedies, idols and room-appropriate frames.
-          </p>
-        </section>
-
-        {/* FAQ */}
-        <section className="mt-28 grid gap-10 lg:mt-36 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-          <div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#947341]">
-              Common questions
-            </span>
-
-            <h2 className="mt-5 font-serif text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
-              Clarity before you begin.
-            </h2>
-
-            <p className="mt-5 max-w-sm text-sm leading-7 text-[#77776c]">
-              Understand the scope, visits and materials before enquiring
-              about a consultation.
-            </p>
-
-            <div className="mt-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#947341]">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#b18b50]/40">
-                <Gem size={16} />
-              </span>
-              <span>Personalised consultation</span>
-            </div>
-          </div>
-
-          <div className="faq-list">
-            {FAQS.map((faq, index) => {
-              const isOpen = openFaq === index;
-
-              return (
-                <div
-                  className={`faq-item ${isOpen ? 'faq-open' : ''}`}
-                  key={faq.question}
-                >
-                  <button
-                    type="button"
-                    className="faq-question"
-                    aria-expanded={isOpen}
-                    onClick={() =>
-                      setOpenFaq(isOpen ? null : index)
-                    }
-                  >
-                    <span className="faq-index">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-
-                    <span className="faq-question-text">
-                      {faq.question}
-                    </span>
-
-                    <span className="faq-toggle">
-                      <ChevronDown size={17} />
-                    </span>
-                  </button>
-
-                  <div
-                    className="faq-answer-wrap"
-                    aria-hidden={!isOpen}
-                  >
-                    <div className="faq-answer">
-                      <p>{faq.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
 
        
 
-        {/* DISCLAIMER */}
-        <footer className="mt-12 border-t border-[#ded5c5] pt-6">
-          <p className="mx-auto max-w-4xl text-center text-xs leading-6 text-[#858274]">
-            Astro Vastu, astrology and numerology are traditional spiritual
-            practices. Recommendations are not a substitute for medical,
-            financial, architectural, engineering or other professional
-            advice. Outcomes are not guaranteed.
-          </p>
-        </footer>
       </>
   );
 }

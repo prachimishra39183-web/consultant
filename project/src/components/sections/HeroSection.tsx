@@ -38,22 +38,26 @@ export default function HeroSection() {
 
       <div className="astro-hero-inner mx-auto w-full max-w-[1400px]">
         {/* Top label */}
-        <div className="astro-hero-eyebrow">
+         {/* Top label */}
+<div className="astro-hero-eyebrow">
   <span className="astro-eyebrow-star">
     <Sparkles size={14} />
   </span>
+
   <span>MAHAVASTU CONSULTANT</span>
+
   <span className="astro-eyebrow-divider" />
+
   <span>CERTIFIED ACHARYA</span>
 </div>
 
         <div className="astro-hero-layout">
           {/* Left: editorial headline */}
           <div className="astro-hero-copy">
-  <p className="astro-hero-overline">
-    <span className="astro-overline-dot" />
-    A MORE HARMONIOUS WAY TO LIVE
-  </p>
+           <p className="astro-hero-overline">
+  <span className="astro-overline-dot" />
+  <span>A MORE HARMONIOUS WAY TO LIVE</span>
+</p>
 
            <h1 className="astro-hero-title">
     Your space.

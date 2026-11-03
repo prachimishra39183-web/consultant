@@ -1,11 +1,8 @@
-
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import {
   CheckCircle2,
   ArrowUpRight,
   Send,
-  Sparkles,
-  Check,
   Sun,
 } from 'lucide-react';
 
@@ -20,13 +17,6 @@ const interestOptions = [
 ];
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const inclusions = [
-  'Tell us about your property and requirements',
-  'Choose the consultation you are interested in',
-  'Share your preferred contact details',
-  'Receive a personalised follow-up',
-];
 
 const emptyForm = (interest: string) => ({
   name: '',
@@ -44,9 +34,11 @@ export default function EnquiryForm({
   defaultInterest = GENERAL_ENQUIRY,
 }: EnquiryFormProps) {
   const [form, setForm] = useState(() => emptyForm(defaultInterest));
+
   const [status, setStatus] = useState<
     'idle' | 'submitting' | 'success' | 'error'
   >('idle');
+
   const [validationError, setValidationError] = useState<string | null>(null);
 
   const updateField =
@@ -63,7 +55,9 @@ export default function EnquiryForm({
 
       setValidationError(null);
 
-      if (status === 'error') setStatus('idle');
+      if (status === 'error') {
+        setStatus('idle');
+      }
     };
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -101,22 +95,15 @@ export default function EnquiryForm({
   const isSubmitting = status === 'submitting';
 
   return (
-  <section
-  id="consultation-enquiry"
-  className="consultation-enquiry mx-auto mt-20 w-full max-w-5xl scroll-mt-24 px-4 sm:mt-24 sm:px-6 lg:mt-28"
->
-      {/* TOP HEADER — SAME DESIGN */}
-    
-
+    <section
+      id="consultation-enquiry"
+      className="consultation-enquiry mx-auto mt-20 w-full max-w-6xl scroll-mt-24 px-4 sm:mt-24 sm:px-6 lg:mt-28"
+    >
       <div className="consultation-enquiry-grid">
-        {/* LEFT PANEL — SAME OLIVE DESIGN */}
+        {/* LEFT INTRODUCTION */}
         <div className="consultation-enquiry-intro">
           <div className="consultation-decoration" aria-hidden="true">
-            <div>
-              <div>
-                <Sun size={46} strokeWidth={0.65} />
-              </div>
-            </div>
+            <Sun size={150} strokeWidth={0.45} />
           </div>
 
           <div className="relative z-10">
@@ -124,11 +111,11 @@ export default function EnquiryForm({
               PERSONAL ATTENTION. THOUGHTFUL GUIDANCE.
             </p>
 
-            <h2 className="consultation-display-title text-white">
+            <h2 className="consultation-display-title">
               Your space
               <br />
               has a story.
-              <span className="mt-2 block italic text-[#e8cc96]">
+              <span className="consultation-title-accent">
                 Let's begin yours.
               </span>
             </h2>
@@ -157,11 +144,8 @@ export default function EnquiryForm({
           </div>
         </div>
 
-        {/* RIGHT PANEL — ENQUIRY INFORMATION + FORM */}
+        {/* RIGHT ENQUIRY CARD */}
         <div className="consultation-enquiry-details">
-         
-
-          {/* ACTUAL WORKING ENQUIRY FORM */}
           <div
             id="enquiry-form"
             className="consultation-form-area scroll-mt-8"
@@ -172,8 +156,8 @@ export default function EnquiryForm({
                   <CheckCircle2 size={34} strokeWidth={1.2} />
                 </div>
 
-                <p className="consultation-eyebrow consultation-eyebrow-light">
-                  Enquiry received
+                <p className="consultation-eyebrow">
+                  ENQUIRY RECEIVED
                 </p>
 
                 <h3>Thank you.</h3>
@@ -200,8 +184,8 @@ export default function EnquiryForm({
               <form onSubmit={handleSubmit} noValidate>
                 <div className="consultation-form-heading">
                   <div>
-                    <p className="consultation-eyebrow consultation-eyebrow-light">
-                      Tell us about yourself
+                    <p className="consultation-eyebrow">
+                      TELL US ABOUT YOURSELF
                     </p>
 
                     <h3>Your enquiry.</h3>
@@ -271,7 +255,7 @@ export default function EnquiryForm({
                 <label className="consultation-input-group consultation-message-field">
                   <span>Your message</span>
                   <textarea
-                    rows={3}
+                    rows={4}
                     value={form.message}
                     onChange={updateField('message')}
                     maxLength={2000}

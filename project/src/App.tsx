@@ -14,18 +14,23 @@ import AdminDashboard from '@/components/sections/AdminDashboard';
 import AdminHome from '@/components/sections/AdminHome';
 
 
+
 function HomePage() {
   return (
     <div
       className="min-h-screen relative"
       style={{
-        backgroundImage:
-          'linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url("/bgi.jpeg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'repeat-y',
-        backgroundAttachment: 'fixed',
-        backgroundColor: '#ffffff',
+        backgroundImage: `
+          linear-gradient(
+            rgba(2, 35, 27, 0.45),
+            rgba(2, 35, 27, 0.65)
+          ),
+          url("/hp.png")
+        `,
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
       <Navbar />
