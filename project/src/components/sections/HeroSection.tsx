@@ -56,7 +56,8 @@ export default function HeroSection() {
             </p>
 
             <h1 className="astro-hero-title">
-              Your space.
+               <span className="astro-title-second"> Your space.</span>
+             
               <br />
               <span className="astro-title-second">Your nature.</span>
               <br />

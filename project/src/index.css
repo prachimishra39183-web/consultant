@@ -407,7 +407,7 @@ select:focus {
 .astro-hero-description {
   max-width: 445px;
   margin-bottom: 28px;
-  color: #72766f;
+  color: #ebe3e3;
   font-size: 14px;
   line-height: 2;
 }
@@ -4583,19 +4583,7 @@ nav {
   color: #f5f0e6;
 }
 
-p,
-li,
-label,
-small,
-blockquote,
-figcaption,
-.section-description,
-.astro-hero-description,
-.astro-hero-note,
-.astro-stats-description,
-.astro-stat-label {
-  color: #f0e8d8 !important;
-}
+
 
 /* Links */
 a,
@@ -4673,20 +4661,7 @@ nav {
   color: #f5f0e6;
 }
 
-/* Paragraphs and descriptive content */
-p,
-li,
-label,
-small,
-blockquote,
-figcaption,
-.section-description,
-.astro-hero-description,
-.astro-hero-note,
-.astro-stats-description,
-.astro-stat-label {
-  color: #f0e8d8 !important;
-}
+
 
 /* Navigation links and general links */
 a,
@@ -6384,5 +6359,468 @@ h6,
 
   .maha-footer .footer-column {
     gap: 11px !important;
+  }
+}
+
+/* =================================
+   ADMIN DASHBOARD — BLACK TEXT FIX
+================================= */
+
+
+
+/* Sidebar text */
+.min-h-screen aside,
+.min-h-screen aside p,
+.min-h-screen aside a,
+.min-h-screen aside button,
+.min-h-screen aside span {
+  color: #000000 !important;
+}
+
+/* Form fields */
+.min-h-screen input,
+.min-h-screen select,
+.min-h-screen textarea {
+  color: #000000 !important;
+  background-color: #fffdf8 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.min-h-screen input::placeholder,
+.min-h-screen textarea::placeholder {
+  color: #595959 !important;
+  opacity: 1 !important;
+}
+
+/* Table headings and table data */
+.min-h-screen table th,
+.min-h-screen table td {
+  color: #000000 !important;
+}
+
+/* Status labels */
+.min-h-screen main span {
+  -webkit-text-fill-color: currentColor;
+}
+
+/* Keep icon colors visible */
+.min-h-screen svg {
+  flex-shrink: 0;
+}
+
+/* Disabled controls */
+.min-h-screen button:disabled,
+.min-h-screen select:disabled {
+  opacity: 0.65;
+}
+/* Instagram and WhatsApp — horizontal alignment */
+.maha-footer .footer-socials {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.maha-footer .footer-social-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border: 1px solid #c49a42;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff8e7, #e8cd91);
+  color: #000000 !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.maha-footer .footer-social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(90, 63, 24, 0.2);
+}
+
+.maha-footer .footer-social-link svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   FULL WEBSITE — MOBILE RESPONSIVE FIX
+   Gold & Ivory Astro Vastu Website
+========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+section,
+main,
+header,
+footer,
+nav,
+article,
+aside {
+  min-width: 0;
+}
+
+/* Prevent long text from breaking layouts */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span,
+label {
+  overflow-wrap: anywhere;
+}
+
+/* Keep section widths inside the screen */
+section {
+  max-width: 100%;
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .consultation-enquiry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .astro-hero {
+    min-height: auto;
+  }
+
+  .astro-hero h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.12;
+  }
+}
+
+/* ==========================================
+   MOBILE — 768px AND BELOW
+========================================== */
+
+@media (max-width: 768px) {
+  /* Consistent section spacing */
+  main > section,
+  main section {
+    scroll-margin-top: 85px;
+  }
+
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Responsive headings */
+  h1 {
+    font-size: clamp(32px, 8vw, 48px);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(25px, 6vw, 36px);
+    line-height: 1.2;
+  }
+
+  h3 {
+    line-height: 1.35;
+  }
+
+  p {
+    overflow-wrap: anywhere;
+  }
+
+  /* Hero section */
+  .astro-hero {
+    min-height: auto !important;
+    padding: 110px 20px 55px !important;
+    background-attachment: scroll !important;
+  }
+
+  .astro-hero h1 {
+    font-size: clamp(34px, 9vw, 52px) !important;
+    line-height: 1.12 !important;
+    overflow-wrap: normal;
+  }
+
+  .astro-hero-description {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* Hero buttons */
+  .astro-hero a,
+  .astro-hero button {
+    min-height: 44px;
+  }
+
+  /* Avoid oversized media */
+  .astro-hero img,
+  section img,
+  section video {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Common grid layouts */
+  .footer-container,
+  .consultation-enquiry-grid,
+  .consultation-fields-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Keep cards within the viewport */
+  .astro-stat-card,
+  .discipline-card,
+  .foundation-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Reduce overly large card spacing */
+  .discipline-card,
+  .foundation-card {
+    padding: 22px !important;
+  }
+
+  /* Seven layers section */
+  .seven-layers-section {
+    overflow-x: clip;
+  }
+
+  .seven-layers-section .active-layer-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Moving expertise bar */
+  .expertise-marquee {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .expertise-item {
+    gap: 14px;
+    padding: 14px 18px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Forms */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  button {
+    min-height: 42px;
+  }
+
+  /* Tables can scroll rather than stretch the page */
+  .admin-dashboard table {
+    min-width: 600px;
+  }
+
+  .admin-dashboard .overflow-x-auto {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Footer */
+  .maha-footer .footer-container {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .maha-footer .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .maha-footer .footer-socials {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* Images and decorative elements */
+  .absolute {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE — 480px AND BELOW
+========================================== */
+
+@media (max-width: 480px) {
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .astro-hero {
+    padding: 100px 16px 45px !important;
+  }
+
+  .astro-hero h1 {
+    font-size: clamp(31px, 9vw, 42px) !important;
+  }
+
+  .astro-hero-description {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* Stack CTA buttons when the layout supports it */
+  .astro-hero .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .astro-hero .hero-actions a,
+  .astro-hero .hero-actions button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Keep cards compact */
+  .astro-stat-card,
+  .discipline-card,
+  .foundation-card {
+    padding: 18px !important;
+  }
+
+  /* Prevent form columns from becoming too narrow */
+  .consultation-form-area {
+    padding: 24px 18px;
+  }
+
+  /* Navigation should never force horizontal scrolling */
+  nav {
+    max-width: 100%;
+  }
+
+  /* Respect mobile viewport width */
+  .maha-footer .footer-container {
+    width: calc(100% - 32px) !important;
+  }
+}
+
+/* ==========================================
+   VERY SMALL MOBILE — 360px AND BELOW
+========================================== */
+
+@media (max-width: 360px) {
+  section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .astro-hero {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .astro-hero h1 {
+    font-size: 30px !important;
+  }
+
+  .expertise-item {
+    padding: 12px 14px;
+    font-size: 9px;
+  }
+
+  .consultation-form-area {
+    padding: 22px 14px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

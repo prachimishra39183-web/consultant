@@ -19,6 +19,8 @@ const navigation = [
   { label: 'Settings', icon: Settings },
 ];
 
+const GOLD = '#B18B50';
+
 const getValue = (item: RecordData, ...keys: string[]) => {
   for (const key of keys) {
     if (item?.[key] !== undefined && item[key] !== null && item[key] !== '') {
@@ -30,7 +32,9 @@ const getValue = (item: RecordData, ...keys: string[]) => {
 
 const formatDate = (value: unknown) => {
   if (!value || value === '—') return 'Not scheduled';
+
   const date = new Date(String(value));
+
   return Number.isNaN(date.getTime())
     ? String(value)
     : date.toLocaleString('en-IN', {
@@ -43,16 +47,54 @@ const statusClass = (status: unknown) => {
   const value = String(status || '').toLowerCase();
 
   if (['confirmed', 'verified', 'converted', 'completed'].includes(value)) {
-    return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+    return 'border-emerald-200 bg-emerald-50 text-emerald-800';
   }
+
   if (['cancelled', 'canceled', 'closed', 'rejected'].includes(value)) {
-    return 'bg-red-50 text-red-700 border-red-200';
+    return 'border-red-200 bg-red-50 text-red-800';
   }
-  if (['contacted', 'in_progress', 'pending'].includes(value)) {
-    return 'bg-amber-50 text-amber-700 border-amber-200';
+
+  if (['contacted', 'in_progress', 'pending', 'new'].includes(value)) {
+    return 'border-amber-300 bg-amber-50 text-black';
   }
-  return 'bg-blue-50 text-blue-700 border-blue-200';
+
+  return 'border-[#d8c18f] bg-[#faf3e4] text-black';
 };
+
+const panel =
+  'rounded-2xl border border-[#e1d1ae] bg-white shadow-[0_8px_28px_rgba(80,60,25,0.06)]';
+
+const primaryButton =
+  'inline-flex items-center justify-center gap-2 rounded-xl border border-[#a47c3c] bg-gradient-to-r from-[#c5a365] to-[#e4cd98] px-4 py-2.5 text-sm font-semibold text-black shadow-sm transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50';
+
+const secondaryButton =
+  'inline-flex items-center justify-center gap-2 rounded-xl border border-[#ddceb0] bg-white px-4 py-2.5 text-sm font-medium text-black transition hover:bg-[#faf3e4] disabled:opacity-50';
+
+const fieldClass =
+  'w-full rounded-xl border border-[#ddceb0] bg-[#fffdf8] px-3 py-2.5 text-sm text-black outline-none placeholder:text-[#777064] focus:border-[#b18b50] focus:ring-2 focus:ring-[#b18b50]/20';
+
+function StatusBadge({ value }: { value: unknown }) {
+  return (
+    <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-medium ${statusClass(value)}`}>
+      {String(value || 'Unknown')}
+    </span>
+  );
+}
+
+function SectionHeading({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="mb-6">
+      <h2 className="text-xl font-semibold text-black">{title}</h2>
+      <p className="mt-1 text-sm leading-6 text-[#625b4e]">{description}</p>
+    </div>
+  );
+}
 
 export default function AdminHome() {
   const navigate = useNavigate();
@@ -79,9 +121,7 @@ export default function AdminHome() {
         {
           method,
           credentials: 'include',
-          headers: body
-            ? { 'Content-Type': 'application/json' }
-            : undefined,
+          headers: body ? { 'Content-Type': 'application/json' } : undefined,
           body: body ? JSON.stringify(body) : undefined,
         }
       );
@@ -156,7 +196,7 @@ export default function AdminHome() {
       }
     }
 
-    verifySession();
+    void verifySession();
 
     return () => {
       cancelled = true;
@@ -175,6 +215,7 @@ export default function AdminHome() {
       });
 
       if (!response.ok) throw new Error('Logout failed');
+
       navigate('/admin/login', { replace: true });
     } catch {
       window.alert('Unable to sign out. Please try again.');
@@ -232,11 +273,13 @@ export default function AdminHome() {
 
     if (!reference?.trim()) return;
 
-    const confirmed = window.confirm(
-      'Have you independently confirmed that the payment was received?'
-    );
-
-    if (!confirmed) return;
+    if (
+      !window.confirm(
+        'Have you independently confirmed that the payment was received?'
+      )
+    ) {
+      return;
+    }
 
     await performAction(
       'verify-payment',
@@ -304,44 +347,51 @@ export default function AdminHome() {
     await performAction(
       'update-booking',
       {
-  id,
-  status:
-    action === 'confirm'
-      ? 'confirmed'
-      : action === 'cancel'
-        ? 'cancelled'
-        : 'completed',
-  ...(selectedSlot ? { selectedSlot } : {}),
-},
-      `Appointment ${action === 'confirm' ? 'confirmed' : action === 'cancel' ? 'cancelled' : 'updated'}.`,
+        id,
+        status:
+          action === 'confirm'
+            ? 'confirmed'
+            : action === 'cancel'
+              ? 'cancelled'
+              : 'completed',
+        ...(selectedSlot ? { selectedSlot } : {}),
+      },
+      `Appointment ${
+        action === 'confirm'
+          ? 'confirmed'
+          : action === 'cancel'
+            ? 'cancelled'
+            : 'updated'
+      }.`,
       String(id)
     );
   }
 
-const filteredEnquiries = useMemo(
-  () =>
-    enquiries.filter((item) =>
-      [
-        getValue(item, 'name', 'full_name'),
-        getValue(item, 'contact', 'phone', 'email', 'phone_or_email'),
-        getValue(item, 'location', 'property_location'),
-        getValue(item, 'property_type', 'propertyType'),
-        getValue(item, 'details', 'property_details', 'message'),
-        getValue(item, 'enquiry_status', 'status'),
-      ]
-        .join(' ')
-        .toLowerCase()
-        .includes(search.toLowerCase())
-    ),
-  [enquiries, search]
-);
+  const filteredEnquiries = useMemo(
+    () =>
+      enquiries.filter((item) =>
+        [
+          getValue(item, 'name', 'full_name'),
+          getValue(item, 'contact', 'phone', 'email', 'phone_or_email'),
+          getValue(item, 'location', 'property_location'),
+          getValue(item, 'property_type', 'propertyType'),
+          getValue(item, 'details', 'property_details', 'message'),
+          getValue(item, 'enquiry_status', 'status'),
+        ]
+          .join(' ')
+          .toLowerCase()
+          .includes(search.toLowerCase())
+      ),
+    [enquiries, search]
+  );
 
   const filteredClients = useMemo(
     () =>
       clients.filter((item) =>
         [
-          getValue(item, 'name'),
+          getValue(item, 'name', 'full_name'),
           getValue(item, 'contact', 'phone', 'email'),
+          getValue(item, 'location', 'property_location'),
         ]
           .join(' ')
           .toLowerCase()
@@ -372,36 +422,32 @@ const filteredEnquiries = useMemo(
       value: dashboard?.stats?.totalEnquiries ?? enquiries.length,
       detail: 'Enquiry records',
       icon: Users,
-      color: 'from-blue-500 to-indigo-600',
     },
     {
       label: 'Confirmed Sessions',
       value: dashboard?.stats?.confirmedBookings ?? '—',
       detail: 'Confirmed appointments',
       icon: CalendarDays,
-      color: 'from-violet-500 to-indigo-600',
     },
     {
       label: 'Upcoming',
       value: dashboard?.upcomingBookings?.length ?? '—',
-      detail: 'Next scheduled sessions',
+      detail: 'Scheduled sessions',
       icon: Clock,
-      color: 'from-amber-400 to-orange-500',
     },
     {
       label: 'New Enquiries',
       value: dashboard?.stats?.newEnquiries ?? '—',
       detail: 'Awaiting follow-up',
       icon: Inbox,
-      color: 'from-emerald-400 to-teal-600',
     },
   ];
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#F8FAFF] text-slate-700">
+      <div className="flex min-h-screen items-center justify-center bg-[#f8f5ed] text-black">
         <div className="text-center">
-          <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-2 border-blue-200 border-t-blue-600" />
+          <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-2 border-[#e8d8b5] border-t-[#b18b50]" />
           <p className="text-sm">Securing your workspace...</p>
         </div>
       </div>
@@ -411,40 +457,46 @@ const filteredEnquiries = useMemo(
   const upcomingBookings: RecordData[] = dashboard?.upcomingBookings || [];
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#F8FAFF] text-slate-800 md:flex">
+    <div className="min-h-screen overflow-x-hidden bg-[#f8f5ed] text-black md:flex">
+      {/* Subtle gold background accents */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-blue-400/15 blur-[120px]" />
-        <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-violet-100 blur-[140px]" />
-        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-cyan-300/15 blur-[120px]" />
+        <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#ead9b4]/35 blur-[110px]" />
+        <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-[#f0e5ce]/55 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#e4cf9e]/25 blur-[110px]" />
       </div>
 
       {menuOpen && (
         <button
           aria-label="Close menu"
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-black/35 backdrop-blur-sm md:hidden"
         />
       )}
 
+      {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-[265px] flex-col border-r border-slate-200 bg-white/95 p-5 backdrop-blur-2xl transition-transform duration-300 md:sticky md:top-0 md:h-screen md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-[265px] flex-col border-r border-[#dfcfad] bg-[#fffdf8] p-5 shadow-xl transition-transform duration-300 md:sticky md:top-0 md:h-screen md:translate-x-0 ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="mb-10 flex items-center justify-between px-1">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 shadow-lg shadow-blue-200/70">
-              <Sun size={23} className="text-white" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#b18b50] bg-gradient-to-br from-[#d9bf86] to-[#f4e7c9] shadow-md">
+              <Sun size={23} className="text-black" />
             </div>
+
             <div>
-              <p className="font-serif text-lg font-semibold">Acharya Sunil</p>
-              <p className="mt-0.5 text-[10px] font-semibold tracking-[0.28em] text-blue-600">
+              <p className="font-serif text-lg font-semibold text-black">
+                Acharya Sunil
+              </p>
+              <p className="mt-0.5 text-[10px] font-bold tracking-[0.24em] text-[#8b682f]">
                 ADMIN STUDIO
               </p>
             </div>
           </div>
+
           <button
-            className="text-slate-500 md:hidden"
+            className="text-black md:hidden"
             onClick={() => setMenuOpen(false)}
             aria-label="Close sidebar"
           >
@@ -452,7 +504,7 @@ const filteredEnquiries = useMemo(
           </button>
         </div>
 
-        <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.24em] text-slate-500">
+        <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#766b58]">
           Workspace
         </p>
 
@@ -472,8 +524,8 @@ const filteredEnquiries = useMemo(
                 }}
                 className={`flex w-full items-center gap-3 rounded-xl border px-4 py-3.5 text-left text-sm transition ${
                   active
-                    ? 'border-blue-200 bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-200/70'
-                    : 'border-transparent text-slate-600 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700'
+                    ? 'border-[#b18b50] bg-gradient-to-r from-[#d9bf86] to-[#f0dfb6] font-semibold text-black shadow-sm'
+                    : 'border-transparent text-black hover:border-[#dfcfad] hover:bg-[#faf3e4]'
                 }`}
               >
                 <Icon size={18} />
@@ -485,28 +537,28 @@ const filteredEnquiries = useMemo(
         </nav>
 
         <div className="mt-auto">
-          <div className="mb-4 rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 p-4">
-            <Sparkles size={20} className="mb-3 text-blue-600" />
-            <p className="text-sm font-semibold">Your workspace</p>
-            <p className="mt-1 text-xs leading-5 text-slate-600">
+          <div className="mb-4 rounded-2xl border border-[#e0cfaa] bg-gradient-to-br from-[#fff9e9] to-[#f1e1bd] p-4">
+            <Sparkles size={20} className="mb-3 text-[#8b682f]" />
+            <p className="text-sm font-semibold text-black">Your workspace</p>
+            <p className="mt-1 text-xs leading-5 text-[#625b4e]">
               Manage appointments, clients and consultation enquiries.
             </p>
           </div>
 
-          <div className="mb-4 flex items-center gap-3 rounded-xl border border-slate-200 bg-blue-50/70 p-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 font-bold text-white">
+          <div className="mb-4 flex items-center gap-3 rounded-xl border border-[#e1d4bb] bg-white p-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#b18b50] bg-gradient-to-br from-[#c5a365] to-[#f0dfb6] font-bold text-black">
               A
             </div>
             <div className="flex-1">
-              <p className="text-sm font-medium">Administrator</p>
-              <p className="text-xs text-slate-500">Signed in</p>
+              <p className="text-sm font-medium text-black">Administrator</p>
+              <p className="text-xs text-[#766b58]">Signed in</p>
             </div>
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="h-2 w-2 rounded-full bg-emerald-600" />
           </div>
 
           <button
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-red-50 hover:text-red-600"
+            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm text-black transition hover:bg-red-50 hover:text-red-700"
           >
             <LogOut size={18} />
             Sign out
@@ -514,10 +566,11 @@ const filteredEnquiries = useMemo(
         </div>
       </aside>
 
+      {/* Main area */}
       <main className="relative min-w-0 flex-1">
-        <header className="sticky top-0 z-30 flex items-center gap-4 border-b border-slate-200 bg-white/90 px-5 py-4 backdrop-blur-2xl sm:px-8">
+        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-[#dfcfad] bg-[#fffdf8]/95 px-4 py-4 backdrop-blur-xl sm:gap-4 sm:px-8">
           <button
-            className="rounded-xl border border-slate-200 bg-white p-2.5 md:hidden"
+            className="rounded-xl border border-[#dfcfad] bg-white p-2.5 text-black md:hidden"
             onClick={() => setMenuOpen(true)}
             aria-label="Open sidebar"
           >
@@ -525,10 +578,10 @@ const filteredEnquiries = useMemo(
           </button>
 
           <div className="min-w-0 flex-1">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#766b58] sm:tracking-[0.2em]">
               Admin workspace / {activeTab}
             </p>
-            <h1 className="mt-1 truncate text-xl font-semibold sm:text-2xl">
+            <h1 className="mt-1 truncate text-xl font-semibold text-black sm:text-2xl">
               {activeTab === 'Dashboard' ? 'Good to see you again' : activeTab}
             </h1>
           </div>
@@ -536,14 +589,14 @@ const filteredEnquiries = useMemo(
           <div className="relative hidden sm:block">
             <Search
               size={16}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#766b58]"
             />
             <input
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               placeholder="Search records..."
               aria-label="Search records"
-              className="w-44 rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-3 text-xs outline-none focus:border-blue-400 lg:w-60"
+              className={`${fieldClass} w-44 py-2.5 pl-9 text-xs lg:w-60`}
             />
           </div>
 
@@ -554,19 +607,34 @@ const filteredEnquiries = useMemo(
               setActiveTab('Enquiries');
               setSearch('');
             }}
-            className="relative rounded-xl border border-slate-200 bg-white p-2.5 text-slate-600 hover:bg-blue-50"
+            className="relative rounded-xl border border-[#dfcfad] bg-white p-2.5 text-black transition hover:bg-[#faf3e4]"
           >
             <Bell size={18} />
           </button>
         </header>
 
-        <div className="mx-auto max-w-[1600px] p-5 sm:p-8 lg:p-10">
+        <div className="mx-auto max-w-[1600px] p-4 sm:p-8 lg:p-10">
+          {/* Mobile search */}
+          <div className="relative mb-5 sm:hidden">
+            <Search
+              size={16}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#766b58]"
+            />
+            <input
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              placeholder="Search records..."
+              aria-label="Search records"
+              className={`${fieldClass} pl-9`}
+            />
+          </div>
+
           {(error || actionMessage) && (
             <div
               className={`mb-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border p-4 text-sm ${
                 error
-                  ? 'border-red-200 bg-red-50 text-red-700'
-                  : 'border-emerald-200 bg-emerald-50 text-emerald-700'
+                  ? 'border-red-200 bg-red-50 text-red-800'
+                  : 'border-emerald-200 bg-emerald-50 text-emerald-800'
               }`}
             >
               <span className="flex items-center gap-2">
@@ -589,7 +657,7 @@ const filteredEnquiries = useMemo(
             <button
               disabled={dataLoading}
               onClick={() => void loadTab(activeTab)}
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-700 shadow-sm hover:bg-blue-50 disabled:opacity-50"
+              className={secondaryButton}
             >
               <RefreshCw size={15} className={dataLoading ? 'animate-spin' : ''} />
               Refresh records
@@ -597,70 +665,76 @@ const filteredEnquiries = useMemo(
           </div>
 
           {dataLoading && (
-            <div className="mb-5 rounded-xl border border-blue-100 bg-blue-50 p-3 text-sm text-blue-700">
+            <div className="mb-5 rounded-xl border border-[#e0cfaa] bg-[#fff8e8] p-3 text-sm text-black">
               Loading live database records...
             </div>
           )}
 
+          {/* Dashboard */}
           {activeTab === 'Dashboard' && (
             <>
-              <section className="relative mb-8 overflow-hidden rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-6 shadow-2xl shadow-blue-100/70 sm:p-9">
-                <div className="pointer-events-none absolute -right-12 -top-20 h-64 w-64 rounded-full bg-blue-100 blur-3xl" />
+              <section className="relative mb-8 overflow-hidden rounded-3xl border border-[#d9c397] bg-gradient-to-br from-[#fffdf7] via-[#fbf3e2] to-[#ead5a6] p-6 shadow-[0_18px_45px_rgba(80,60,25,0.09)] sm:p-9">
+                <div className="pointer-events-none absolute -right-12 -top-20 h-64 w-64 rounded-full bg-[#d8c18f]/40 blur-3xl" />
+
                 <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">
                   <div className="max-w-xl">
-                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-100 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-700">
+                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d1b77f] bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-black">
                       <Sparkles size={13} />
                       Your control center
                     </div>
-                    <h2 className="font-serif text-3xl font-medium leading-tight sm:text-4xl lg:text-5xl">
+
+                    <h2 className="font-serif text-3xl font-medium leading-tight text-black sm:text-4xl lg:text-5xl">
                       Clarity for every
-                      <span className="block bg-gradient-to-r from-blue-700 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                      <span className="block text-[#987237]">
                         consultation.
                       </span>
                     </h2>
-                    <p className="mt-4 max-w-lg text-sm leading-6 text-slate-600">
+
+                    <p className="mt-4 max-w-lg text-sm leading-6 text-[#554d40]">
                       Review incoming enquiries, monitor bookings and keep
                       client consultations organised in one place.
                     </p>
+
                     <button
                       onClick={() => setActiveTab('Appointments')}
-                      className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:-translate-y-0.5"
+                      className={`${primaryButton} mt-6`}
                     >
                       View appointments <ArrowUpRight size={17} />
                     </button>
                   </div>
 
                   <div className="relative mx-auto flex h-44 w-44 shrink-0 items-center justify-center md:mr-6 lg:h-52 lg:w-52">
-                    <div className="absolute inset-0 rounded-full border border-blue-200" />
-                    <div className="absolute inset-4 rounded-full border border-indigo-200" />
-                    <div className="absolute inset-8 rounded-full border border-violet-200" />
-                    <div className="relative flex h-24 w-24 items-center justify-center rounded-[30px] border border-blue-200 bg-gradient-to-br from-blue-100 via-indigo-100 to-violet-100 shadow-xl [transform:rotate(-8deg)]">
-                      <Sun size={43} strokeWidth={1.2} className="text-blue-700" />
+                    <div className="absolute inset-0 rounded-full border border-[#c8a86b]" />
+                    <div className="absolute inset-4 rounded-full border border-[#d8c18f]" />
+                    <div className="absolute inset-8 rounded-full border border-[#b18b50]/70" />
+                    <div className="relative flex h-24 w-24 items-center justify-center rounded-[30px] border border-[#b18b50] bg-gradient-to-br from-[#e8d4a6] to-[#fff8e8] shadow-lg [transform:rotate(-8deg)]">
+                      <Sun size={43} strokeWidth={1.2} className="text-black" />
                     </div>
                   </div>
                 </div>
               </section>
 
               <div className="mb-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                {stats.map(({ label, value, detail, icon: Icon, color }, index) => (
+                {stats.map(({ label, value, detail, icon: Icon }, index) => (
                   <div
                     key={label}
-                    className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50 p-5 shadow-xl shadow-slate-200/60 transition hover:-translate-y-1 sm:p-6"
+                    className={`${panel} p-5 transition hover:-translate-y-1 hover:shadow-lg sm:p-6`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <p className="text-sm text-slate-600">{label}</p>
-                        <p className="mt-4 text-4xl font-semibold text-slate-900">
+                        <p className="text-sm text-[#625b4e]">{label}</p>
+                        <p className="mt-4 text-4xl font-semibold text-black">
                           {value}
                         </p>
                       </div>
-                      <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${color} shadow-lg`}>
-                        <Icon size={21} className="text-white" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#d5bd8b] bg-gradient-to-br from-[#f4e7c9] to-[#dfc48b]">
+                        <Icon size={21} className="text-black" />
                       </div>
                     </div>
-                    <div className="mt-5 flex justify-between border-t border-slate-200 pt-4">
-                      <span className="text-xs text-slate-500">{detail}</span>
-                      <span className="text-xs text-slate-400">
+
+                    <div className="mt-5 flex justify-between border-t border-[#eee4d1] pt-4">
+                      <span className="text-xs text-[#625b4e]">{detail}</span>
+                      <span className="text-xs text-[#9b7a43]">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
@@ -669,20 +743,23 @@ const filteredEnquiries = useMemo(
               </div>
 
               <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
-                <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/60 sm:p-7">
+                <section className={`${panel} p-5 sm:p-7`}>
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div>
                       <div className="flex items-center gap-2">
-                        <CalendarDays size={20} className="text-blue-600" />
-                        <h3 className="font-semibold">Upcoming consultations</h3>
+                        <CalendarDays size={20} className="text-[#987237]" />
+                        <h3 className="font-semibold text-black">
+                          Upcoming consultations
+                        </h3>
                       </div>
-                      <p className="mt-2 text-xs text-slate-500">
+                      <p className="mt-2 text-xs text-[#625b4e]">
                         Scheduled appointments from your database
                       </p>
                     </div>
+
                     <button
                       onClick={() => setActiveTab('Appointments')}
-                      className="text-xs text-blue-600 hover:text-blue-800"
+                      className="text-xs font-medium text-[#8b682f] hover:underline"
                     >
                       View all →
                     </button>
@@ -692,65 +769,102 @@ const filteredEnquiries = useMemo(
                     {upcomingBookings.length ? (
                       upcomingBookings.map((item, index) => (
                         <div
-                          key={getValue(item, 'id', 'booking_id') === '—'
-                            ? index
-                            : getValue(item, 'id', 'booking_id')}
-                          className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-blue-50/50 p-4"
+                          key={
+                            getValue(item, 'id', 'booking_id') === '—'
+                              ? index
+                              : getValue(item, 'id', 'booking_id')
+                          }
+                          className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#e7dcc6] bg-[#fffdf8] p-4"
                         >
                           <div>
-                            <p className="font-medium">
+                            <p className="font-medium text-black">
                               {getValue(item, 'name', 'client_name')}
                             </p>
-                            <p className="mt-1 text-xs text-slate-500">
-                              {formatDate(getValue(item, 'selected_slot', 'selectedSlot', 'booking_date'))}
+                            <p className="mt-1 text-xs text-[#625b4e]">
+                              {formatDate(
+                                getValue(
+                                  item,
+                                  'selected_slot',
+                                  'selectedSlot',
+                                  'booking_date'
+                                )
+                              )}
                             </p>
                           </div>
-                          <span className={`rounded-full border px-3 py-1 text-xs ${statusClass(getValue(item, 'booking_status', 'status'))}`}>
-                            {getValue(item, 'booking_status', 'status')}
-                          </span>
+                          <StatusBadge
+                            value={getValue(item, 'booking_status', 'status')}
+                          />
                         </div>
                       ))
                     ) : (
-                      <div className="rounded-xl border border-dashed border-slate-200 bg-blue-50/50 px-5 py-10 text-center">
-                        <CalendarDays size={30} className="mx-auto mb-3 text-blue-500" />
-                        <p className="text-sm font-medium">No upcoming consultations returned</p>
-                        <p className="mt-2 text-xs text-slate-500">
-                          Refresh the dashboard or open appointments to review records.
+                      <div className="rounded-xl border border-dashed border-[#d8c8a7] bg-[#fffdf8] px-5 py-10 text-center">
+                        <CalendarDays
+                          size={30}
+                          className="mx-auto mb-3 text-[#987237]"
+                        />
+                        <p className="text-sm font-medium text-black">
+                          No upcoming consultations returned
+                        </p>
+                        <p className="mt-2 text-xs text-[#625b4e]">
+                          Refresh the dashboard or open appointments to review
+                          records.
                         </p>
                       </div>
                     )}
                   </div>
                 </section>
 
-                <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/60 sm:p-7">
+                <section className={`${panel} p-5 sm:p-7`}>
                   <div className="flex items-center gap-3">
-                    <div className="rounded-lg bg-violet-100 p-2 text-violet-600">
+                    <div className="rounded-lg border border-[#e0cfaa] bg-[#faf3e4] p-2 text-[#8b682f]">
                       <Activity size={18} />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Workspace activity</h3>
-                      <p className="mt-1 text-xs text-slate-500">
+                      <h3 className="font-semibold text-black">
+                        Workspace activity
+                      </h3>
+                      <p className="mt-1 text-xs text-[#625b4e]">
                         Shortcuts to your records
                       </p>
                     </div>
                   </div>
+
                   <div className="mt-6 space-y-3">
                     {[
-                      { title: 'Client management', desc: 'View client contact details', icon: Users, tab: 'Clients' },
-                      { title: 'Enquiry inbox', desc: 'Review and update enquiries', icon: Inbox, tab: 'Enquiries' },
-                      { title: 'Appointments', desc: 'Review bookings and payments', icon: CircleDollarSign, tab: 'Appointments' },
+                      {
+                        title: 'Client management',
+                        desc: 'View client contact details',
+                        icon: Users,
+                        tab: 'Clients',
+                      },
+                      {
+                        title: 'Enquiry inbox',
+                        desc: 'Review and update enquiries',
+                        icon: Inbox,
+                        tab: 'Enquiries',
+                      },
+                      {
+                        title: 'Appointments',
+                        desc: 'Review bookings and payments',
+                        icon: CircleDollarSign,
+                        tab: 'Appointments',
+                      },
                     ].map(({ title, desc, icon: Icon, tab }) => (
                       <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className="flex w-full items-center gap-3 rounded-xl border border-slate-200 bg-blue-50/50 p-3.5 text-left transition hover:border-blue-200 hover:bg-blue-50"
+                        className="flex w-full items-center gap-3 rounded-xl border border-[#e7dcc6] bg-[#fffdf8] p-3.5 text-left transition hover:border-[#c6a76e] hover:bg-[#faf3e4]"
                       >
-                        <Icon size={19} className="text-blue-600" />
+                        <Icon size={19} className="text-[#987237]" />
                         <div className="flex-1">
-                          <p className="text-sm font-medium">{title}</p>
-                          <p className="mt-1 text-xs text-slate-500">{desc}</p>
+                          <p className="text-sm font-medium text-black">
+                            {title}
+                          </p>
+                          <p className="mt-1 text-xs text-[#625b4e]">
+                            {desc}
+                          </p>
                         </div>
-                        <ChevronRight size={16} className="text-slate-400" />
+                        <ChevronRight size={16} className="text-[#8b682f]" />
                       </button>
                     ))}
                   </div>
@@ -759,24 +873,25 @@ const filteredEnquiries = useMemo(
             </>
           )}
 
+          {/* Enquiries */}
           {activeTab === 'Enquiries' && (
-            <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl sm:p-7">
-              <div className="mb-6">
-                <h2 className="text-xl font-semibold">Consultation enquiries</h2>
-                <p className="mt-1 text-sm text-slate-500">
-                  Review website submissions and update their status.
-                </p>
-              </div>
+            <section className={`${panel} p-5 sm:p-7`}>
+              <SectionHeading
+                title="Consultation enquiries"
+                description="Review website submissions and update their status."
+              />
 
               {filteredEnquiries.length === 0 ? (
-                <p className="rounded-xl bg-blue-50 p-8 text-center text-sm text-slate-500">
-                  {dataLoading ? 'Loading enquiries...' : 'No matching enquiries found.'}
+                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#625b4e]">
+                  {dataLoading
+                    ? 'Loading enquiries...'
+                    : 'No matching enquiries found.'}
                 </p>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full min-w-[850px] text-left text-sm">
                     <thead>
-                      <tr className="border-b border-slate-200 text-xs uppercase tracking-wide text-slate-500">
+                      <tr className="border-b border-[#e5d9c2] text-xs uppercase tracking-wide text-[#625b4e]">
                         <th className="p-3">Client</th>
                         <th className="p-3">Property</th>
                         <th className="p-3">Received</th>
@@ -787,32 +902,64 @@ const filteredEnquiries = useMemo(
                     <tbody>
                       {filteredEnquiries.map((item, index) => {
                         const id = getValue(item, 'id', 'enquiry_id');
-                        const status = String(getValue(item, 'enquiry_status', 'status'));
+                        const status = String(
+                          getValue(item, 'enquiry_status', 'status')
+                        );
+
                         return (
-                          <tr key={id === '—' ? index : id} className="border-b border-slate-100 align-top hover:bg-blue-50/40">
+                          <tr
+                            key={id === '—' ? index : id}
+                            className="border-b border-[#f0e8d9] align-top transition hover:bg-[#fffaf0]"
+                          >
                             <td className="p-3">
-                              <p className="font-medium">{getValue(item, 'name')}</p>
-                              <p className="mt-1 text-xs text-slate-500">{getValue(item, 'contact', 'phone', 'email')}</p>
+                              <p className="font-medium text-black">
+                                {getValue(item, 'name', 'full_name')}
+                              </p>
+                              <p className="mt-1 text-xs text-[#625b4e]">
+                                {getValue(
+                                  item,
+                                  'contact',
+                                  'phone',
+                                  'email',
+                                  'phone_or_email'
+                                )}
+                              </p>
+                            </td>
+                            <td className="p-3 text-black">
+                              <p>
+                                {getValue(item, 'propertyType', 'property_type')}
+                              </p>
+                              <p className="mt-1 max-w-52 text-xs text-[#625b4e]">
+                                {getValue(item, 'location', 'property_location')}
+                              </p>
+                            </td>
+                            <td className="p-3 text-xs text-[#625b4e]">
+                              {formatDate(
+                                getValue(item, 'created_at', 'createdAt')
+                              )}
                             </td>
                             <td className="p-3">
-                              <p>{getValue(item, 'propertyType', 'property_type', 'propertyType')}</p>
-                              <p className="mt-1 max-w-52 text-xs text-slate-500">{getValue(item, 'location', 'property_location')}</p>
-                            </td>
-                            <td className="p-3 text-xs text-slate-500">
-                              {formatDate(getValue(item, 'created_at', 'createdAt'))}
-                            </td>
-                            <td className="p-3">
-                              <span className={`rounded-full border px-2.5 py-1 text-xs ${statusClass(status)}`}>{status}</span>
+                              <StatusBadge value={status} />
                             </td>
                             <td className="p-3">
                               <select
                                 value={status === '—' ? 'new' : status}
                                 disabled={busyId === String(id)}
-                                onChange={(event) => void updateEnquiry(item, event.target.value)}
-                                className="rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs outline-none focus:border-blue-400"
+                                onChange={(event) =>
+                                  void updateEnquiry(item, event.target.value)
+                                }
+                                className={`${fieldClass} max-w-44 py-2 text-xs`}
                               >
-                                {['new', 'contacted', 'in_progress', 'converted', 'closed'].map((option) => (
-                                  <option key={option} value={option}>{option.replace('_', ' ')}</option>
+                                {[
+                                  'new',
+                                  'contacted',
+                                  'in_progress',
+                                  'converted',
+                                  'closed',
+                                ].map((option) => (
+                                  <option key={option} value={option}>
+                                    {option.replace('_', ' ')}
+                                  </option>
                                 ))}
                               </select>
                             </td>
@@ -826,42 +973,67 @@ const filteredEnquiries = useMemo(
             </section>
           )}
 
+          {/* Clients */}
           {activeTab === 'Clients' && (
-            <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl sm:p-7">
-              <h2 className="text-xl font-semibold">Clients</h2>
-              <p className="mb-6 mt-1 text-sm text-slate-500">
-                Client contact information from your database.
-              </p>
+            <section className={`${panel} p-5 sm:p-7`}>
+              <SectionHeading
+                title="Clients"
+                description="Client contact information from your database."
+              />
 
               {filteredClients.length === 0 ? (
-                <p className="rounded-xl bg-blue-50 p-8 text-center text-sm text-slate-500">
-                  {dataLoading ? 'Loading clients...' : 'No matching clients found.'}
+                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#625b4e]">
+                  {dataLoading
+                    ? 'Loading clients...'
+                    : 'No matching clients found.'}
                 </p>
               ) : (
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {filteredClients.map((item, index) => {
                     const id = getValue(item, 'id', 'client_id');
+
                     return (
-                      <article key={id === '—' ? index : id} className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50 p-5 transition hover:-translate-y-1 hover:shadow-lg">
+                      <article
+                        key={id === '—' ? index : id}
+                        className="rounded-2xl border border-[#e1d4bb] bg-gradient-to-br from-white to-[#fff9ed] p-5 transition hover:-translate-y-1 hover:shadow-lg"
+                      >
                         <div className="mb-4 flex items-center gap-3">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 font-semibold text-white">
-                            {String(getValue(item, 'name')).charAt(0).toUpperCase()}
+                          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#d5bd8b] bg-gradient-to-br from-[#e7d3a5] to-[#f7edda] font-semibold text-black">
+                            {String(getValue(item, 'name', 'full_name'))
+                              .charAt(0)
+                              .toUpperCase()}
                           </div>
                           <div className="min-w-0">
-                            <h3 className="truncate font-semibold">{getValue(item, 'name')}</h3>
-                            <p className="text-xs text-slate-500">Client record</p>
+                            <h3 className="truncate font-semibold text-black">
+                              {getValue(item, 'name', 'full_name')}
+                            </h3>
+                            <p className="text-xs text-[#625b4e]">
+                              Client record
+                            </p>
                           </div>
                         </div>
-                        <p className="flex items-start gap-2 break-all text-sm text-slate-600">
-                          <Phone size={15} className="mt-0.5 shrink-0 text-blue-600" />
+
+                        <p className="flex items-start gap-2 break-all text-sm text-black">
+                          <Phone
+                            size={15}
+                            className="mt-0.5 shrink-0 text-[#987237]"
+                          />
                           {getValue(item, 'contact', 'phone')}
                         </p>
-                        <p className="mt-3 flex items-start gap-2 break-all text-sm text-slate-600">
-                          <Mail size={15} className="mt-0.5 shrink-0 text-blue-600" />
+
+                        <p className="mt-3 flex items-start gap-2 break-all text-sm text-black">
+                          <Mail
+                            size={15}
+                            className="mt-0.5 shrink-0 text-[#987237]"
+                          />
                           {getValue(item, 'email')}
                         </p>
-                        <p className="mt-3 flex items-start gap-2 text-sm text-slate-600">
-                          <MapPin size={15} className="mt-0.5 shrink-0 text-blue-600" />
+
+                        <p className="mt-3 flex items-start gap-2 text-sm text-black">
+                          <MapPin
+                            size={15}
+                            className="mt-0.5 shrink-0 text-[#987237]"
+                          />
                           {getValue(item, 'location', 'property_location')}
                         </p>
                       </article>
@@ -872,76 +1044,106 @@ const filteredEnquiries = useMemo(
             </section>
           )}
 
+          {/* Appointments */}
           {activeTab === 'Appointments' && (
-            <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl sm:p-7">
-              <div className="mb-6">
-                <h2 className="text-xl font-semibold">Appointments & payments</h2>
-                <p className="mt-1 text-sm text-slate-500">
-                  Review bookings, verify received payments and manage appointment status.
-                </p>
-              </div>
+            <section className={`${panel} p-5 sm:p-7`}>
+              <SectionHeading
+                title="Appointments & payments"
+                description="Review bookings, verify received payments and manage appointment status."
+              />
 
               {filteredBookings.length === 0 ? (
-                <p className="rounded-xl bg-blue-50 p-8 text-center text-sm text-slate-500">
-                  {dataLoading ? 'Loading appointments...' : 'No matching bookings found.'}
+                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#625b4e]">
+                  {dataLoading
+                    ? 'Loading appointments...'
+                    : 'No matching bookings found.'}
                 </p>
               ) : (
                 <div className="space-y-4">
                   {filteredBookings.map((item, index) => {
                     const id = getValue(item, 'id', 'booking_id');
-                    const bookingStatus = String(getValue(item, 'booking_status', 'status'));
-                    const paymentStatus = String(getValue(item, 'payment_status'));
+                    const bookingStatus = String(
+                      getValue(item, 'booking_status', 'status')
+                    );
+                    const paymentStatus = String(
+                      getValue(item, 'payment_status', 'paymentStatus')
+                    );
                     const isBusy = busyId === String(id);
 
                     return (
-                      <article key={id === '—' ? index : id} className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/70 p-5">
+                      <article
+                        key={id === '—' ? index : id}
+                        className="rounded-2xl border border-[#e1d4bb] bg-gradient-to-br from-white to-[#fffaf0] p-5"
+                      >
                         <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-start">
                           <div className="min-w-0">
-                            <h3 className="text-base font-semibold">
+                            <h3 className="text-base font-semibold text-black">
                               {getValue(item, 'name', 'client_name')}
                             </h3>
-                            <p className="mt-1 break-all text-sm text-slate-500">
+                            <p className="mt-1 break-all text-sm text-[#625b4e]">
                               {getValue(item, 'contact', 'phone', 'email')}
                             </p>
-                            <p className="mt-3 flex items-center gap-2 text-sm text-slate-600">
-                              <CalendarDays size={16} className="text-blue-600" />
-                              {formatDate(getValue(item, 'selected_slot', 'selectedSlot', 'booking_date', 'bookingDate'))}
+                            <p className="mt-3 flex items-center gap-2 text-sm text-black">
+                              <CalendarDays
+                                size={16}
+                                className="text-[#987237]"
+                              />
+                              {formatDate(
+                                getValue(
+                                  item,
+                                  'selected_slot',
+                                  'selectedSlot',
+                                  'booking_date',
+                                  'bookingDate'
+                                )
+                              )}
                             </p>
-                            <p className="mt-2 text-sm text-slate-600">
-                              Amount: {getValue(item, 'amount', 'price', 'payment_amount')}
+                            <p className="mt-2 text-sm text-black">
+                              Amount:{' '}
+                              {getValue(item, 'amount', 'price', 'payment_amount')}
                             </p>
+                            {getValue(item, 'payment_reference', 'paymentReference') !== '—' && (
+                              <p className="mt-2 break-all text-xs text-[#625b4e]">
+                                Payment reference:{' '}
+                                {getValue(item, 'payment_reference', 'paymentReference')}
+                              </p>
+                            )}
                           </div>
 
                           <div className="flex flex-wrap gap-2">
-                            <span className={`rounded-full border px-3 py-1 text-xs ${statusClass(bookingStatus)}`}>
-                              Booking: {bookingStatus}
-                            </span>
-                            <span className={`rounded-full border px-3 py-1 text-xs ${statusClass(paymentStatus)}`}>
-                              Payment: {paymentStatus}
-                            </span>
+                            <StatusBadge value={`Booking: ${bookingStatus}`} />
+                            <StatusBadge value={`Payment: ${paymentStatus}`} />
                           </div>
                         </div>
 
-                        <div className="mt-5 flex flex-wrap gap-2 border-t border-slate-200 pt-4">
+                        <div className="mt-5 flex flex-wrap gap-2 border-t border-[#e9dfcd] pt-4">
                           {paymentStatus.toLowerCase() !== 'verified' && (
                             <button
                               disabled={isBusy}
                               onClick={() => void verifyPayment(item)}
-                              className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700 hover:bg-emerald-100 disabled:opacity-50"
+                              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-800 hover:bg-emerald-100 disabled:opacity-50"
                             >
-                              <CheckCircle2 size={14} className="mr-1 inline" />
+                              <CheckCircle2 size={14} />
                               Verify payment
                             </button>
                           )}
 
                           {bookingStatus.toLowerCase() !== 'confirmed' &&
                             bookingStatus.toLowerCase() !== 'cancelled' &&
-                            bookingStatus.toLowerCase() !== 'canceled' && (
+                            bookingStatus.toLowerCase() !== 'canceled' &&
+                            bookingStatus.toLowerCase() !== 'completed' && (
                               <button
-                                disabled={isBusy || paymentStatus.toLowerCase() !== 'verified'}
-                                title={paymentStatus.toLowerCase() !== 'verified' ? 'Verify payment first' : 'Confirm booking'}
+                                disabled={
+                                  isBusy ||
+                                  paymentStatus.toLowerCase() !== 'verified'
+                                }
+                                title={
+                                  paymentStatus.toLowerCase() !== 'verified'
+                                    ? 'Verify payment first'
+                                    : 'Confirm booking'
+                                }
                                 onClick={() => void updateBooking(item, 'confirm')}
-                                className="rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-3 py-2 text-xs font-medium text-white hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+                                className={primaryButton}
                               >
                                 Confirm appointment
                               </button>
@@ -951,19 +1153,23 @@ const filteredEnquiries = useMemo(
                             <button
                               disabled={isBusy}
                               onClick={() => void updateBooking(item, 'complete')}
-                              className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700 hover:bg-blue-100 disabled:opacity-50"
+                              className={secondaryButton}
                             >
                               Mark completed
                             </button>
                           )}
 
-                          {!['cancelled', 'canceled', 'completed'].includes(bookingStatus.toLowerCase()) && (
+                          {![
+                            'cancelled',
+                            'canceled',
+                            'completed',
+                          ].includes(bookingStatus.toLowerCase()) && (
                             <button
                               disabled={isBusy}
                               onClick={() => void updateBooking(item, 'cancel')}
-                              className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700 hover:bg-red-100 disabled:opacity-50"
+                              className="inline-flex items-center gap-1.5 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-800 hover:bg-red-100 disabled:opacity-50"
                             >
-                              <XCircle size={14} className="mr-1 inline" />
+                              <XCircle size={14} />
                               Cancel booking
                             </button>
                           )}
@@ -976,13 +1182,15 @@ const filteredEnquiries = useMemo(
             </section>
           )}
 
+          {/* Packages */}
           {activeTab === 'Packages' && (
-            <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
-              <Package size={28} className="mb-4 text-blue-600" />
-              <h2 className="text-2xl font-semibold">Consultation packages</h2>
-              <p className="mt-2 text-sm text-slate-600">
-                Package editing is not connected to the admin API yet. These are your current website package prices.
-              </p>
+            <section className={`${panel} p-6 sm:p-8`}>
+              <Package size={28} className="mb-4 text-[#987237]" />
+              <SectionHeading
+                title="Consultation packages"
+                description="Current website package prices."
+              />
+
               <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {[
                   { name: 'Gold', price: '₹2,50,000' },
@@ -990,32 +1198,57 @@ const filteredEnquiries = useMemo(
                   { name: 'Bronze', price: '₹80,000' },
                   { name: 'Basic', price: '₹30,000–₹50,000' },
                 ].map((item) => (
-                  <div key={item.name} className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-blue-50 p-5">
-                    <p className="text-sm text-slate-500">{item.name}</p>
-                    <p className="mt-2 text-xl font-semibold">{item.price}</p>
+                  <div
+                    key={item.name}
+                    className="rounded-2xl border border-[#ddc99e] bg-gradient-to-br from-white to-[#faf0d9] p-5 transition hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <p className="text-sm font-medium text-[#625b4e]">
+                      {item.name}
+                    </p>
+                    <p className="mt-2 text-xl font-semibold text-black">
+                      {item.price}
+                    </p>
                   </div>
                 ))}
               </div>
+
+              <p className="mt-5 text-xs leading-5 text-[#625b4e]">
+                Package editing is not connected to the admin API yet. Changes
+                here require an API and database update before they can be saved.
+              </p>
             </section>
           )}
 
+          {/* Settings */}
           {activeTab === 'Settings' && (
-            <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
-              <Settings size={28} className="mb-4 text-blue-600" />
-              <h2 className="text-2xl font-semibold">Workspace settings</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Your admin session is protected by the existing login API. Account and password changes are not connected to this page.
-              </p>
-              <button
-                onClick={handleLogout}
-                className="mt-5 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 text-sm font-semibold text-white"
-              >
-                <LogOut size={16} /> Sign out
+            <section className={`${panel} p-6 sm:p-8`}>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#ddc99e] bg-[#faf0d9]">
+                <Settings size={25} className="text-[#987237]" />
+              </div>
+
+              <SectionHeading
+                title="Workspace settings"
+                description="Manage your admin workspace session."
+              />
+
+              <div className="rounded-xl border border-[#e7dcc6] bg-[#fffaf0] p-4">
+                <p className="text-sm font-medium text-black">
+                  Session security
+                </p>
+                <p className="mt-1 text-sm leading-6 text-[#625b4e]">
+                  Your admin session is protected by the existing login API.
+                  Account and password changes are not connected to this page.
+                </p>
+              </div>
+
+              <button onClick={handleLogout} className={`${primaryButton} mt-5`}>
+                <LogOut size={16} />
+                Sign out
               </button>
             </section>
           )}
 
-          <p className="mt-8 text-center text-[10px] tracking-wide text-slate-400">
+          <p className="mt-8 text-center text-[10px] tracking-[0.18em] text-[#8a7b61]">
             ACHARYA SUNIL MAHATMA · ADMIN WORKSPACE
           </p>
         </div>

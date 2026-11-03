@@ -380,15 +380,7 @@ export default function SevenLayersSection() {
   id="seven-layers"
   className="seven-layers-section relative isolate overflow-hidden px-5 pt-8 pb-12 sm:px-8 sm:pt-12 sm:pb-16 lg:px-12 lg:pt-16 lg:pb-20"
 >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-48 top-36 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#dbe7e3]/55 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-48 top-[36%] -z-10 h-[34rem] w-[34rem] rounded-full bg-[#eadfcb]/55 blur-3xl"
-      />
-
+   
       <div className="mx-auto max-w-7xl">
         
         {/* OPENING */}
@@ -409,7 +401,7 @@ export default function SevenLayersSection() {
               <span className="block">perspective.</span>
             </h2>
 
-            <p className="mt-7 max-w-2xl text-base leading-8 text-[#66675c] sm:text-lg">
+            <p className="mt-7 max-w-2xl text-base leading-8 text-white sm:text-lg">
               In Vastu tradition, a plot is understood through 16 directional
               zones around a centre, the Brahmasthan, and the five elements:
               earth, water, fire, air and space. The centre is traditionally
@@ -481,7 +473,7 @@ export default function SevenLayersSection() {
                 One layer at a time.
               </h3>
             </div>
-            <p className="max-w-md text-sm leading-7 text-[#77776c]">
+            <p className="max-w-md text-sm leading-7 text-white">
               Select a layer to explore its role in the consultation. Each
               recommendation depends on the property assessment.
             </p>
@@ -558,8 +550,7 @@ export default function SevenLayersSection() {
               <p className="mt-7 max-w-2xl text-base leading-8 text-[#55584b] sm:text-lg">
                 {active.description}
               </p>
-
-              <div className="mt-6 border-l-2 border-[var(--layer-accent)]/50 pl-5">
+                    <div className="mt-6 border-l-2 border-[var(--layer-accent)]/50 pl-5">
   <p className="layer-detail-text">
     {active.detail}
   </p>
