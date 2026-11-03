@@ -37,7 +37,7 @@ const LAYERS = [
       'The starting layer considers the existing arrangement of the property and the structural or functional points identified during assessment.',
     icon: Compass,
     symbol: 'compass',
-    color: '#dce8d8',
+    color: '#e8dbd8',
     accent: '#526d51',
   },
   {
@@ -116,7 +116,7 @@ const LAYERS = [
     icon: Orbit,
     symbol: 'star',
     color: '#e7e1d0',
-    accent: '#8b7448',
+    accent: '#739f14',
   },
 ];
 
@@ -560,10 +560,10 @@ export default function SevenLayersSection() {
               </p>
 
               <div className="mt-6 border-l-2 border-[var(--layer-accent)]/50 pl-5">
-                <p className="text-sm leading-7 text-[#77776c]">
-                  {active.detail}
-                </p>
-              </div>
+  <p className="layer-detail-text">
+    {active.detail}
+  </p>
+</div>
 
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <button

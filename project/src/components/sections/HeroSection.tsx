@@ -104,7 +104,7 @@ export default function HeroSection() {
                   <ArrowDown
                     size={15}
                     strokeWidth={2}
-                    color="#947341"
+                    color="#e75207"
                   />
                 </span>
               </a>

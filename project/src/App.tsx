@@ -42,7 +42,9 @@ function HomePage() {
         <SevenLayersSection />
         <PackagesSection />
         <ConsultationSection />
-        <EnquireSection />
+        <div className="pb-60">
+  <EnquireSection />
+</div>
       </main>
 
       <Footer />

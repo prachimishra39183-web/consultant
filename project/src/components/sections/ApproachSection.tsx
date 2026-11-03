@@ -134,7 +134,7 @@ return (
             <Sparkles size={17} strokeWidth={1.4} />
           </div>
 
-          <p className="text-sm leading-7 !text-black sm:text-base">
+          <p className="text-sm leading-7 !text-white sm:text-base">
             Rather than begin with a remedy, the consultation begins with
             understanding. Traditional disciplines inform one personal plan.
           </p>
@@ -379,7 +379,7 @@ return (
             {/* FOOTER */}
             <div className="mt-5 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.16em] !text-black">
               <UserRound size={15} strokeWidth={1.4} />
-              <span>A personal, assessment-led practice</span>
+            <span className="practice-tag">A personal, assessment-led practice</span>
             </div>
           </div>
         </div>
@@ -404,7 +404,7 @@ return (
         </div>
 
         <div className="max-w-lg lg:justify-self-end">
-          <p className="text-sm font-medium leading-7 !text-black sm:text-base">
+          <p className="text-sm font-medium leading-7 !text-white sm:text-base">
             Four foundation steps help shape the recommendations. The seven
             layers follow this assessment, not the other way around.
           </p>
