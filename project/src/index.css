@@ -1615,14 +1615,14 @@ select:focus {
   --card-bg: #25251f;
   --card-text: #f5f0e6;
   --card-accent: #d9b66f;
-  --card-glow: rgba(217, 182, 111, 0.18);
+  --card-glow: rgba(212, 144, 8, 0.18);
 }
 
 .astro-stat-card-2 {
-  --card-bg: #29251f;
+  --card-bg: #de8706;
   --card-text: #f5f0e6;
   --card-accent: #e5c98a;
-  --card-glow: rgba(229, 201, 138, 0.18);
+  --card-glow: rgba(134, 102, 25, 0.18);
 }
 
 .astro-stat-card-3 {
@@ -2602,454 +2602,7 @@ select:focus {
   }
 }
 
-/* =========================================
-   MAHAVASTU — LUXURY ENQUIRY SECTION
-   Charcoal | Champagne Gold | Warm Ivory
-========================================= */
-/* =========================================
-   ENQUIRY SECTION — MAIN LAYOUT
-========================================= */
 
-.seven-enquiry {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  overflow: hidden;
-
-  border: 1px solid rgba(217, 182, 111, 0.35);
-  border-radius: 1.5rem;
-
-  background: #29251f;
-  color: #f8f1e4;
-
-  box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.22),
-    0 0 0 1px rgba(217, 182, 111, 0.05);
-}
-
-/* =========================================
-   DARK INTRODUCTION PANEL
-========================================= */
-
-.seven-enquiry-copy {
-  position: relative;
-  overflow: hidden;
-
-  padding: clamp(2rem, 5vw, 4.5rem);
-
-  background:
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(217, 182, 111, 0.16),
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at 90% 90%,
-      rgba(217, 182, 111, 0.07),
-      transparent 45%
-    ),
-    linear-gradient(
-      145deg,
-      #383024 0%,
-      #211e19 100%
-    );
-
-  color: #f8f1e4;
-}
-
-/* Introduction headings */
-
-.seven-enquiry-copy h1,
-.seven-enquiry-copy h2,
-.seven-enquiry-copy h3,
-.seven-enquiry-copy h4 {
-  color: #f2d9a0 !important;
-}
-
-/* Introduction text */
-
-.seven-enquiry-copy p,
-.seven-enquiry-copy li {
-  color: #e8dfce !important;
-}
-
-/* Introduction icons */
-
-.seven-enquiry-copy svg,
-.seven-enquiry-copy .icon {
-  color: #d9b66f;
-}
-
-/* =========================================
-   IVORY FORM PANEL
-========================================= */
-
-.seven-enquiry-form {
-  position: relative;
-  min-width: 0;
-
-  padding: clamp(1.5rem, 4vw, 3.5rem);
-
-  background: linear-gradient(
-    145deg,
-    #fbf7ed 0%,
-    #f1e8d7 100%
-  );
-
-  color: #302a21;
-}
-
-/* Form headings */
-
-.seven-enquiry-form h1,
-.seven-enquiry-form h2,
-.seven-enquiry-form h3,
-.seven-enquiry-form h4 {
-  color: #6e542c !important;
-}
-
-/* Form descriptions */
-
-.seven-enquiry-form p {
-  color: #655f52 !important;
-}
-
-/* Form labels */
-
-.seven-enquiry-form label {
-  color: #74603c;
-}
-
-/* Form links */
-
-.seven-enquiry-form a {
-  color: #98713c;
-  text-decoration-color: rgba(152, 113, 60, 0.4);
-}
-
-.seven-enquiry-form a:hover {
-  color: #6e542c;
-}
-
-/* =========================================
-   FORM FIELDS
-========================================= */
-
-.enquiry-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-
-  margin-bottom: 1.35rem;
-}
-
-/* Field labels */
-
-.enquiry-field label {
-  color: #74603c;
-
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Inputs, dropdowns and textareas */
-
-.enquiry-field input,
-.enquiry-field select,
-.enquiry-field textarea {
-  width: 100%;
-  min-width: 0;
-
-  border: 1px solid #d8c9ac;
-  border-radius: 0.65rem;
-
-  padding: 0.9rem 1rem;
-
-  background: #fffdf8;
-  color: #292820;
-
-  font-family: inherit;
-  font-size: 0.875rem;
-
-  transition:
-    background-color 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease;
-}
-
-/* Placeholder */
-
-.enquiry-field input::placeholder,
-.enquiry-field textarea::placeholder {
-  color: #958b78;
-  opacity: 1;
-}
-
-/* Dropdown options */
-
-.enquiry-field select option {
-  background: #fffdf8;
-  color: #292820;
-}
-
-/* Focus state */
-
-.enquiry-field input:focus,
-.enquiry-field select:focus,
-.enquiry-field textarea:focus {
-  border-color: #b9975b;
-  outline: none;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 0 0 3px rgba(185, 151, 91, 0.16),
-    0 3px 12px rgba(41, 40, 32, 0.04);
-}
-
-/* Textarea */
-
-.enquiry-field textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-/* =========================================
-   CHAMPAGNE GOLD SUBMIT BUTTON
-========================================= */
-
-.enquiry-submit {
-  display: flex;
-  width: 100%;
-
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-
-  border: 1px solid #c9a568;
-  border-radius: 0.7rem;
-
-  padding: 1rem 1.25rem;
-
-  background: linear-gradient(
-    115deg,
-    #c5a15d 0%,
-    #f2d9a0 45%,
-    #d4af62 75%,
-    #f8e8ad 100%
-  );
-
-  color: #29251f;
-
-  font-family: inherit;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  box-shadow:
-    0 5px 16px rgba(177, 139, 80, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
-
-  transition:
-    background 200ms ease,
-    color 200ms ease,
-    transform 200ms ease,
-    box-shadow 200ms ease;
-
-  cursor: pointer;
-}
-
-/* Submit hover */
-
-.enquiry-submit:hover {
-  background: linear-gradient(
-    115deg,
-    #f8e8ad 0%,
-    #d9b66f 50%,
-    #b58a30 100%
-  );
-
-  color: #211e19;
-
-  box-shadow:
-    0 8px 24px rgba(177, 139, 80, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-
-  transform: translateY(-2px);
-}
-
-/* Submit active */
-
-.enquiry-submit:active {
-  transform: translateY(1px);
-}
-
-/* Disabled submit */
-
-.enquiry-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* Keyboard accessibility */
-
-.enquiry-submit:focus-visible,
-.enquiry-copy:focus-visible {
-  outline: 2px solid #b9975b;
-  outline-offset: 4px;
-}
-
-/* =========================================
-   ENQUIRY RESULT CARD
-========================================= */
-
-.enquiry-result {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
-
-  border: 1px solid #d8c9ac;
-  border-radius: 0.85rem;
-
-  background: #fffdf8;
-  color: #292820;
-
-  box-shadow:
-    0 8px 24px rgba(41, 40, 32, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-}
-
-/* Result headings */
-
-.enquiry-result h1,
-.enquiry-result h2,
-.enquiry-result h3,
-.enquiry-result h4 {
-  color: #806332 !important;
-}
-
-/* Result descriptions */
-
-.enquiry-result p {
-  color: #655f52 !important;
-}
-
-/* Result labels */
-
-.enquiry-result label {
-  color: #74603c;
-}
-
-/* Message preview */
-
-.enquiry-message-preview {
-  display: block;
-  width: 100%;
-
-  margin-top: 1rem;
-
-  border: 1px solid #d8c9ac;
-  border-radius: 0.6rem;
-
-  padding: 0.9rem;
-
-  background: #f5f0e6;
-  color: #494337;
-
-  font-family: inherit;
-  font-size: 0.8rem;
-  line-height: 1.7;
-
-  resize: vertical;
-}
-
-/* =========================================
-   COPY BUTTON
-========================================= */
-
-.enquiry-copy {
-  margin-top: 0.85rem;
-
-  border: 1px solid #d4bd8c;
-  border-radius: 0.55rem;
-
-  padding: 0.7rem 1rem;
-
-  background: #e8dcc5;
-  color: #40321d;
-
-  font-family: inherit;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition:
-    background-color 200ms ease,
-    color 200ms ease,
-    border-color 200ms ease;
-}
-
-/* Copy button hover */
-
-.enquiry-copy:hover {
-  background: #d9b66f;
-  color: #211e19;
-  border-color: #b9975b;
-}
-
-/* =========================================
-   RESPONSIVE LAYOUT
-========================================= */
-
-@media (max-width: 900px) {
-  .seven-enquiry {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .seven-enquiry-copy,
-  .seven-enquiry-form {
-    padding: clamp(1.5rem, 6vw, 3rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .seven-enquiry {
-    border-radius: 1rem;
-  }
-
-  .enquiry-field {
-    margin-bottom: 1.1rem;
-  }
-
-  .enquiry-submit {
-    padding: 0.9rem 1rem;
-    font-size: 0.65rem;
-  }
-
-  .enquiry-result {
-    padding: 1rem;
-  }
-}
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .enquiry-field input,
-  .enquiry-field select,
-  .enquiry-field textarea,
-  .enquiry-submit,
-  .enquiry-copy {
-    transition: none !important;
-  }
-}
 /* =========================================
    ACTIVE SEVEN LAYER CARD
    Deep Plum + Champagne Gold
@@ -3239,7 +2792,7 @@ select:focus {
 .consultation-pricing {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(217, 182, 111, 0.38);
+  border: 1px solid rgba(12, 11, 8, 0.38);
   border-radius: 28px;
   background: #F8F4EA;
   box-shadow: 0 30px 90px rgba(41, 37, 31, 0.09);
@@ -3456,148 +3009,6 @@ select:focus {
   line-height: 1.9;
 }
 
-/* Enquiry section */
-
-.seven-enquiry {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  overflow: hidden;
-  border: 1px solid #354033;
-  border-radius: 28px;
-  background: #30382c;
-  box-shadow: 0 30px 90px rgba(49, 43, 31, 0.12);
-}
-
-.seven-enquiry-copy {
-  position: relative;
-  padding: clamp(28px, 5vw, 60px);
-  background:
-    radial-gradient(ellipse at 0% 100%, rgba(177, 139, 80, 0.2), transparent 55%),
-    #30382c;
-}
-
-.seven-enquiry-form {
-  min-width: 0;
-  padding: clamp(25px, 4vw, 48px);
-  background: #f8f5ed;
-}
-
-.enquiry-field {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 9px;
-  margin-bottom: 20px;
-}
-
-.enquiry-field label {
-  color: #77776c;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-.enquiry-field input,
-.enquiry-field select,
-.enquiry-field textarea {
-  width: 100%;
-  min-width: 0;
-  border: 1px solid #d9cfbc;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.55);
-  padding: 13px 14px;
-  color: #292d24;
-  font-family: "DM Sans", sans-serif;
-  font-size: 13px;
-  line-height: 1.6;
-  transition:
-    border-color 200ms ease,
-    background 200ms ease,
-    box-shadow 200ms ease;
-}
-
-.enquiry-field input::placeholder,
-.enquiry-field textarea::placeholder {
-  color: #a19c8e;
-}
-
-.enquiry-field input:focus,
-.enquiry-field select:focus,
-.enquiry-field textarea:focus {
-  border-color: #a18150;
-  outline: none;
-  background: #fffdf8;
-  box-shadow: 0 0 0 3px rgba(177, 139, 80, 0.12);
-}
-
-.enquiry-field textarea {
-  resize: vertical;
-}
-
-.enquiry-submit {
-  display: flex;
-  width: 100%;
-  min-height: 52px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 0 19px;
-  border: 1px solid #30382c;
-  border-radius: 10px;
-  background: #30382c;
-  color: #fff9ed;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition:
-    background 250ms ease,
-    color 250ms ease,
-    transform 250ms ease;
-}
-
-.enquiry-submit:hover {
-  transform: translateY(-2px);
-  background: #b18b50;
-  color: #fff;
-}
-
-.enquiry-result {
-  margin-top: 20px;
-  padding: 18px;
-  border: 1px solid #d9cfbc;
-  border-radius: 13px;
-  background: #fffdf8;
-}
-
-.enquiry-message-preview {
-  width: 100%;
-  margin-top: 15px;
-  padding: 12px;
-  border: 1px solid #e0d7c8;
-  border-radius: 8px;
-  background: #f7f5ef;
-  color: #55584b;
-  font-family: "DM Sans", sans-serif;
-  font-size: 11px;
-  line-height: 1.7;
-  resize: vertical;
-}
-
-.enquiry-copy {
-  margin-top: 12px;
-  padding: 10px 15px;
-  border: 1px solid #cfc4af;
-  border-radius: 999px;
-  background: transparent;
-  color: #705832;
-  font-size: 10px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 /* Responsive tablet */
 
 @media (max-width: 1023px) {
@@ -3767,36 +3178,6 @@ select:focus {
   }
 }
 
-/* Reduced motion accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  .seven-layers-section *,
-  .seven-layers-section *::before,
-  .seven-layers-section *::after {
-    animation: none !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-.seven-enquiry-form .enquiry-field {
-  margin-bottom: 0;
-}
-
-.seven-enquiry-form .enquiry-field input,
-.seven-enquiry-form .enquiry-field select,
-.seven-enquiry-form .enquiry-field textarea {
-  box-sizing: border-box;
-}
-
-@media (max-width: 640px) {
-  .seven-enquiry-copy {
-    min-width: 0;
-  }
-
-  .seven-enquiry-form {
-    min-width: 0;
-  }
-}
 /* =========================================
    SEVEN LAYERS — CHAMPAGNE & IVORY
 ========================================= */
@@ -4232,6 +3613,15 @@ select:focus {
 
 .profile-showcase {
   isolation: isolate;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #f8e8bd 0%,
+    #e9ce8c 35%,
+    #d8b66c 70%,
+    #c49a4d 100%
+  );
+  border-color: rgba(177, 139, 80, 0.65);
   animation: profile-appear 1s ease both;
 }
 
@@ -4244,12 +3634,12 @@ select:focus {
   background:
     radial-gradient(
       ellipse at 90% 10%,
-      rgba(217, 182, 111, 0.16),
+      rgba(255, 248, 220, 0.45),
       transparent 38%
     ),
     radial-gradient(
       ellipse at 10% 90%,
-      rgba(242, 217, 160, 0.12),
+      rgba(255, 255, 235, 0.25),
       transparent 35%
     );
 }
@@ -4695,62 +4085,6 @@ select:focus {
   }
 }
 
-/* EXPERTISE MARQUEE */
-.expertise-marquee {
-  position: relative;
-  z-index: 40;
-  margin-top: 76px;
-  height: 38px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-
-  background: linear-gradient(
-    90deg,
-    #302a21 0%,
-    #3b3226 48%,
-    #302a21 100%
-  );
-
-  border-top: 1px solid rgba(217, 182, 111, 0.2);
-  border-bottom: 1px solid rgba(217, 182, 111, 0.35);
-
-  color: #f8f1e4;
-}
-
-.expertise-track {
-  display: flex;
-  width: max-content;
-  animation: expertise-scroll 28s linear infinite;
-}
-
-.expertise-group {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-}
-
-.expertise-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 25px;
-  padding: 0 25px;
-  white-space: nowrap;
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: #f8f1e4;
-}
-
-.expertise-star {
-  color: #d9b66f;
-  font-size: 14px;
-  text-shadow: 0 0 8px rgba(217, 182, 111, 0.3);
-}
 
 /* MARQUEE MOVEMENT */
 @keyframes expertise-scroll {
@@ -4991,19 +4325,6 @@ hr,
   border-color: #d9b66f;
 }
 
-/* EXPERTISE MARQUEE */
-.expertise-marquee,
-.expertise-track-wrapper {
-  background: linear-gradient(
-    90deg,
-    #302a21 0%,
-    #3b3226 50%,
-    #302a21 100%
-  );
-
-  border-top: 1px solid rgba(217, 182, 111, 0.25);
-  border-bottom: 1px solid rgba(217, 182, 111, 0.35);
-}
 
 /* STATISTICS */
 .astro-stats,
@@ -5848,281 +5169,944 @@ h6,
 }
 
 /* =========================================
-   ENQUIRY SECTION — PREMIUM DARK CARD
+   ENQUIRY SECTION — PREMIUM GOLD & BLACK
+========================================= */
+/* FORCE ALL CONSULTATION TEXT TO BLACK */
+
+.consultation-enquiry,
+.consultation-enquiry * {
+  color: #000000;
+}
+
+/* Left gold panel */
+.consultation-eyebrow,
+.consultation-display-title,
+.consultation-title-accent,
+.consultation-intro-description,
+.consultation-acharya-name,
+.consultation-acharya-speciality {
+  color: #000000 !important;
+}
+
+/* Right form panel */
+.consultation-form-heading h3,
+.consultation-success h3,
+.consultation-form-heading > div > p:last-child,
+.consultation-input-group > span,
+.consultation-step {
+  color: #000000 !important;
+}
+
+/* Input fields */
+.consultation-input-group input,
+.consultation-input-group select,
+.consultation-input-group textarea {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000;
+}
+
+.consultation-input-group input::placeholder,
+.consultation-input-group textarea::placeholder {
+  color: #000000 !important;
+  opacity: 0.65;
+}
+
+.consultation-input-group select option {
+  color: #000000 !important;
+  background: #ffffff;
+}
+
+/* Submit button */
+.consultation-submit {
+  color: #000000 !important;
+}
+
+/* Privacy note */
+.consultation-privacy-note {
+  color: #000000 !important;
+}
+
+/* Error message */
+.consultation-form-error {
+  color: #000000 !important;
+}
+
+/* Success message */
+.consultation-success > p {
+  color: #000000 !important;
+}
+
+/* Icons */
+.consultation-sun-icon,
+.consultation-success-icon,
+.consultation-privacy-note svg {
+  color: #000000 !important;
+}
+/* =========================================
+   GOLDEN STATISTIC CARDS
+========================================= */
+
+.astro-stat-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #f7e7bd 0%,
+    #e8cd91 40%,
+    #d5ad65 75%,
+    #c69b50 100%
+  ) !important;
+
+  border: 1px solid #b58a45 !important;
+  border-radius: 22px;
+
+  color: #3b2a17 !important;
+
+  box-shadow:
+    0 14px 32px rgba(90, 63, 24, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Shine effect */
+.astro-stat-card-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    transparent 35%,
+    rgba(120, 82, 28, 0.05) 70%,
+    transparent 100%
+  );
+}
+
+/* Card number index */
+.astro-stat-index {
+  color: #765522 !important;
+}
+
+/* Decorative symbols */
+.astro-stat-symbol {
+  color: #765522 !important;
+}
+
+/* Main statistic number */
+.astro-stat-value {
+  color: #352716 !important;
+  font-weight: 600;
+}
+
+/* Labels */
+.astro-stat-label {
+  color: #4b3820 !important;
+  font-weight: 500;
+}
+
+/* Bottom captions */
+.astro-stat-card-caption {
+  color: #765522 !important;
+}
+
+/* Orbit dot */
+.astro-stat-orbit-dot {
+  background: #765522 !important;
+  box-shadow: 0 0 10px rgba(118, 85, 34, 0.3);
+}
+
+/* Progress track */
+.astro-stat-progress {
+  background: rgba(91, 62, 22, 0.2) !important;
+}
+
+/* Progress fill */
+.astro-stat-progress span {
+  background: #765522 !important;
+}
+
+/* Watermark */
+.astro-stat-watermark {
+  color: rgba(91, 62, 22, 0.12) !important;
+}
+
+/* Hover animation */
+.astro-stat-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 22px 42px rgba(90, 63, 24, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================
+   GOLDEN DISCIPLINE CARDS — TEXT VISIBILITY
+========================================= */
+
+.discipline-card {
+  background: linear-gradient(
+    135deg,
+    #f7e7bd 0%,
+    #e8cd91 40%,
+    #d5ad65 75%,
+    #c69b50 100%
+  ) !important;
+
+  border: 1px solid #b58a45 !important;
+  color: #352716 !important;
+}
+
+/* Force all card text to dark brown */
+.discipline-card,
+.discipline-card p,
+.discipline-card h3,
+.discipline-card span {
+  color: #352716 !important;
+}
+
+/* Subtitle and small text */
+.discipline-card p {
+  color: #4b3820 !important;
+}
+
+/* Card headings */
+.discipline-card h3 {
+  color: #352716 !important;
+}
+
+/* Number labels */
+.discipline-card .font-mono {
+  color: #765522 !important;
+}
+
+/* Icons */
+.discipline-card svg {
+  color: #765522 !important;
+  stroke: #765522 !important;
+}
+
+/* Icon container */
+.discipline-card .rounded-xl {
+  background: rgba(255, 255, 255, 0.35) !important;
+  border-color: rgba(118, 85, 34, 0.3) !important;
+}
+
+/* Decorative background symbol */
+.discipline-card .discipline-watermark {
+  color: rgba(91, 62, 22, 0.13) !important;
+}
+
+/* Bottom divider */
+.discipline-card .border-t {
+  border-color: rgba(91, 62, 22, 0.25) !important;
+}
+
+/* Hover effect */
+.discipline-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 22px 42px rgba(90, 63, 24, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+/* =========================================
+   GOLDEN FOUNDATION STEP CARDS
+========================================= */
+
+.foundation-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #f7e7bd 0%,
+    #e8cd91 40%,
+    #d5ad65 75%,
+    #c69b50 100%
+  ) !important;
+
+  border: 1px solid #b58a45 !important;
+  color: #352716 !important;
+
+  box-shadow:
+    0 14px 32px rgba(90, 63, 24, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* All card text */
+.foundation-card,
+.foundation-card p,
+.foundation-card h3,
+.foundation-card span {
+  color: #352716 !important;
+}
+
+/* Step number */
+.foundation-card .font-mono {
+  color: #765522 !important;
+}
+
+/* Step title */
+.foundation-card h3 {
+  color: #352716 !important;
+}
+
+/* Description */
+.foundation-card p {
+  color: #4b3820 !important;
+}
+
+/* Tag text */
+.foundation-card p.text-\[8px\] {
+  color: #765522 !important;
+}
+
+/* Icon container */
+.foundation-card .rounded-full {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(118, 85, 34, 0.3) !important;
+}
+
+/* Icons */
+.foundation-card svg {
+  color: #765522 !important;
+  stroke: #765522 !important;
+}
+
+/* Horizontal divider */
+.foundation-card .h-px {
+  background: linear-gradient(
+    to right,
+    rgba(118, 85, 34, 0.65),
+    rgba(181, 138, 69, 0.3),
+    transparent
+  ) !important;
+}
+
+/* Bottom border */
+.foundation-card .border-t {
+  border-color: rgba(91, 62, 22, 0.25) !important;
+}
+
+/* Hover effect */
+.foundation-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #9c722f !important;
+
+  box-shadow:
+    0 22px 42px rgba(90, 63, 24, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* Hover icon circle */
+.foundation-card:hover .rounded-full {
+  background: rgba(255, 255, 255, 0.45) !important;
+  border-color: #9c722f !important;
+}
+/* =========================================
+   GOLDEN MOVING EXPERTISE BAR
+========================================= */
+
+.expertise-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #f7e7bd 0%,
+    #e8cd91 40%,
+    #d5ad65 75%,
+    #c69b50 100%
+  ) !important;
+
+  border-top: 1px solid #b58a45;
+  border-bottom: 1px solid #b58a45;
+
+  box-shadow:
+    0 8px 24px rgba(90, 63, 24, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.expertise-track {
+  display: flex;
+  width: max-content;
+  animation: expertise-marquee-scroll 28s linear infinite;
+}
+
+.expertise-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* Text */
+.expertise-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+
+  padding: 18px 30px;
+
+  color:  #000000  !important;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Star separator */
+.expertise-star {
+  color: #9b702d !important;
+  font-size: 17px;
+  line-height: 1;
+
+  text-shadow: 0 0 8px rgba(118, 85, 34, 0.25);
+}
+
+/* Infinite movement */
+@keyframes expertise-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.expertise-marquee:hover .expertise-track {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .expertise-item {
+    gap: 16px;
+    padding: 15px 20px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .expertise-track {
+    animation-duration: 22s;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .expertise-track {
+    animation: none;
+  }
+}
+
+/* Golden active layer container */
+.seven-layers-section .active-layer-panel {
+  background: linear-gradient(
+    135deg,
+    #f8e8bd 0%,
+    #ecd49a 50%,
+    #dfbd79 100%
+  ) !important;
+
+  border: 1px solid #c9a15d;
+  box-shadow: 0 20px 50px rgba(100, 70, 30, 0.12);
+}
+
+/* Dark brown text inside the golden container */
+.seven-layers-section .active-layer-panel h4 {
+  color: #3b281b !important;
+}
+
+.seven-layers-section .active-layer-panel p {
+  color: #5b4027 !important;
+}
+
+.seven-layers-section .active-layer-panel span {
+  color: #76552e;
+}
+
+/* Artwork background */
+.seven-layers-section .active-layer-art-disc {
+  background: linear-gradient(
+    145deg,
+    #fff5dc,
+    #e5c98e
+  ) !important;
+
+  border: 1px solid #c9a15d;
+}
+
+/* Artwork details */
+.seven-layers-section .active-layer-art-index,
+.seven-layers-section .active-layer-art-caption {
+  color: #76552e !important;
+}
+
+/* Layer navigation buttons */
+.seven-layers-section .layer-step-button {
+  background: #f4e1b5;
+  color: #4a3320;
+  border: 1px solid #c9a15d;
+}
+
+.seven-layers-section .layer-next-button {
+  background: #5b3d26;
+  color: #fff4df;
+  border: 1px solid #5b3d26;
+}
+
+
+/* =========================================
+   PREMIUM GOLD & IVORY ENQUIRY SECTION
 ========================================= */
 
 .consultation-enquiry {
-  color: #f8f1e4;
+  --enquiry-gold: #b18b50;
+  --enquiry-gold-dark: #89652f;
+  --enquiry-ink: #352b20;
+  ---muted: #776d60;
+  --enquiry-ivory: #fffdf8;
+  color: var(--enquiry-ink);
 }
 
 .consultation-enquiry-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #d9c49e;
+  border-radius: 28px;
+  background: var(--enquiry-ivory);
+  box-shadow:
+    0 28px 70px rgba(104, 76, 35, 0.13),
+    0 7px 18px rgba(104, 76, 35, 0.07);
 }
 
-/* Left introduction */
+/* LEFT GOLDEN PANEL */
+
 .consultation-enquiry-intro {
   position: relative;
   display: flex;
+  min-width: 0;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100%;
+  isolation: isolate;
   overflow: hidden;
-  padding: 2.5rem;
-  border: 1px solid rgba(217, 182, 111,  0.25);
-  border-radius: 28px;
+  padding: clamp(30px, 4vw, 55px);
   background:
     radial-gradient(
-      circle at 15% 15%,
-      rgba(217, 182, 111, 0.15),
-      transparent 45%
+      ellipse at 88% 15%,
+      rgba(255, 255, 255, 0.48),
+      transparent 36%
     ),
-    linear-gradient(145deg, #302a21, #1f1d18);
+    linear-gradient(
+      145deg,
+      #f6e8c8 0%,
+      #e7cf9e 43%,
+      #d4b274 100%
+    );
+  color: #382a19;
 }
 
-.consultation-decoration {
+.consultation-enquiry-intro::before {
   position: absolute;
-  right: -35px;
-  top: 10%;
-  color: rgba(217, 182, 111, 0.12);
-  pointer-events: none;
+  z-index: -1;
+  right: -100px;
+  bottom: 70px;
+  width: 290px;
+  height: 290px;
+  border: 1px solid rgba(123, 85, 35, 0.19);
+  border-radius: 50%;
+  content: "";
+}
+
+.consultation-enquiry-intro::after {
+  position: absolute;
+  z-index: -1;
+  right: -55px;
+  bottom: 115px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(123, 85, 35, 0.17);
+  border-radius: 50%;
+  content: "";
+}
+
+.consultation-gold-orb {
+  position: absolute;
+  top: 28px;
+  right: 26px;
+  display: grid;
+  width: 155px;
+  height: 155px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 32% 24%,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 247, 221, 0.4) 32%,
+      rgba(183, 137, 65, 0.22) 70%
+    );
+  box-shadow:
+    inset 0 0 25px rgba(255, 255, 255, 0.65),
+    0 15px 38px rgba(113, 76, 27, 0.13);
+  color: #9a7136;
+  animation: consultation-orb-float 7s ease-in-out infinite;
+}
+
+.consultation-orb-ring {
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(137, 101, 47, 0.25);
+  border-radius: 50%;
+}
+
+.consultation-orb-ring-two {
+  inset: -8px;
+  border-style: dashed;
+  border-color: rgba(137, 101, 47, 0.22);
+}
+
+.consultation-orb-sparkle {
+  position: absolute;
+  top: 24px;
+  right: 23px;
+}
+
+.consultation-intro-content {
+  position: relative;
+  z-index: 1;
+  max-width: 470px;
+  padding-top: 130px;
 }
 
 .consultation-eyebrow {
-  color: #d9b66f;
+  margin: 0 0 17px;
+  color: #89652f;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 800;
+  letter-spacing: 0.2em;
   line-height: 1.8;
 }
 
-.consultation-display-title {
-  margin-top: 1.5rem;
-  color: #f8f1e4;
-  font-family: Georgia, serif;
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+.consultation-enquiry-intro .consultation-eyebrow {
+  color: #76552b;
 }
 
-.consultation-title-accent {
-  display: block;
-  margin-top: 0.75rem;
-  color: #e8cc96;
+.consultation-display-title {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(35px, 3.8vw, 53px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.14;
+}
+
+.consultation-display-title span {
+  display: inline-block;
+  margin-top: 8px;
+  color: #8a632d;
   font-style: italic;
+  font-weight: 400;
+}
+
+.consultation-gold-divider {
+  width: 62px;
+  height: 2px;
+  margin: 25px 0;
+  background: #9b733a;
 }
 
 .consultation-intro-description {
-  margin-top: 1.5rem;
-  max-width: 30rem;
-  color: #c6bca9;
+  max-width: 390px;
+  margin: 0;
+  color: #55432e;
   font-size: 14px;
-  line-height: 1.9;
+  line-height: 1.95;
+}
+
+.consultation-intro-secondary {
+  margin-top: 13px;
+  color: #725d43;
 }
 
 .consultation-intro-footer {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(217, 182, 111, 0.25);
+  gap: 14px;
+  margin-top: 38px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(117, 81, 34, 0.22);
 }
 
 .consultation-sun-icon {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   flex-shrink: 0;
   place-items: center;
-  border: 1px solid rgba(217, 182, 111, 0.4);
+  border: 1px solid rgba(117, 81, 34, 0.3);
   border-radius: 50%;
-  color: #d9b66f;
+  background: rgba(255, 255, 255, 0.36);
+  color: #7f5a2a;
 }
 
 .consultation-acharya-name {
-  color: #f8f1e4;
-  font-size: 14px;
+  margin: 0;
+  color: #392b1b;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .consultation-acharya-speciality {
-  margin-top: 0.35rem;
-  color: #c6bca9;
+  margin: 5px 0 0;
+  color: #6f5940;
   font-size: 11px;
+  letter-spacing: 0.02em;
 }
 
-/* Right form card */
+.consultation-panel-number {
+  position: absolute;
+  right: 25px;
+  bottom: 18px;
+  color: rgba(91, 64, 28, 0.14);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 75px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* RIGHT IVORY FORM PANEL */
+
 .consultation-enquiry-details {
   min-width: 0;
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(222, 200, 158, 0.13),
+      transparent 34%
+    ),
+    #fffdf8;
 }
 
 .consultation-form-area {
   height: 100%;
-  min-width: 0;
-  padding: 2.5rem;
-  border: 1px solid rgba(217, 182, 111, 0.5);
-  border-radius: 28px;
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(217, 182, 111, 0.1),
-      transparent 35%
-    ),
-    linear-gradient(145deg, #302a21, #24211c);
-  color: #f8f1e4;
-  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.2);
+  padding: clamp(28px, 4vw, 52px);
 }
 
 .consultation-form-heading {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 15px;
+  margin-bottom: 32px;
+}
+
+.consultation-form-heading .consultation-eyebrow {
+  margin-bottom: 10px;
 }
 
 .consultation-form-heading h3,
 .consultation-success h3 {
-  margin-top: 0.75rem;
-  color: #f8f1e4;
-  font-family: Georgia, serif;
-  font-size: 2.2rem;
-  line-height: 1.15;
+  margin: 0;
+  color: #392d21;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(26px, 2.5vw, 35px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
 }
 
 .consultation-form-heading > div > p:last-child {
-  margin-top: 0.6rem;
-  color: #c6bca9;
+  margin: 10px 0 0;
+  color: #82786b;
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .consultation-step {
-  display: grid;
-  width: 42px;
-  height: 42px;
   flex-shrink: 0;
-  place-items: center;
-  border: 1px solid rgba(217, 182, 111, 0.4);
-  border-radius: 50%;
-  color: #d9b66f;
-  font-family: Georgia, serif;
+  padding: 8px 10px;
+  border: 1px solid #e6d6b8;
+  border-radius: 8px;
+  background: #f8f0e1;
+  color: #89652f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
-/* Fields */
 .consultation-fields-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 23px 17px;
 }
 
 .consultation-input-group {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 9px;
 }
 
 .consultation-input-group > span {
-  color: #e8cc96;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  color: #514437;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.consultation-input-group > span b {
+  color: #a67835;
 }
 
 .consultation-input-group input,
 .consultation-input-group select,
 .consultation-input-group textarea {
+  box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  border: 1px solid rgba(217, 182, 111, 0.3);
-  border-radius: 12px;
-  padding: 0.9rem 1rem;
-  background: #1e1c18;
-  color: #f8f1e4;
-  font-size: 13px;
+  border: 1px solid #e8dfd0;
+  border-radius: 10px;
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  background: #fffefa;
+  color: #352b20;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.consultation-input-group input,
+.consultation-input-group select {
+  height: 49px;
+  padding: 0 13px;
+}
+
+.consultation-input-group textarea {
+  min-height: 115px;
+  padding: 13px;
+  line-height: 1.7;
+  resize: vertical;
 }
 
 .consultation-input-group input::placeholder,
 .consultation-input-group textarea::placeholder {
-  color: #918675;
+  color: #aaa092;
 }
 
 .consultation-input-group input:focus,
 .consultation-input-group select:focus,
 .consultation-input-group textarea:focus {
-  border-color: #d9b66f;
-  box-shadow: 0 0 0 3px rgba(217, 182, 111, 0.1);
-}
-
-.consultation-input-group select option {
-  background: #24211c;
-  color: #f8f1e4;
+  border-color: #bd995d;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(189, 153, 93, 0.13);
 }
 
 .consultation-message-field {
-  margin-top: 1.25rem;
+  margin-top: 25px;
 }
 
-.consultation-input-group textarea {
-  resize: vertical;
-}
-
-/* Submit button */
 .consultation-submit {
   display: inline-flex;
   width: 100%;
+  min-height: 53px;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-  border: 1px solid #d9b66f;
-  border-radius: 999px;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, #e8cc96, #c5a15d);
-  color: #29251f;
-  font-size: 11px;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 14px 20px;
+  border: 1px solid #a37a3d;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #c9a566 0%, #ae8447 100%);
+  box-shadow:
+    0 7px 0 #8f6937,
+    0 12px 22px rgba(130, 91, 39, 0.16);
+  color: #fffdf7;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
 }
 
 .consultation-submit:hover:not(:disabled) {
-  background: #f2d9a0;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(217, 182, 111, 0.15);
+  box-shadow:
+    0 9px 0 #8f6937,
+    0 17px 27px rgba(130, 91, 39, 0.2);
+  filter: brightness(1.04);
+}
+
+.consultation-submit:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #8f6937;
 }
 
 .consultation-submit:disabled {
   cursor: wait;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .consultation-privacy-note {
-  margin-top: 1rem;
-  color: #a99d8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 19px 0 0;
+  color: #8c8172;
   font-size: 11px;
   line-height: 1.7;
   text-align: center;
 }
 
+.consultation-privacy-note svg {
+  flex-shrink: 0;
+  color: #9b783f;
+}
+
 .consultation-form-error {
-  margin-top: 1rem;
-  color: #f0a49b;
-  font-size: 13px;
+  margin: 16px 0 0;
+  padding: 11px 13px;
+  border: 1px solid #edc8bd;
+  border-radius: 8px;
+  background: #fff2ee;
+  color: #a33d2b;
+  font-size: 12px;
   line-height: 1.6;
 }
 
-/* Success message */
 .consultation-success {
   display: flex;
-  min-height: 380px;
+  min-height: 450px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -6130,109 +6114,178 @@ h6,
 
 .consultation-success-icon {
   display: grid;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 1.5rem;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 27px;
   place-items: center;
-  border: 1px solid rgba(217, 182, 111, 0.4);
+  border: 1px solid #e4d0aa;
   border-radius: 50%;
-  color: #d9b66f;
+  background: #f7edd9;
+  color: #997039;
+}
+
+.consultation-success h3 {
+  margin-bottom: 15px;
+  font-size: 40px;
 }
 
 .consultation-success > p:not(.consultation-eyebrow) {
-  margin-top: 1rem;
-  color: #c6bca9;
+  max-width: 380px;
+  color: #766b5d;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+@keyframes consultation-orb-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
   .consultation-enquiry-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   }
 
-  .consultation-enquiry-intro,
+  .consultation-enquiry-intro {
+    padding: 30px;
+  }
+
   .consultation-form-area {
-    padding: 1.5rem;
-    border-radius: 22px;
+    padding: 30px;
   }
 
-  .consultation-fields-grid {
-    grid-template-columns: 1fr;
+  .consultation-gold-orb {
+    top: 22px;
+    right: 20px;
+    width: 115px;
+    height: 115px;
+  }
+
+  .consultation-gold-orb > svg:first-of-type {
+    width: 90px;
+    height: 90px;
+  }
+
+  .consultation-intro-content {
+    padding-top: 110px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+  .consultation-enquiry-grid {
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 21px;
+  }
+
+  .consultation-enquiry-intro {
+    min-height: 0;
+    padding: 28px 25px 25px;
+  }
+
+  .consultation-gold-orb {
+    top: 23px;
+    right: 22px;
+    width: 95px;
+    height: 95px;
+  }
+
+  .consultation-gold-orb > svg:first-of-type {
+    width: 68px;
+    height: 68px;
+  }
+
+  .consultation-orb-sparkle {
+    top: 15px;
+    right: 13px;
+    width: 18px;
+  }
+
+  .consultation-intro-content {
+    padding-top: 105px;
   }
 
   .consultation-display-title {
-    font-size: clamp(2.5rem, 12vw, 3.5rem);
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
+  .consultation-intro-description {
+    font-size: 13px;
+  }
+
+  .consultation-intro-footer {
+    margin-top: 27px;
+    padding-top: 20px;
+  }
+
+  .consultation-panel-number {
+    right: 15px;
+    bottom: 10px;
+    font-size: 56px;
+  }
+
+  .consultation-form-area {
+    padding: 28px 23px 32px;
+  }
+
+  .consultation-form-heading {
+    margin-bottom: 26px;
+  }
+
+  .consultation-form-heading h3 {
+    font-size: 28px;
+  }
+
+  .consultation-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 19px;
+  }
+
+  .consultation-message-field {
+    margin-top: 22px;
+  }
+
+  .consultation-success {
+    min-height: 360px;
   }
 }
-/* Align hero labels and remove unwanted gaps */
-.astro-hero-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: fit-content;
-  margin-bottom: 18px;
-  line-height: 1.2;
+
+@media (prefers-reduced-motion: reduce) {
+  .consultation-gold-orb {
+    animation: none;
+  }
+
+  .consultation-submit {
+    transition: none;
+  }
+}
+/* FORCE MOVING MARQUEE TEXT TO PURE BLACK */
+
+.expertise-marquee,
+.expertise-marquee .expertise-track,
+.expertise-marquee .expertise-group,
+.expertise-marquee .expertise-item,
+.expertise-marquee .expertise-item span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
 }
 
-.astro-eyebrow-star {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* Keep decorative stars golden */
+.expertise-marquee .expertise-star {
+  color: #8b6428 !important;
+  -webkit-text-fill-color: #8b6428 !important;
 }
 
-.astro-eyebrow-divider {
-  display: inline-block;
-  width: 1px;
-  height: 13px;
-  margin: 0 2px;
-  flex-shrink: 0;
-}
-
-.astro-hero-overline {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  width: fit-content;
-  margin: 0 0 18px;
-  line-height: 1.3;
-}
-
-.astro-overline-dot {
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-/* Prevent heading and label spacing from being stretched */
-.astro-hero-copy {
-  text-align: left;
-}
-
-.astro-hero-title {
-  margin-top: 0;
-}
-/* Reduce vertical gap between hero labels */
-.astro-hero-eyebrow {
-  margin-bottom: 8px !important;
-}
-
-.astro-hero-overline {
-  margin-top: 0 !important;
-  margin-bottom: 10px !important;
-  line-height: 1.2 !important;
-}
-
-/* Remove extra spacing from the hero copy */
-.astro-hero-copy {
-  gap: 0;
-}
-
-.astro-hero-title {
-  margin-top: 0 !important;
+/* Ensure text stays visible */
+.expertise-marquee .expertise-item {
+  font-weight: 800 !important;
 }

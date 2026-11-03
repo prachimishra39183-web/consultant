@@ -222,117 +222,128 @@ async function createConsultationBooking() {
           </div>
         </section>
 
-        {/* PRICING FEATURE */}
-        <section
-          id="consultation"
-          className="consultation-pricing mt-28 scroll-mt-24 sm:mt-36 lg:mt-44"
-        >
-          <div className="pricing-topline">
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em]">
-              The complete consultation
-            </span>
+       
+{/* PRICING FEATURE */}
 
-            <span className="pricing-topline-mark">
-              <Sparkles size={16} />
-              Personalised assessment
-            </span>
-          </div>
-
-          <div className="grid lg:grid-cols-[1.03fr_0.97fr]">
-            <div className="pricing-main">
-              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#e4c997]">
-                Complete 7-layer Astro Vastu
-              </p>
-
-              <h2 className="mt-5 max-w-xl font-serif text-4xl font-medium leading-[1.05] tracking-tight text-[#fff9ed] sm:text-5xl lg:text-6xl">
-                A personal plan for your property.
-              </h2>
-
-              <p className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-                The 7-Layer Astro Vastu Balancing Process brings the
-                foundation assessment, site visits and personalised
-                recommendations into one consultation.
-              </p>
-
-              <div className="mt-10 flex flex-wrap items-end gap-x-4 gap-y-1">
-                <span className="font-serif text-6xl tracking-tight text-[#f2d7a4] sm:text-7xl">
-                  ₹75,000
-                </span>
-
-                <span className="pb-2 text-[10px] uppercase tracking-[0.18em] text-white/65">
-                  Consultation fee
-                </span>
-              </div>
-
-              <button
-  type="button"
-  onClick={() => setBookingOpen(true)}
-  className="pricing-cta mt-9"
+{/* PRICING FEATURE */}
+<section
+  id="consultation"
+  className="mt-28 scroll-mt-24 overflow-hidden rounded-[28px] border border-[#d8c18f] !bg-[#fcf8ef] shadow-[0_25px_65px_rgba(0,0,0,0.08)] sm:mt-36 lg:mt-44"
 >
-  Book a consultation
-  <ArrowUpRight size={17} />
-</button>
-              <div
-                className="pricing-orbit pricing-orbit-one"
-                aria-hidden="true"
-              />
-              <div
-                className="pricing-orbit pricing-orbit-two"
-                aria-hidden="true"
-              />
-            </div>
+  {/* TOP BAR */}
+  <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#d8c18f] !bg-[#f1e4c6] px-6 py-5 !text-black sm:px-10">
+    <span className="text-[10px] font-bold uppercase tracking-[0.25em] !text-black">
+      The complete consultation
+    </span>
 
-            <div className="pricing-inclusions">
-              <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#947341]">
-                Personal attention. A clearly defined engagement.
-              </span>
+    <span className="flex items-center gap-2 text-xs font-semibold !text-black">
+      <Sparkles size={16} />
+      Personalised assessment
+    </span>
+  </div>
 
-              <ul className="mt-7 space-y-5">
-                {[
-                  'All four foundation assessment steps',
-                  'All seven balancing layers',
-                  '7–10 site visits, according to property needs',
-                  'Written findings and a personalised material document',
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm leading-6 text-[#55584b]"
-                  >
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e5eadf] text-[#536b4f]">
-                      <Check size={12} strokeWidth={2.2} />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+  <div className="grid lg:grid-cols-[1.03fr_0.97fr]">
+    {/* LEFT PANEL */}
+    <div className="relative isolate overflow-hidden !bg-gradient-to-br from-[#fffdf7] via-[#f8efd9] to-[#ead5a8] px-6 py-10 !text-black sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+      <p className="text-[10px] font-bold uppercase tracking-[0.22em] !text-black">
+        Complete 7-layer Astro Vastu
+      </p>
 
-              <div className="mt-9 border-t border-[#d9cfbc] pt-7">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#eae1d0] text-[#8d7042]">
-                    <Wallet size={19} strokeWidth={1.4} />
-                  </span>
+      <h2 className="mt-5 max-w-xl font-serif text-4xl font-medium leading-[1.08] tracking-tight !text-black sm:text-5xl lg:text-6xl">
+        A personal plan for your property.
+      </h2>
 
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#947341]">
-                      Estimated material cost
-                    </p>
+      <p className="mt-5 max-w-xl text-sm leading-7 !text-black sm:text-base">
+        The 7-Layer Astro Vastu Balancing Process brings the
+        foundation assessment, site visits and personalised
+        recommendations into one consultation.
+      </p>
 
-                    <p className="mt-1 font-serif text-3xl font-medium sm:text-4xl">
-                      ₹55,000–₹60,000
-                    </p>
-                  </div>
-                </div>
+      {/* CONSULTATION PRICE */}
+      <div className="mt-10 flex flex-wrap items-end gap-x-4 gap-y-1">
+        <span className="font-serif text-5xl font-semibold tracking-tight !text-black sm:text-7xl">
+          ₹75,000
+        </span>
 
-                <p className="mt-4 text-sm leading-7 text-[#77776c]">
-                  Materials are not included in the consultation fee. The
-                  estimate depends on the property. Materials must be
-                  purchased separately online, strictly from Mahavastu.
-                </p>
-              </div>
-            </div>
+        <span className="pb-2 text-[10px] font-bold uppercase tracking-[0.18em] !text-black">
+          Consultation fee
+        </span>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setBookingOpen(true)}
+        className="mt-9 inline-flex items-center justify-center gap-3 rounded-xl border border-[#98712f] !bg-[#d8b56e] px-7 py-4 text-sm font-bold !text-black shadow-[0_5px_0_#98712f] transition duration-300 hover:-translate-y-1 hover:!bg-[#c9a256]"
+      >
+        Book a consultation
+        <ArrowUpRight size={17} />
+      </button>
+
+      {/* DECORATIVE CIRCLES */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-28 -right-20 -z-10 h-72 w-72 rounded-full border border-[#98712f]/30"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-20 -right-12 -z-10 h-56 w-56 rounded-full border border-dashed border-[#98712f]/30"
+      />
+    </div>
+
+    {/* RIGHT PANEL */}
+    <div className="!bg-[#fffdf7] px-6 py-10 !text-black sm:px-10 sm:py-12 lg:px-10 lg:py-14">
+      <span className="text-[10px] font-bold uppercase tracking-[0.2em] !text-black">
+        Personal attention. A clearly defined engagement.
+      </span>
+
+      <ul className="mt-7 space-y-5">
+        {[
+          'All four foundation assessment steps',
+          'All seven balancing layers',
+          '7–10 site visits, according to property needs',
+          'Written findings and a personalised material document',
+        ].map((item) => (
+          <li
+            key={item}
+            className="flex items-start gap-3 text-sm leading-6 !text-black"
+          >
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ead8ad] !text-black">
+              <Check size={12} strokeWidth={2.2} />
+            </span>
+            <span className="!text-black">{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* MATERIAL COST */}
+      <div className="mt-9 rounded-2xl border border-[#d8c18f] !bg-gradient-to-br from-[#fffdf7] to-[#f4e8cd] p-5 sm:p-6">
+        <div className="flex items-center gap-3">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#d8c18f] bg-[#efe0bd] !text-black">
+            <Wallet size={20} strokeWidth={1.5} />
+          </span>
+
+          <div className="min-w-0">
+            <p className="text-[9px] font-bold uppercase tracking-[0.2em] !text-black">
+              Estimated material cost
+            </p>
+
+            <p className="mt-1 font-serif text-2xl font-semibold leading-tight !text-black sm:text-3xl">
+              ₹55,000–₹60,000
+            </p>
           </div>
-        </section>
-                  
+        </div>
+
+        <p className="mt-4 text-sm leading-7 !text-black">
+          Materials are not included in the consultation fee.
+          The estimate depends on the property. Materials must be
+          purchased separately online from Mahavastu.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
                   
 {bookingOpen && (
   <div
@@ -566,38 +577,42 @@ async function createConsultationBooking() {
   </div>
 )}
 
-        {/* WHAT THE CLIENT RECEIVES */}
-       
+  
 {/* WHAT THE CLIENT RECEIVES */}
-<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#b18b50]/30 !bg-[#1e1c18] p-6 shadow-[0_20px_55px_rgba(35,27,17,0.16)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
+<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#b18b50]/40 bg-gradient-to-br from-[#fffdf7] via-[#faf2df] to-[#f0e2c3] p-6 text-black shadow-[0_20px_55px_rgba(35,27,17,0.08)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
+
+  {/* INTRODUCTION */}
   <div>
-    <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#c6a15b]">
+    <span className="text-[10px] font-bold uppercase tracking-[0.23em] !text-black">
       Your consultation documents
     </span>
 
-    <h2 className="mt-4 font-serif text-3xl font-medium leading-tight text-[#f4ead8] sm:text-4xl">
+    <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight !text-black sm:text-4xl">
       Clarity before you begin.
     </h2>
 
-    <p className="mt-4 max-w-sm text-sm leading-7 text-[#c5b9a5]">
+    <p className="mt-4 max-w-sm text-sm leading-7 !text-black">
       Clear, personalised documentation to help you understand your
       consultation findings and recommendations.
     </p>
   </div>
 
+  {/* DOCUMENT CARDS */}
   <div className="grid gap-4 sm:grid-cols-2">
+
     {/* WRITTEN FINDINGS */}
-    <div className="deliverable-item group flex gap-4 rounded-2xl border border-[#b18b50]/30 bg-[#292620] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#d6b16a]/60 hover:bg-[#302c24]">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c6a15b]/40 bg-[#373126] text-[#d6b16a]">
+    <div className="group flex gap-4 rounded-2xl border border-[#d8c18f] bg-gradient-to-br from-[#fffdf7] via-[#faf2df] to-[#f0e2c3] p-5 !text-black shadow-[0_10px_28px_rgba(120,87,35,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#b18b50] hover:shadow-[0_16px_35px_rgba(120,87,35,0.15)]">
+
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#d9c08d] bg-[#efe0bd] !text-black">
         <ShieldCheck size={20} strokeWidth={1.4} />
       </div>
 
       <div>
-        <h3 className="font-serif text-xl text-[#f4ead8]">
+        <h3 className="font-serif text-xl font-semibold !text-black">
           Written findings
         </h3>
 
-        <p className="mt-2 text-sm leading-6 text-[#c5b9a5]">
+        <p className="mt-2 text-sm leading-6 !text-black">
           Your written findings explain the personal plan and the
           reason for each recommended remedy.
         </p>
@@ -605,17 +620,18 @@ async function createConsultationBooking() {
     </div>
 
     {/* MATERIAL DOCUMENT */}
-    <div className="deliverable-item group flex gap-4 rounded-2xl border border-[#b18b50]/30 bg-[#292620] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#d6b16a]/60 hover:bg-[#302c24]">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c6a15b]/40 bg-[#373126] text-[#d6b16a]">
+    <div className="group flex gap-4 rounded-2xl border border-[#d8c18f] bg-gradient-to-br from-[#fffdf7] via-[#faf2df] to-[#f0e2c3] p-5 !text-black shadow-[0_10px_28px_rgba(120,87,35,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#b18b50] hover:shadow-[0_16px_35px_rgba(120,87,35,0.15)]">
+
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#d9c08d] bg-[#efe0bd] !text-black">
         <Layers3 size={20} strokeWidth={1.4} />
       </div>
 
       <div>
-        <h3 className="font-serif text-xl text-[#f4ead8]">
+        <h3 className="font-serif text-xl font-semibold !text-black">
           Material document
         </h3>
 
-        <p className="mt-2 text-sm leading-6 text-[#c5b9a5]">
+        <p className="mt-2 text-sm leading-6 !text-black">
           A tailored material document identifies the materials
           and placements recommended for your property.
         </p>
@@ -624,8 +640,8 @@ async function createConsultationBooking() {
   </div>
 
   {/* MATERIAL DETAILS */}
-  <div className="rounded-xl border border-[#b18b50]/20 bg-[#25231e] p-4 lg:col-start-2">
-    <p className="text-sm leading-7 text-[#c5b9a5]">
+  <div className="rounded-xl border border-[#d8c18f] bg-gradient-to-r from-[#f8f0df] to-[#efe0bd] p-4 !text-black lg:col-start-2">
+    <p className="text-sm leading-7 !text-black">
       Selections may include metal studs and strips, devta items,
       precious stone dust as per your astrological chart,
       flooring-specific remedies, idols and room-appropriate frames.
@@ -634,44 +650,86 @@ async function createConsultationBooking() {
 </section>
 
 {/* FAQ */}
-<section className="mt-28 grid gap-10 lg:mt-36 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-  {/* FAQ INTRO */}
-  <div>
-    <span className="text-[10px] font-bold uppercase tracking-[0.23em] text-[#947341]">
-      Common questions
-    </span>
+<section className="mt-28 grid gap-8 !text-black lg:mt-36 lg:grid-cols-[0.72fr_1.28fr] lg:gap-10">
 
-    <h2 className="mt-5 font-serif text-4xl font-medium leading-tight tracking-tight text-[#29241d] sm:text-5xl">
-      Clarity before you begin.
-    </h2>
+  {/* GOLDEN INTRODUCTION PANEL */}
+  <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[#b18b50] bg-gradient-to-br from-[#f9e9c8] via-[#eddaaf] to-[#d8b878] p-7 !text-black shadow-[0_20px_45px_rgba(91,61,30,0.18)] sm:p-9 lg:p-10">
 
-    <p className="mt-5 max-w-sm text-sm leading-7 text-[#71685a]">
-      Understand the scope, visits and materials before enquiring
-      about a consultation.
-    </p>
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full border border-[#8a642e]/20"
+    />
 
-    <div className="mt-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#947341]">
-      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#b18b50]/40">
-        <Gem size={16} />
-      </span>
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 rounded-full border border-[#8a642e]/20"
+    />
 
-      <span>Personalised consultation</span>
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full bg-white/25 blur-2xl"
+    />
+
+    <div className="relative z-10">
+      <div className="mb-5 flex items-center gap-3">
+        <span className="h-px w-10 bg-black" />
+        <span className="text-[10px] font-extrabold uppercase tracking-[0.23em] !text-black">
+          Common questions
+        </span>
+      </div>
+
+      <h2 className="max-w-md font-serif text-4xl font-bold leading-tight tracking-tight !text-black sm:text-5xl">
+        Clarity before you begin.
+      </h2>
+
+      <p className="mt-6 max-w-sm text-sm font-medium leading-7 !text-black sm:text-base">
+        Understand the scope, visits and materials before enquiring
+        about a consultation. Get a clearer picture of the process
+        before taking your next step.
+      </p>
+
+      <div className="mt-8 flex items-center gap-4 rounded-2xl border border-[#8a642e]/30 bg-white/35 p-4 shadow-sm">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#8a642e]/35 bg-[#f8e8c5] !text-black">
+          <Gem size={21} strokeWidth={1.5} />
+        </span>
+
+        <div>
+          <p className="text-xs font-extrabold uppercase tracking-[0.12em] !text-black">
+            Personalised consultation
+          </p>
+          <p className="mt-1 text-xs font-medium leading-5 !text-black">
+            Guidance tailored to your needs and space.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative z-10 mt-10 border-t border-[#8a642e]/30 pt-5">
+      <div className="flex items-center justify-between gap-3">
+        <span className="text-[9px] font-extrabold uppercase tracking-[0.18em] !text-black">
+          Your questions matter
+        </span>
+
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8a642e]/35 bg-white/35 !text-black">
+          <ArrowUpRight size={18} />
+        </span>
+      </div>
     </div>
   </div>
 
-  {/* FAQ ACCORDION */}
+  {/* FUNCTIONAL FAQ ACCORDION */}
   <div className="faq-list space-y-3">
     {FAQS.map((faq, index) => {
       const isOpen = openFaq === index;
 
       return (
         <div
-          className={`faq-item overflow-hidden rounded-2xl border transition-all duration-300 ${
-            isOpen
-              ? 'faq-open border-[#b18b50]/60 bg-[#292620] shadow-[0_12px_30px_rgba(35,27,17,0.12)]'
-              : 'border-[#b18b50]/30 bg-[#1e1c18] hover:border-[#b18b50]/55'
-          }`}
           key={faq.question}
+          className={`faq-item overflow-hidden rounded-2xl border !text-black transition-all duration-300 ${
+            isOpen
+              ? 'faq-open border-[#c4a05f] bg-gradient-to-br from-[#fffdf7] to-[#f3e5c6] shadow-[0_12px_30px_rgba(120,87,35,0.10)]'
+              : 'border-[#e3d2ae] bg-[#fcf8ef] hover:border-[#b18b50] hover:bg-[#f8f0df]'
+          }`}
         >
           <button
             type="button"
@@ -679,27 +737,19 @@ async function createConsultationBooking() {
             aria-expanded={isOpen}
             onClick={() => setOpenFaq(isOpen ? null : index)}
           >
-            <span
-              className={`faq-index font-mono text-xs tracking-widest ${
-                isOpen ? 'text-[#d6b16a]' : 'text-[#a18b65]'
-              }`}
-            >
+            <span className="faq-index font-mono text-xs tracking-widest !text-black">
               {String(index + 1).padStart(2, '0')}
             </span>
 
-            <span
-              className={`faq-question-text flex-1 font-serif text-lg sm:text-xl ${
-                isOpen ? 'text-[#f4ead8]' : 'text-[#e5d8c2]'
-              }`}
-            >
+            <span className="faq-question-text flex-1 font-serif text-lg font-semibold !text-black sm:text-xl">
               {faq.question}
             </span>
 
             <span
-              className={`faq-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition duration-300 ${
+              className={`faq-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-full border !text-black transition duration-300 ${
                 isOpen
-                  ? 'rotate-180 border-[#c6a15b]/50 bg-[#373126] text-[#d6b16a]'
-                  : 'border-[#b18b50]/30 bg-[#292620] text-[#b9a27a]'
+                  ? 'rotate-180 border-[#c4a05f] bg-[#ead8b0]'
+                  : 'border-[#e3d2ae] bg-[#f5ead2]'
               }`}
             >
               <ChevronDown size={17} />
@@ -713,8 +763,8 @@ async function createConsultationBooking() {
             aria-hidden={!isOpen}
           >
             <div className="min-h-0 overflow-hidden">
-              <div className="faq-answer border-t border-[#b18b50]/20 px-5 pb-5 pt-4 sm:px-6">
-                <p className="text-sm leading-7 text-[#c5b9a5]">
+              <div className="faq-answer border-t border-[#e3d2ae] px-5 pb-5 pt-4 sm:px-6">
+                <p className="text-sm leading-7 !text-black">
                   {faq.answer}
                 </p>
               </div>
