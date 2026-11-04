@@ -69,7 +69,7 @@ export default function Navbar() {
   className="group relative z-50 flex shrink-0 items-center"
   aria-label="Home"
 >
-  <div className="relative mx-auto w-full max-w-[190px] overflow-hidden rounded-2xl border-2 border-[#B58A30] bg-[#F8EBCB] p-1 shadow-[0_3px_12px_rgba(112,78,24,0.15)] transition-all duration-300">
+  <div className="relative mx-auto w-full max-w-[170px] overflow-hidden rounded-2xl border-2 border-[#B58A30] bg-[#F8EBCB] p-1 shadow-[0_3px_12px_rgba(112,78,24,0.15)] transition-all duration-300">
     <img
       src="/logoo.png"
       alt="Acharya Sunil Mahatma Astro Vastu Expert"

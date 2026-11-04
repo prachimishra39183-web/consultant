@@ -469,7 +469,7 @@ export default function SevenLayersSection() {
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#947341]">
                 The seven-layer journey
               </span>
-              <h3 className="mt-4 font-serif text-4xl font-medium tracking-tight text-[#292d24] sm:text-5xl lg:text-6xl">
+              <h3 className="mt-4 font-serif text-4xl font-medium tracking-tight text-white sm:text-5xl lg:text-6xl">
                 One layer at a time.
               </h3>
             </div>

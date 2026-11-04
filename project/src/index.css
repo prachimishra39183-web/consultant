@@ -73,7 +73,7 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  color: #f2d9a0;
+  color: #1e1707;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 500;
   line-height: 1.12;
@@ -3033,25 +3033,38 @@ select:focus {
   }
 }
 
-/* Mobile layer navigation */
+/* =========================================
+   MOBILE LAYER NAVIGATION — ALIGNED LAYOUT
+========================================= */
 
 @media (max-width: 700px) {
   .layer-selector {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     border-bottom: 0;
+    align-items: stretch;
   }
 
   .layer-selector-item {
     display: grid;
-    min-height: 94px;
-    grid-template-columns: 27px 34px minmax(0, 1fr);
-    grid-template-rows: auto auto;
+    min-height: 100px;
+
+    grid-template-columns: 28px 34px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+
     align-items: center;
-    column-gap: 10px;
-    row-gap: 5px;
-    padding: 14px 10px;
-    border-right: 1px solid #ded6c8;
-    border-bottom: 1px solid #ded6c8;
+    justify-items: start;
+
+    column-gap: 9px;
+    row-gap: 0;
+
+    padding: 14px 12px;
+
+    border-right: 1px solid #C49A3A;
+    border-bottom: 1px solid #C49A3A;
+
+    text-align: left;
+    box-sizing: border-box;
   }
 
   .layer-selector-item:nth-child(2n) {
@@ -3059,43 +3072,106 @@ select:focus {
   }
 
   .layer-selector-number {
-    grid-row: 1 / 3;
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    min-width: 28px;
+
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
   }
 
   .layer-selector-icon {
-    grid-row: 1 / 3;
-    width: 33px;
-    height: 33px;
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    margin: 0;
   }
 
   .layer-selector-title {
     grid-column: 3;
-    align-self: end;
+    grid-row: 1;
+
+    align-self: center;
+    justify-self: stretch;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+
     font-size: 10px;
+    line-height: 1.45;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    text-align: left;
+
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .layer-selector-arrow {
     display: none;
   }
 
+  /* Active layer content */
   .active-layer-panel {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 28px 23px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+
+    padding: 28px 20px;
+
+    align-items: center;
   }
 
   .active-layer-art {
     width: min(100%, 270px);
+    margin-inline: auto;
   }
 
   .active-layer-art-caption {
     bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .active-layer-copy {
+    width: 100%;
+    min-width: 0;
     padding-top: 10px;
+
+    text-align: left;
   }
 
+  .active-layer-copy h2,
+  .active-layer-copy h3 {
+    text-align: left;
+    line-height: 1.25;
+  }
+
+  .active-layer-copy p {
+    line-height: 1.75;
+    overflow-wrap: break-word;
+  }
+
+  /* Consultation journey */
   .consultation-journey {
     gap: 34px;
   }
@@ -3105,12 +3181,15 @@ select:focus {
   }
 
   .journey-step-top {
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
-    gap: 22px;
+    gap: 18px;
   }
 
   .journey-step-number {
     align-self: center;
+    flex-shrink: 0;
   }
 
   .journey-connector {
@@ -3120,17 +3199,20 @@ select:focus {
     transform: rotate(90deg);
   }
 
+  /* Pricing */
   .pricing-topline {
     align-items: flex-start;
     flex-direction: column;
+    gap: 12px;
   }
 
   .pricing-main {
     min-height: auto;
   }
 
+  /* Enquiry */
   .seven-enquiry {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .seven-enquiry-copy {
@@ -3140,40 +3222,96 @@ select:focus {
   .seven-enquiry-form {
     padding: 25px 20px;
   }
+
+  /* FAQ */
+  .faq-question {
+    display: grid;
+    grid-template-columns: 25px minmax(0, 1fr) 34px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .faq-question-text {
+    min-width: 0;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+  }
+
+  .faq-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faq-answer p {
+    line-height: 1.75;
+    overflow-wrap: break-word;
+  }
 }
 
-/* Small phones */
+/* =========================================
+   SMALL PHONES
+========================================= */
 
 @media (max-width: 390px) {
   .layer-selector-item {
     grid-template-columns: 22px 29px minmax(0, 1fr);
     column-gap: 7px;
-    padding: 12px 7px;
+
+    min-height: 94px;
+    padding: 12px 8px;
+  }
+
+  .layer-selector-number {
+    width: 22px;
+    min-width: 22px;
+    font-size: 9px;
   }
 
   .layer-selector-icon {
     width: 29px;
     height: 29px;
+    min-width: 29px;
   }
 
   .layer-selector-title {
     font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+
+  .active-layer-panel {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .active-layer-art {
+    width: min(100%, 240px);
   }
 
   .faq-question {
-    grid-template-columns: 25px 1fr 30px;
+    grid-template-columns: 22px minmax(0, 1fr) 30px;
     gap: 8px;
+    padding-inline: 14px;
+  }
+
+  .faq-question-text {
+    font-size: 16px;
   }
 
   .faq-answer p {
-    padding-left: 33px;
-    padding-right: 10px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .pricing-cta {
     width: 100%;
     padding-inline: 12px;
     font-size: 9px;
+  }
+
+  .seven-enquiry-form {
+    padding: 22px 16px;
   }
 }
 
@@ -3311,7 +3449,7 @@ select:focus {
   justify-content: center;
   border: 1px solid #D9CDB7;
   border-radius: 50%;
-  background: rgba(255, 251, 245, 0.65);
+  background: rgba(248, 158, 23, 0.65);
   color: var(--layer-accent, #A98545);
   transition:
     transform 400ms ease,
@@ -4558,7 +4696,7 @@ select:focus-visible {
 /* Main headings */
 h1,
 h2,
-h3,
+
 
 h5,
 h6,
@@ -4632,7 +4770,7 @@ textarea::placeholder {
 
 h1,
 h2,
-h3,
+
 
 h5,
 h6,
@@ -4715,7 +4853,7 @@ textarea::placeholder {
 /* Keep headings in champagne gold */
 h1,
 h2,
-h3,
+
 h5,
 h6,
 .section-heading,
@@ -5033,60 +5171,126 @@ h6,
   color: #000000 !important;
 }
 
-/* Right form panel */
+/* ================================
+   GOLDEN CONSULTATION FORM THEME
+================================ */
+
+/* Right form panel headings and labels */
 .consultation-form-heading h3,
 .consultation-success h3,
 .consultation-form-heading > div > p:last-child,
 .consultation-input-group > span,
 .consultation-step {
-  color: #000000 !important;
+  color: #382507 !important;
 }
 
 /* Input fields */
 .consultation-input-group input,
 .consultation-input-group select,
 .consultation-input-group textarea {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000;
+  color: #382507 !important;
+  -webkit-text-fill-color: #382507;
+  background-color: #FFF8E6 !important;
+  border-color: #C49A3A !important;
+  transition: all 0.3s ease;
 }
 
+/* Input focus */
+.consultation-input-group input:focus,
+.consultation-input-group select:focus,
+.consultation-input-group textarea:focus {
+  border-color: #A87920 !important;
+  box-shadow: 0 0 0 3px rgba(184, 134, 32, 0.18) !important;
+  outline: none;
+}
+
+/* Placeholder text */
 .consultation-input-group input::placeholder,
 .consultation-input-group textarea::placeholder {
-  color: #000000 !important;
-  opacity: 0.65;
+  color: #805719 !important;
+  -webkit-text-fill-color: #805719;
+  opacity: 0.7;
 }
 
+/* Dropdown options */
 .consultation-input-group select option {
-  color: #000000 !important;
-  background: #ffffff;
+  color: #382507 !important;
+  background: #FFF4CC;
 }
 
 /* Submit button */
 .consultation-submit {
-  color: #000000 !important;
+  color: #382507 !important;
+  background: linear-gradient(
+    135deg,
+    #F9E7A9 0%,
+    #E8C15F 45%,
+    #C99722 100%
+  ) !important;
+  border: 1px solid #B88620 !important;
+  box-shadow: 0 5px 0 #98712F,
+              0 8px 18px rgba(120, 78, 12, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Submit button hover */
+.consultation-submit:hover {
+  background: linear-gradient(
+    135deg,
+    #EED17C 0%,
+    #DDB34B 50%,
+    #B88620 100%
+  ) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #805719,
+              0 12px 24px rgba(120, 78, 12, 0.2);
 }
 
 /* Privacy note */
 .consultation-privacy-note {
-  color: #000000 !important;
+  color: #65420D !important;
 }
 
 /* Error message */
 .consultation-form-error {
-  color: #000000 !important;
+  color: #8B2E18 !important;
+  background-color: #FFF0E8;
+  border: 1px solid #DCA18B;
+  border-radius: 10px;
+  padding: 10px 14px;
 }
 
 /* Success message */
 .consultation-success > p {
-  color: #000000 !important;
+  color: #503711 !important;
 }
 
 /* Icons */
 .consultation-sun-icon,
 .consultation-success-icon,
 .consultation-privacy-note svg {
-  color: #000000 !important;
+  color: #A87920 !important;
 }
+
+/* Success icon */
+.consultation-success-icon {
+  background: #F5D77F !important;
+  border: 1px solid #B88620 !important;
+}
+
+/* Step indicators */
+.consultation-step {
+  background: #E8C15F !important;
+  border-color: #B88620 !important;
+}
+
+/* Selection highlight */
+.consultation-input-group input::selection,
+.consultation-input-group textarea::selection {
+  background: #E8C15F;
+  color: #382507;
+}
+
 /* =========================================
    GOLDEN STATISTIC CARDS
 ========================================= */
@@ -6821,4 +7025,17 @@ section {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* Golden background for the entire consultation documents card */
+.deliverables-row {
+  background: linear-gradient(
+    135deg,
+    #f9e7a9 0%,
+    #e8c15f 50%,
+    #c99722 100%
+  ) !important;
+
+  color: #382507 !important;
+  border: 1px solid #b88620 !important;
+  box-shadow: 0 20px 55px rgba(120, 78, 12, 0.25);
 }

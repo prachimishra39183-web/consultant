@@ -231,7 +231,7 @@ async function createConsultationBooking() {
   className="mt-28 scroll-mt-24 overflow-hidden rounded-[28px] border border-[#d8c18f] !bg-[#fcf8ef] shadow-[0_25px_65px_rgba(0,0,0,0.08)] sm:mt-36 lg:mt-44"
 >
   {/* TOP BAR */}
-  <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#d8c18f] !bg-[#f1e4c6] px-6 py-5 !text-black sm:px-10">
+  <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#B88620] !bg-gradient-to-r from-[#E8C15F] via-[#F7E4A4] to-[#D4AF37] px-6 py-5 !text-[#382507] sm:px-10">
     <span className="text-[10px] font-bold uppercase tracking-[0.25em] !text-black">
       The complete consultation
     </span>
@@ -244,7 +244,7 @@ async function createConsultationBooking() {
 
   <div className="grid lg:grid-cols-[1.03fr_0.97fr]">
     {/* LEFT PANEL */}
-    <div className="relative isolate overflow-hidden !bg-gradient-to-br from-[#fffdf7] via-[#f8efd9] to-[#ead5a8] px-6 py-10 !text-black sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+    <div className="relative isolate overflow-hidden !bg-gradient-to-br from-[#FFF0B8] via-[#E8C15F] to-[#C99722] px-6 py-10 !text-[#382507] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
       <p className="text-[10px] font-bold uppercase tracking-[0.22em] !text-black">
         Complete 7-layer Astro Vastu
       </p>
@@ -291,7 +291,7 @@ async function createConsultationBooking() {
     </div>
 
     {/* RIGHT PANEL */}
-    <div className="!bg-[#fffdf7] px-6 py-10 !text-black sm:px-10 sm:py-12 lg:px-10 lg:py-14">
+    <div className="!bg-gradient-to-br from-[#F8E8B7] via-[#EED58F] to-[#D9B65B] px-6 py-10 !text-[#382507] sm:px-10 sm:py-12 lg:px-10 lg:py-14">
       <span className="text-[10px] font-bold uppercase tracking-[0.2em] !text-black">
         Personal attention. A clearly defined engagement.
       </span>
@@ -316,7 +316,7 @@ async function createConsultationBooking() {
       </ul>
 
       {/* MATERIAL COST */}
-      <div className="mt-9 rounded-2xl border border-[#d8c18f] !bg-gradient-to-br from-[#fffdf7] to-[#f4e8cd] p-5 sm:p-6">
+      <div className="mt-9 rounded-2xl border border-[#B88620] !bg-gradient-to-br from-[#FFF1BF] via-[#EBCB70] to-[#D5A83C] p-5 sm:p-6 shadow-[0_10px_28px_rgba(101,65,8,0.12)]">
         <div className="flex items-center gap-3">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#d8c18f] bg-[#efe0bd] !text-black">
             <Wallet size={20} strokeWidth={1.5} />
@@ -348,11 +348,11 @@ async function createConsultationBooking() {
     onClick={() => setBookingOpen(false)}
   >
    <div
-  className="relative my-auto w-full max-w-2xl overflow-hidden rounded-[28px] border border-[#b18b50]/40 bg-[#1e1c18] text-[#f4ead8] shadow-2xl"
+  className="relative my-auto w-full max-w-2xl overflow-hidden rounded-[28px] border border-[#B88620] bg-gradient-to-br from-[#FFF4CC] via-[#EED58F] to-[#D4AF37] text-[#382507] shadow-2xl"
   onClick={(e) => e.stopPropagation()}
 >
       {/* Header */}
-      <div className="relative border-b border-[#b18b50]/25 bg-[#25231e] px-6 py-7 sm:px-9">
+      <div className="relative border-b border-[#B88620]/50 bg-gradient-to-r from-[#E8C15F] to-[#D4AF37] px-6 py-7 sm:px-9">
         <button
           type="button"
           onClick={() => setBookingOpen(false)}
@@ -366,7 +366,7 @@ async function createConsultationBooking() {
           Private consultation
         </span>
 
-        <h2 className="mt-3 pr-8 font-serif text-3xl sm:text-4xl">
+        <h2 className="mt-3 pr-8 font-serif text-3xl text-white sm:text-4xl">
           Reserve your session.
         </h2>
 
@@ -401,8 +401,8 @@ async function createConsultationBooking() {
       <div className="space-y-7 p-6 sm:p-9">
         {/* Choose consultation */}
         <div>
-          <h3 className="text-sm font-bold">Choose your consultation</h3>
-          <p className="mt-1 text-xs text-[#76665D]">
+          <h4 className="text-sm font-bold">Choose your consultation</h4>
+          <p className="mt-1 text-xs text-black">
             Select the option that suits your schedule.
           </p>
 
@@ -576,7 +576,8 @@ async function createConsultationBooking() {
 
   
 {/* WHAT THE CLIENT RECEIVES */}
-<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#D4AF37] bg-gradient-to-br from-[#FFE9A3] via-[#E8BF52] to-[#C99722] p-6 !text-[#382507] shadow-[0_20px_55px_rgba(120,78,12,0.20)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
+{/* WHAT THE CLIENT RECEIVES */}
+<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#B88620] bg-gradient-to-br from-[#F9E7A9] via-[#E8C15F] to-[#C99722] p-6 !text-[#382507] shadow-[0_20px_55px_rgba(120,78,12,0.25)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
 
   {/* INTRODUCTION */}
   <div>
@@ -648,68 +649,69 @@ async function createConsultationBooking() {
 
 </section>
 
+
 {/* FAQ */}
-<section className="mt-28 grid gap-8 !text-black lg:mt-36 lg:grid-cols-[0.72fr_1.28fr] lg:gap-10">
+<section className="mt-28 grid gap-8 !text-[#382507] lg:mt-36 lg:grid-cols-[0.72fr_1.28fr] lg:gap-10">
 
   {/* GOLDEN INTRODUCTION PANEL */}
-  <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[#b18b50] bg-gradient-to-br from-[#f9e9c8] via-[#eddaaf] to-[#d8b878] p-7 !text-black shadow-[0_20px_45px_rgba(91,61,30,0.18)] sm:p-9 lg:p-10">
+  <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[#B88620] bg-gradient-to-br from-[#F9E7A9] via-[#E8C15F] to-[#C99722] p-7 !text-[#382507] shadow-[0_20px_45px_rgba(120,78,12,0.22)] sm:p-9 lg:p-10">
 
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full border border-[#8a642e]/20"
+      className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full border border-[#805719]/30"
     />
 
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 rounded-full border border-[#8a642e]/20"
+      className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 rounded-full border border-[#805719]/30"
     />
 
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full bg-white/25 blur-2xl"
+      className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full bg-[#FFF4CC]/30 blur-2xl"
     />
 
     <div className="relative z-10">
       <div className="mb-5 flex items-center gap-3">
-        <span className="h-px w-10 bg-black" />
-        <span className="text-[10px] font-extrabold uppercase tracking-[0.23em] !text-black">
+        <span className="h-px w-10 bg-[#65420D]" />
+        <span className="text-[10px] font-extrabold uppercase tracking-[0.23em] !text-[#65420D]">
           Common questions
         </span>
       </div>
 
-      <h2 className="max-w-md font-serif text-4xl font-bold leading-tight tracking-tight !text-black sm:text-5xl">
+      <h2 className="max-w-md font-serif text-4xl font-bold leading-tight tracking-tight !text-[#382507] sm:text-5xl">
         Clarity before you begin.
       </h2>
 
-      <p className="mt-6 max-w-sm text-sm font-medium leading-7 !text-black sm:text-base">
+      <p className="mt-6 max-w-sm text-sm font-medium leading-7 !text-[#503711] sm:text-base">
         Understand the scope, visits and materials before enquiring
         about a consultation. Get a clearer picture of the process
         before taking your next step.
       </p>
 
-      <div className="mt-8 flex items-center gap-4 rounded-2xl border border-[#8a642e]/30 bg-white/35 p-4 shadow-sm">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#8a642e]/35 bg-[#f8e8c5] !text-black">
+      <div className="mt-8 flex items-center gap-4 rounded-2xl border border-[#B88620]/60 bg-[#FFF2C6]/60 p-4 shadow-sm">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#B88620]/60 bg-[#F5D77F] !text-[#65420D]">
           <Gem size={21} strokeWidth={1.5} />
         </span>
 
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.12em] !text-black">
+          <p className="text-xs font-extrabold uppercase tracking-[0.12em] !text-[#382507]">
             Personalised consultation
           </p>
-          <p className="mt-1 text-xs font-medium leading-5 !text-black">
+          <p className="mt-1 text-xs font-medium leading-5 !text-[#503711]">
             Guidance tailored to your needs and space.
           </p>
         </div>
       </div>
     </div>
 
-    <div className="relative z-10 mt-10 border-t border-[#8a642e]/30 pt-5">
+    <div className="relative z-10 mt-10 border-t border-[#805719]/30 pt-5">
       <div className="flex items-center justify-between gap-3">
-        <span className="text-[9px] font-extrabold uppercase tracking-[0.18em] !text-black">
+        <span className="text-[9px] font-extrabold uppercase tracking-[0.18em] !text-[#65420D]">
           Your questions matter
         </span>
 
-        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8a642e]/35 bg-white/35 !text-black">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B88620]/60 bg-[#FFF2C6]/60 !text-[#65420D]">
           <ArrowUpRight size={18} />
         </span>
       </div>
@@ -724,10 +726,10 @@ async function createConsultationBooking() {
       return (
         <div
           key={faq.question}
-          className={`faq-item overflow-hidden rounded-2xl border !text-black transition-all duration-300 ${
+          className={`faq-item overflow-hidden rounded-2xl border !text-[#382507] transition-all duration-300 ${
             isOpen
-              ? 'faq-open border-[#c4a05f] bg-gradient-to-br from-[#fffdf7] to-[#f3e5c6] shadow-[0_12px_30px_rgba(120,87,35,0.10)]'
-              : 'border-[#e3d2ae] bg-[#fcf8ef] hover:border-[#b18b50] hover:bg-[#f8f0df]'
+              ? 'faq-open border-[#B88620] bg-gradient-to-br from-[#F9E7A9] via-[#EED17C] to-[#DDB34B] shadow-[0_12px_30px_rgba(120,87,35,0.16)]'
+              : 'border-[#C49A3A] bg-gradient-to-r from-[#F8EBC5] to-[#EED58F] hover:border-[#805719] hover:from-[#F2D77F] hover:to-[#E1BC58]'
           }`}
         >
           <button
@@ -736,19 +738,19 @@ async function createConsultationBooking() {
             aria-expanded={isOpen}
             onClick={() => setOpenFaq(isOpen ? null : index)}
           >
-            <span className="faq-index font-mono text-xs tracking-widest !text-black">
+            <span className="faq-index font-mono text-xs tracking-widest !text-[#805719]">
               {String(index + 1).padStart(2, '0')}
             </span>
 
-            <span className="faq-question-text flex-1 font-serif text-lg font-semibold !text-black sm:text-xl">
+            <span className="faq-question-text flex-1 font-serif text-lg font-semibold !text-[#382507] sm:text-xl">
               {faq.question}
             </span>
 
             <span
-              className={`faq-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-full border !text-black transition duration-300 ${
+              className={`faq-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-full border !text-[#65420D] transition duration-300 ${
                 isOpen
-                  ? 'rotate-180 border-[#c4a05f] bg-[#ead8b0]'
-                  : 'border-[#e3d2ae] bg-[#f5ead2]'
+                  ? 'rotate-180 border-[#805719] bg-[#D4A63B]'
+                  : 'border-[#B88620] bg-[#F5D77F]'
               }`}
             >
               <ChevronDown size={17} />
@@ -762,14 +764,15 @@ async function createConsultationBooking() {
             aria-hidden={!isOpen}
           >
             <div className="min-h-0 overflow-hidden">
-              <div className="faq-answer border-t border-[#e3d2ae] px-5 pb-5 pt-4 sm:px-6">
-                <p className="text-sm leading-7 !text-black">
+              <div className="faq-answer border-t border-[#B88620]/50 px-5 pb-5 pt-4 sm:px-6">
+                <p className="text-sm leading-7 !text-[#503711]">
                   {faq.answer}
                 </p>
               </div>
             </div>
           </div>
         </div>
+
       );
     })}
   </div>
