@@ -2793,7 +2793,7 @@ select:focus {
   overflow: hidden;
   border: 1px solid rgba(12, 11, 8, 0.38);
   border-radius: 28px;
-  background: #F8F4EA;
+  background: #efac03;
   box-shadow: 0 30px 90px rgba(41, 37, 31, 0.09);
 }
 
@@ -3254,8 +3254,8 @@ select:focus {
   overflow: hidden;
   border: 0;
   border-right: 1px solid #D9CDB7;
-  background: transparent;
-  color: #817969;
+  background:transparent;
+  color: #ef3e08;
   text-align: left;
   cursor: pointer;
   transition:
@@ -3300,7 +3300,7 @@ select:focus {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--layer-accent, #A98545);
+  color: var(--layer-accent, #150e02);
 }
 
 .layer-selector-icon {
@@ -3311,7 +3311,7 @@ select:focus {
   justify-content: center;
   border: 1px solid #D9CDB7;
   border-radius: 50%;
-  background: rgba(255, 252, 245, 0.65);
+  background: rgba(255, 251, 245, 0.65);
   color: var(--layer-accent, #A98545);
   transition:
     transform 400ms ease,

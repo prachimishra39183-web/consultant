@@ -69,11 +69,15 @@ export default function Navbar() {
   className="group relative z-50 flex shrink-0 items-center"
   aria-label="Home"
 >
-  <div className="flex h-[62px] w-[62px] items-center justify-center overflow-hidden rounded-full border-2 border-[#B58A30] bg-[#F8EBCB] shadow-[0_3px_12px_rgba(112,78,24,0.15)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#91651E] sm:h-[72px] sm:w-[72px]">
+  <div className="relative mx-auto w-full max-w-[190px] overflow-hidden rounded-2xl border-2 border-[#B58A30] bg-[#F8EBCB] p-1 shadow-[0_3px_12px_rgba(112,78,24,0.15)] transition-all duration-300">
     <img
       src="/logoo.png"
-      alt="Acharya Sunil Mahatma logo"
-      className="h-full w-full rounded-full object-cover p-1"
+      alt="Acharya Sunil Mahatma Astro Vastu Expert"
+      className="block h-auto w-full object-contain"
+      style={{
+        objectFit: "contain",
+        objectPosition: "center",
+      }}
     />
   </div>
 </a>

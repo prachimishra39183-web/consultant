@@ -80,13 +80,13 @@ export default function PackagesSection() {
 
   <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
     {/* Regular consultation */}
-    <div className="relative overflow-hidden rounded-3xl border border-[#dfd2b9] bg-white p-6 shadow-[0_12px_35px_rgba(91,61,30,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(91,61,30,0.14)] sm:p-8">
-      <div className="absolute right-0 top-0 h-28 w-28 rounded-bl-full bg-[#f8f1e4]" />
+     <div className="relative overflow-hidden rounded-3xl border border-[#b8860b] bg-gradient-to-br from-[#ffe9a3] via-[#e9bd4d] to-[#c58a16] p-6 shadow-[0_16px_40px_rgba(145,94,15,0.24)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(145,94,15,0.32)] sm:p-8">
+  <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#fff8dc]/50 blur-2xl" />
 
-      <div className="relative">
-        <span className="inline-flex rounded-full border border-[#dfcba5] bg-[#faf5ea] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#8a6937]">
-          Regular Visit
-        </span>
+  <div className="relative">
+    <span className="inline-flex rounded-full border border-[#80520f]/40 bg-[#fff2c2]/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#4a2d08]">
+     Regular Visit
+    </span>
 
         <h4 className="mt-5 font-serif text-2xl font-bold text-[#805b2e]">
           Vastu Consultation
@@ -108,13 +108,13 @@ export default function PackagesSection() {
     </div>
 
     {/* Horoscope-based selection */}
-    <div className="relative overflow-hidden rounded-3xl border border-[#b18b50]/70 bg-gradient-to-br from-[#fffaf0] via-[#f4e5c6] to-[#e5cd9d] p-6 shadow-[0_16px_40px_rgba(91,61,30,0.13)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(91,61,30,0.19)] sm:p-8">
-      <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-white/40 blur-2xl" />
+   <div className="relative overflow-hidden rounded-3xl border border-[#b8860b] bg-gradient-to-br from-[#ffe9a3] via-[#e9bd4d] to-[#c58a16] p-6 shadow-[0_16px_40px_rgba(145,94,15,0.24)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(145,94,15,0.32)] sm:p-8">
+  <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#fff8dc]/50 blur-2xl" />
 
-      <div className="relative">
-        <span className="inline-flex rounded-full border border-[#b18b50]/50 bg-white/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#805b2e]">
-          Personalised Selection
-        </span>
+  <div className="relative">
+    <span className="inline-flex rounded-full border border-[#80520f]/40 bg-[#fff2c2]/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#4a2d08]">
+      Personalised Selection
+    </span>
 
         <h4 className="mt-5 font-serif text-2xl font-bold text-[#805b2e]">
           Property Selection as per Horoscope
@@ -142,18 +142,18 @@ export default function PackagesSection() {
         <li
           key={pkg.id}
           className="
-            group relative flex flex-col overflow-hidden
-            rounded-2xl
-            border border-[#b18b50]/45
-            bg-gradient-to-br from-[#f8e8c5] via-[#ead5a8] to-[#d6b779]
-            p-6
-            !text-black
-            shadow-[0_15px_40px_rgba(91,61,30,0.12)]
-            transition-all duration-300
-            hover:-translate-y-1
-            hover:border-[#a98249]
-            hover:shadow-[0_22px_50px_rgba(91,61,30,0.20)]
-          "
+  group relative flex flex-col overflow-hidden
+  rounded-2xl
+  border border-[#c18b28]/70
+  bg-gradient-to-br from-[#fff0b3] via-[#edc45c] to-[#c58a16]
+  p-6
+  !text-black
+  shadow-[0_15px_40px_rgba(145,94,15,0.22)]
+  transition-all duration-300
+  hover:-translate-y-1
+  hover:border-[#9f6b12]
+  hover:shadow-[0_22px_50px_rgba(145,94,15,0.32)]
+"
         >
           {/* Subtle golden glow */}
           <div

@@ -327,9 +327,6 @@ async function createConsultationBooking() {
               Estimated material cost
             </p>
 
-            <p className="mt-1 font-serif text-2xl font-semibold leading-tight !text-black sm:text-3xl">
-              ₹55,000–₹60,000
-            </p>
           </div>
         </div>
 
@@ -579,21 +576,21 @@ async function createConsultationBooking() {
 
   
 {/* WHAT THE CLIENT RECEIVES */}
-<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#b18b50]/40 bg-gradient-to-br from-[#fffdf7] via-[#faf2df] to-[#f0e2c3] p-6 text-black shadow-[0_20px_55px_rgba(35,27,17,0.08)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
+<section className="deliverables-row mt-12 grid gap-8 rounded-[28px] border border-[#D4AF37] bg-gradient-to-br from-[#FFE9A3] via-[#E8BF52] to-[#C99722] p-6 !text-[#382507] shadow-[0_20px_55px_rgba(120,78,12,0.20)] sm:p-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:p-10">
 
   {/* INTRODUCTION */}
   <div>
-    <span className="text-[10px] font-bold uppercase tracking-[0.23em] !text-black">
+    <span className="text-[10px] font-bold uppercase tracking-[0.23em] !text-[#65420D]">
       Your consultation documents
     </span>
 
-    <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight !text-black sm:text-4xl">
+    <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight !text-[#382507] sm:text-4xl">
       Clarity before you begin.
     </h2>
 
-    <p className="mt-4 max-w-sm text-sm leading-7 !text-black">
-      Clear, personalised documentation to help you understand your
-      consultation findings and recommendations.
+    <p className="mt-4 max-w-sm text-sm leading-7 !text-[#503711]">
+      Receive clear, personalised documents explaining your consultation
+      findings, recommended remedies and the plan for your property.
     </p>
   </div>
 
@@ -601,52 +598,54 @@ async function createConsultationBooking() {
   <div className="grid gap-4 sm:grid-cols-2">
 
     {/* WRITTEN FINDINGS */}
-    <div className="group flex gap-4 rounded-2xl border border-[#d8c18f] bg-gradient-to-br from-[#fffdf7] via-[#faf2df] to-[#f0e2c3] p-5 !text-black shadow-[0_10px_28px_rgba(120,87,35,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#b18b50] hover:shadow-[0_16px_35px_rgba(120,87,35,0.15)]">
+    <div className="group flex gap-4 rounded-2xl border border-[#B88620]/70 bg-gradient-to-br from-[#FFF4C9] via-[#F5D984] to-[#E5BC4D] p-5 !text-[#382507] shadow-[0_10px_28px_rgba(101,65,8,0.13)] transition duration-300 hover:-translate-y-1 hover:border-[#936410] hover:shadow-[0_16px_35px_rgba(101,65,8,0.23)]">
 
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#d9c08d] bg-[#efe0bd] !text-black">
-        <ShieldCheck size={20} strokeWidth={1.4} />
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#B88620]/70 bg-gradient-to-br from-[#E5BC4D] to-[#C28B19] !text-[#382507] shadow-sm">
+        <ShieldCheck size={20} strokeWidth={1.6} />
       </div>
 
       <div>
-        <h3 className="font-serif text-xl font-semibold !text-black">
-          Written findings
+        <h3 className="font-serif text-xl font-semibold !text-[#382507]">
+          Written Findings
         </h3>
 
-        <p className="mt-2 text-sm leading-6 !text-black">
-          Your written findings explain the personal plan and the
-          reason for each recommended remedy.
+        <p className="mt-2 text-sm leading-6 !text-[#503711]">
+          Understand your personalised plan, consultation findings
+          and the reasoning behind each recommended remedy.
         </p>
       </div>
     </div>
 
     {/* MATERIAL DOCUMENT */}
-    <div className="group flex gap-4 rounded-2xl border border-[#d8c18f] bg-gradient-to-br from-[#fffdf7] via-[#faf2df] to-[#f0e2c3] p-5 !text-black shadow-[0_10px_28px_rgba(120,87,35,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#b18b50] hover:shadow-[0_16px_35px_rgba(120,87,35,0.15)]">
+    <div className="group flex gap-4 rounded-2xl border border-[#B88620]/70 bg-gradient-to-br from-[#FFF4C9] via-[#F5D984] to-[#E5BC4D] p-5 !text-[#382507] shadow-[0_10px_28px_rgba(101,65,8,0.13)] transition duration-300 hover:-translate-y-1 hover:border-[#936410] hover:shadow-[0_16px_35px_rgba(101,65,8,0.23)]">
 
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#d9c08d] bg-[#efe0bd] !text-black">
-        <Layers3 size={20} strokeWidth={1.4} />
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#B88620]/70 bg-gradient-to-br from-[#E5BC4D] to-[#C28B19] !text-[#382507] shadow-sm">
+        <Layers3 size={20} strokeWidth={1.6} />
       </div>
 
       <div>
-        <h3 className="font-serif text-xl font-semibold !text-black">
-          Material document
+        <h3 className="font-serif text-xl font-semibold !text-[#382507]">
+          Material Document
         </h3>
 
-        <p className="mt-2 text-sm leading-6 !text-black">
-          A tailored material document identifies the materials
-          and placements recommended for your property.
+        <p className="mt-2 text-sm leading-6 !text-[#503711]">
+          A property-specific document outlining recommended materials,
+          their placements and how they fit into your Vastu plan.
         </p>
       </div>
     </div>
   </div>
 
   {/* MATERIAL DETAILS */}
-  <div className="rounded-xl border border-[#d8c18f] bg-gradient-to-r from-[#f8f0df] to-[#efe0bd] p-4 !text-black lg:col-start-2">
-    <p className="text-sm leading-7 !text-black">
-      Selections may include metal studs and strips, devta items,
-      precious stone dust as per your astrological chart,
-      flooring-specific remedies, idols and room-appropriate frames.
+  <div className="rounded-xl border border-[#B88620]/70 bg-gradient-to-r from-[#F9E6A6] to-[#E9C45C] p-4 !text-[#382507] shadow-[0_8px_22px_rgba(101,65,8,0.10)] lg:col-start-2">
+    <p className="text-sm font-medium leading-7 !text-[#503711]">
+      Recommended materials may include metal studs and strips,
+      devta items, precious stone dust selected according to your
+      astrological chart, flooring-specific remedies, idols and
+      room-appropriate frames, depending on your individual plan.
     </p>
   </div>
+
 </section>
 
 {/* FAQ */}

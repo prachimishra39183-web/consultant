@@ -369,7 +369,7 @@ export default function SevenLayersSection() {
       `Property details: ${formData.details || 'Not provided'}`,
       '',
       'Consultation: 7-Layer Astro Vastu — ₹75,000',
-      'Estimated materials: ₹55,000–₹60,000, charged separately.',
+      
     ].join('\n');
 
     setFormMessage(message);
