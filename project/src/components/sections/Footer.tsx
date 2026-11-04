@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="footer-brand">
           <a href="/" className="footer-logo">
             <img
-              src="/logoo.jpeg"
+              src="/logoo.png"
               alt="Mahavastu logo"
               className="footer-logo-image"
             />
