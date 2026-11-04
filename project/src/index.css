@@ -71,8 +71,7 @@ img {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   margin-top: 0;
   color: #f2d9a0;
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -4560,7 +4559,7 @@ select:focus-visible {
 h1,
 h2,
 h3,
-h4,
+
 h5,
 h6,
 .heading,
@@ -4634,7 +4633,7 @@ textarea::placeholder {
 h1,
 h2,
 h3,
-h4,
+
 h5,
 h6,
 .heading,
@@ -4717,7 +4716,6 @@ textarea::placeholder {
 h1,
 h2,
 h3,
-h4,
 h5,
 h6,
 .section-heading,

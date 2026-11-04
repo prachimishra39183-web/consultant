@@ -9,46 +9,52 @@ type PackageType = (typeof servicePackages)[number];
 export default function PackagesSection() {
   const [selected, setSelected] = useState<PackageType | null>(null);
 
-  const getServices = (pkg: PackageType) => {
-    const name = pkg.name.toLowerCase();
+ const getServices = (pkg: PackageType) => {
+  const name = pkg.name.toLowerCase();
 
-    const commonServices = [
-      'Planning according to the property size and specific issues',
-      'Balancing recommendations based on individual requirements',
-      'Site selection for a new home, office, or land as per horoscope',
-    ];
+  const commonServices = [
+    'Residential Vastu — houses, flats and bungalows',
+    'Factory Vastu — industrial units, production areas and machinery layout',
+    'Site Selection — choosing land or property for a new project',
+    'Land Energy Assessment — evaluating land and its surrounding energy',
+    'Property layout and directional analysis',
+    'Personalised balancing recommendations based on individual requirements',
+    'Astrological guidance for property selection, where applicable',
+  ];
 
-    if (name.includes('platinum')) {
-      return [
-        '8-layer planning and balancing',
-        '4–5 bedroom flat or bungalow',
-        ...commonServices,
-      ];
-    }
-
-    if (name.includes('gold')) {
-      return [
-        '8-layer planning and balancing',
-        '3–4 bedroom home as per horoscope',
-        ...commonServices,
-      ];
-    }
-
-    if (name.includes('site')) {
-      return [
-        'New home selection as per horoscope',
-        'Office location selection as per horoscope',
-        'Land selection as per horoscope',
-      ];
-    }
-
+  if (name.includes('platinum')) {
     return [
-      ...(pkg.inclusions ?? []),
+      'Comprehensive 8-layer planning and balancing',
+      'Detailed assessment for large homes and bungalows',
       ...commonServices,
-    ].filter((service, index, services) =>
-      services.indexOf(service) === index
-    );
-  };
+    ];
+  }
+
+  if (name.includes('gold')) {
+    return [
+      '8-layer planning and balancing',
+      'Detailed assessment for 3–4 bedroom homes',
+      ...commonServices,
+    ];
+  }
+
+  if (name.includes('site')) {
+    return [
+      'Residential plot and property selection',
+      'Industrial and factory site selection',
+      'Land Energy Assessment before purchase',
+      'Directional and surrounding-site analysis',
+      'Personalised recommendations for property selection',
+    ];
+  }
+
+  return [
+    ...(pkg.inclusions ?? []),
+    ...commonServices,
+  ].filter((service, index, services) =>
+    services.indexOf(service) === index
+  );
+};
 
   return (
   <SectionShell
@@ -57,6 +63,79 @@ export default function PackagesSection() {
     title="Service Packages"
     className=""
   >
+    {/* CONSULTATION & PROPERTY SELECTION */}
+<div className="mb-12">
+  <div className="mx-auto mb-7 max-w-2xl text-center">
+    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#a98249]">
+      Personalised Guidance
+    </p>
+    <h3 className="mt-3 font-serif text-3xl font-bold text-[#29251e] sm:text-4xl">
+      Consultation & Property Selection
+    </h3>
+    <p className="mt-3 text-sm leading-6 text-[#62594b] sm:text-base">
+      Choose a consultation for your concerns or get personalised guidance
+      before selecting your next property.
+    </p>
+  </div>
+
+  <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+    {/* Regular consultation */}
+    <div className="relative overflow-hidden rounded-3xl border border-[#dfd2b9] bg-white p-6 shadow-[0_12px_35px_rgba(91,61,30,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(91,61,30,0.14)] sm:p-8">
+      <div className="absolute right-0 top-0 h-28 w-28 rounded-bl-full bg-[#f8f1e4]" />
+
+      <div className="relative">
+        <span className="inline-flex rounded-full border border-[#dfcba5] bg-[#faf5ea] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#8a6937]">
+          Regular Visit
+        </span>
+
+        <h4 className="mt-5 font-serif text-2xl font-bold text-[#805b2e]">
+          Vastu Consultation
+        </h4>
+
+        <p className="mt-2 text-sm leading-6 text-[#62594b]">
+          A personal consultation to discuss your property, Vastu concerns
+          and recommended next steps.
+        </p>
+
+        <p className="mt-6 text-4xl font-bold text-[#9a7339]">
+          ₹5,100
+        </p>
+
+        <p className="mt-2 text-xs text-[#776d5e]">
+          Standard consultation visit
+        </p>
+      </div>
+    </div>
+
+    {/* Horoscope-based selection */}
+    <div className="relative overflow-hidden rounded-3xl border border-[#b18b50]/70 bg-gradient-to-br from-[#fffaf0] via-[#f4e5c6] to-[#e5cd9d] p-6 shadow-[0_16px_40px_rgba(91,61,30,0.13)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(91,61,30,0.19)] sm:p-8">
+      <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-white/40 blur-2xl" />
+
+      <div className="relative">
+        <span className="inline-flex rounded-full border border-[#b18b50]/50 bg-white/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#805b2e]">
+          Personalised Selection
+        </span>
+
+        <h4 className="mt-5 font-serif text-2xl font-bold text-[#805b2e]">
+          Property Selection as per Horoscope
+        </h4>
+
+        <p className="mt-2 text-sm leading-6 text-[#514536]">
+          Guidance for selecting a new home, office or land, considering
+          your horoscope and the property's suitability.
+        </p>
+
+        <p className="mt-6 text-4xl font-bold text-[#805b2e]">
+          ₹11,000
+        </p>
+
+        <p className="mt-2 text-xs text-[#65553f]">
+          New home · Office · Land
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
     {/* PACKAGE CARDS */}
     <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {servicePackages.map((pkg) => (

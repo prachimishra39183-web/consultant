@@ -34,9 +34,13 @@ function HomePage() {
       }}
     >
       <Navbar />
-      <MovingExpertiseBar />
 
+<div className="pt-14">
+  <MovingExpertiseBar />
+</div>
       <main>
+      
+
         <HeroSection />
         <ApproachSection />
         <SevenLayersSection />

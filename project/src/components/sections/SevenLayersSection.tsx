@@ -107,7 +107,7 @@ const LAYERS = [
   },
   {
     number: '07',
-    name: 'Planetary, tantric & numerological balancing',
+    name: 'Planetary, tantra & numerological balancing',
     short: 'A considered synthesis',
     description:
       'May include Navadurga, the 10 Mahavidya, precious stone dust, metals and gemstones. Numerology informs suitable rings or pendants and colour correction of house or mobile numbers, phone covers, screens and wallpapers, without changing the numbers.',

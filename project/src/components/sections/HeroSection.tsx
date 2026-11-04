@@ -74,7 +74,7 @@ export default function HeroSection() {
             </div>
 
             <p className="astro-hero-description">
-              Personalised guidance with Acharya Sunil Mahatma,
+              Personalised guidance from Acharya Sunil Mahatma,
               bringing Astro Vastu, astrology and numerology
               together around you and your space.
             </p>

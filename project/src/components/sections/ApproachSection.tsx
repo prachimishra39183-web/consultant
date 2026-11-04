@@ -237,13 +237,11 @@ return (
                 </h3>
 
                 <p className="mt-2 text-xs leading-5 text-white/90">
-                  Astro Vastu · Astrology · Numerology
+                  Astro Vastu · Astrology · Numerology . Tantra . Palimist
                 </p>
               </div>
 
-              <div className="absolute bottom-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/35 bg-white/10 text-[#e2c17e] backdrop-blur-sm">
-                <Sparkles size={18} strokeWidth={1.2} />
-              </div>
+              
             </div>
           </div>
 
