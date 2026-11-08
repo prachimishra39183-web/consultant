@@ -261,9 +261,7 @@ async function createConsultationBooking() {
 
       {/* CONSULTATION PRICE */}
       <div className="mt-10 flex flex-wrap items-end gap-x-4 gap-y-1">
-        <span className="font-serif text-5xl font-semibold tracking-tight !text-black sm:text-7xl">
-          ₹75,000
-        </span>
+        
 
         <span className="pb-2 text-[10px] font-bold uppercase tracking-[0.18em] !text-black">
           Consultation fee

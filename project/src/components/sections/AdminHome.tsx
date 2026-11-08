@@ -19,7 +19,10 @@ const navigation = [
   { label: 'Settings', icon: Settings },
 ];
 
-const GOLD = '#B18B50';
+const GOLD = '#C49A45';
+const DARK_GOLD = '#8A641F';
+const DEEP_TEXT = '#292116';
+const MUTED_TEXT = '#62543F';
 
 const getValue = (item: RecordData, ...keys: string[]) => {
   for (const key of keys) {
@@ -62,16 +65,16 @@ const statusClass = (status: unknown) => {
 };
 
 const panel =
-  'rounded-2xl border border-[#e1d1ae] bg-white shadow-[0_8px_28px_rgba(80,60,25,0.06)]';
+  'rounded-2xl border border-[#D5B66F] bg-gradient-to-br from-[#FFFEFA] via-[#FFF9EA] to-[#F5E6C3] shadow-[0_10px_30px_rgba(139,100,31,0.12)]';
 
 const primaryButton =
-  'inline-flex items-center justify-center gap-2 rounded-xl border border-[#a47c3c] bg-gradient-to-r from-[#c5a365] to-[#e4cd98] px-4 py-2.5 text-sm font-semibold text-black shadow-sm transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl border border-[#9C701F] bg-gradient-to-r from-[#B9872D] via-[#D9B45F] to-[#F0D99A] px-5 py-2.5 text-sm font-bold text-[#241A0B] shadow-[0_4px_12px_rgba(139,100,31,0.2)] transition hover:brightness-105 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50';
 
 const secondaryButton =
-  'inline-flex items-center justify-center gap-2 rounded-xl border border-[#ddceb0] bg-white px-4 py-2.5 text-sm font-medium text-black transition hover:bg-[#faf3e4] disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl border border-[#C7A45F] bg-[#FFF8E8] px-4 py-2.5 text-sm font-semibold text-[#382A15] transition hover:border-[#98702B] hover:bg-[#F4E3BD] disabled:opacity-50';
 
 const fieldClass =
-  'w-full rounded-xl border border-[#ddceb0] bg-[#fffdf8] px-3 py-2.5 text-sm text-black outline-none placeholder:text-[#777064] focus:border-[#b18b50] focus:ring-2 focus:ring-[#b18b50]/20';
+  'w-full rounded-xl border border-[#C9AD76] bg-[#FFFEFA] px-3 py-2.5 text-sm font-medium text-[#241D12] outline-none placeholder:text-[#82745E] focus:border-[#A87927] focus:ring-2 focus:ring-[#C49A45]/30';
 
 function StatusBadge({ value }: { value: unknown }) {
   return (
@@ -91,7 +94,7 @@ function SectionHeading({
   return (
     <div className="mb-6">
       <h2 className="text-xl font-semibold text-black">{title}</h2>
-      <p className="mt-1 text-sm leading-6 text-[#625b4e]">{description}</p>
+      <p className="mt-1 text-sm leading-6 text-[#62543F]">{description}</p>
     </div>
   );
 }
@@ -457,13 +460,13 @@ export default function AdminHome() {
   const upcomingBookings: RecordData[] = dashboard?.upcomingBookings || [];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f8f5ed] text-black md:flex">
+    <div className="min-h-screen overflow-x-hidden bg-[#F4E8CC] font-sans text-[#62543F] antialiased md:flex">
       {/* Subtle gold background accents */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#ead9b4]/35 blur-[110px]" />
-        <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-[#f0e5ce]/55 blur-[120px]" />
-        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#e4cf9e]/25 blur-[110px]" />
-      </div>
+  <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#D6AE5E]/30 blur-[110px]" />
+  <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-[#F3DDA9]/50 blur-[120px]" />
+  <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#C49A45]/20 blur-[110px]" />
+</div>
 
       {menuOpen && (
         <button
@@ -475,9 +478,9 @@ export default function AdminHome() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-[265px] flex-col border-r border-[#dfcfad] bg-[#fffdf8] p-5 shadow-xl transition-transform duration-300 md:sticky md:top-0 md:h-screen md:translate-x-0 ${
-          menuOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed inset-y-0 left-0 z-50 flex w-[265px] flex-col border-r border-[#C9A65D] bg-gradient-to-b from-[#FFF9E9] via-[#F9EDCF] to-[#EED9A8] p-5 shadow-[8px_0_30px_rgba(100,70,20,0.12)] transition-transform duration-300 md:sticky md:top-0 md:h-screen md:translate-x-0 ${
+  menuOpen ? 'translate-x-0' : '-translate-x-full'
+}`}
       >
         <div className="mb-10 flex items-center justify-between px-1">
           <div className="flex items-center gap-3">
@@ -489,7 +492,7 @@ export default function AdminHome() {
               <p className="font-serif text-lg font-semibold text-black">
                 Acharya Sunil
               </p>
-              <p className="mt-0.5 text-[10px] font-bold tracking-[0.24em] text-[#8b682f]">
+              <p className="mt-0.5 text-[10px] font-bold tracking-[0.24em] text-[#62543F]">
                 ADMIN STUDIO
               </p>
             </div>
@@ -504,7 +507,7 @@ export default function AdminHome() {
           </button>
         </div>
 
-        <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#766b58]">
+        <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#62543F]">
           Workspace
         </p>
 
@@ -540,7 +543,7 @@ export default function AdminHome() {
           <div className="mb-4 rounded-2xl border border-[#e0cfaa] bg-gradient-to-br from-[#fff9e9] to-[#f1e1bd] p-4">
             <Sparkles size={20} className="mb-3 text-[#8b682f]" />
             <p className="text-sm font-semibold text-black">Your workspace</p>
-            <p className="mt-1 text-xs leading-5 text-[#625b4e]">
+            <p className="mt-1 text-xs leading-5 text-[#62543F]">
               Manage appointments, clients and consultation enquiries.
             </p>
           </div>
@@ -551,7 +554,7 @@ export default function AdminHome() {
             </div>
             <div className="flex-1">
               <p className="text-sm font-medium text-black">Administrator</p>
-              <p className="text-xs text-[#766b58]">Signed in</p>
+              <p className="text-xs text-[#62543F]">Signed in</p>
             </div>
             <span className="h-2 w-2 rounded-full bg-emerald-600" />
           </div>
@@ -568,7 +571,7 @@ export default function AdminHome() {
 
       {/* Main area */}
       <main className="relative min-w-0 flex-1">
-        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-[#dfcfad] bg-[#fffdf8]/95 px-4 py-4 backdrop-blur-xl sm:gap-4 sm:px-8">
+        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-[#C9A65D] bg-gradient-to-r from-[#FFF9E9] via-[#F8EBCB] to-[#EED9A8] px-4 py-4 shadow-sm backdrop-blur-xl sm:gap-4 sm:px-8">
           <button
             className="rounded-xl border border-[#dfcfad] bg-white p-2.5 text-black md:hidden"
             onClick={() => setMenuOpen(true)}
@@ -618,7 +621,7 @@ export default function AdminHome() {
           <div className="relative mb-5 sm:hidden">
             <Search
               size={16}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#766b58]"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#62543F]"
             />
             <input
               value={search}
@@ -673,7 +676,7 @@ export default function AdminHome() {
           {/* Dashboard */}
           {activeTab === 'Dashboard' && (
             <>
-              <section className="relative mb-8 overflow-hidden rounded-3xl border border-[#d9c397] bg-gradient-to-br from-[#fffdf7] via-[#fbf3e2] to-[#ead5a6] p-6 shadow-[0_18px_45px_rgba(80,60,25,0.09)] sm:p-9">
+              <section className="relative mb-8 overflow-hidden rounded-3xl border border-[#B88B37] bg-gradient-to-br from-[#FFF9E8] via-[#F4E3BA] to-[#D9B66F] p-6 shadow-[0_18px_45px_rgba(100,70,20,0.16)] sm:p-9">
                 <div className="pointer-events-none absolute -right-12 -top-20 h-64 w-64 rounded-full bg-[#d8c18f]/40 blur-3xl" />
 
                 <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">
@@ -683,14 +686,14 @@ export default function AdminHome() {
                       Your control center
                     </div>
 
-                    <h2 className="font-serif text-3xl font-medium leading-tight text-black sm:text-4xl lg:text-5xl">
-                      Clarity for every
-                      <span className="block text-[#987237]">
-                        consultation.
-                      </span>
-                    </h2>
+                    <h2 className="font-serif text-3xl font-semibold leading-tight text-[#62543F] sm:text-4xl lg:text-5xl">
+  Clarity for every
+  <span className="block text-[#62543F]">
+    consultation.
+  </span>
+</h2>
 
-                    <p className="mt-4 max-w-lg text-sm leading-6 text-[#554d40]">
+                    <p className="mt-4 max-w-lg text-sm leading-6 text-[#62543F]">
                       Review incoming enquiries, monitor bookings and keep
                       client consultations organised in one place.
                     </p>
@@ -723,7 +726,7 @@ export default function AdminHome() {
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="text-sm text-[#625b4e]">{label}</p>
-                        <p className="mt-4 text-4xl font-semibold text-black">
+                        <p className="mt-4 text-4xl font-semibold text-[#62543F]">
                           {value}
                         </p>
                       </div>
@@ -733,7 +736,7 @@ export default function AdminHome() {
                     </div>
 
                     <div className="mt-5 flex justify-between border-t border-[#eee4d1] pt-4">
-                      <span className="text-xs text-[#625b4e]">{detail}</span>
+                      <span className="text-xs text-[#62543F]">{detail}</span>
                       <span className="text-xs text-[#9b7a43]">
                         {String(index + 1).padStart(2, '0')}
                       </span>
@@ -748,11 +751,11 @@ export default function AdminHome() {
                     <div>
                       <div className="flex items-center gap-2">
                         <CalendarDays size={20} className="text-[#987237]" />
-                        <h3 className="font-semibold text-black">
+                        <h3 className="font-semibold text-[#62543F]">
                           Upcoming consultations
                         </h3>
                       </div>
-                      <p className="mt-2 text-xs text-[#625b4e]">
+                      <p className="mt-2 text-xs text-[#62543F]">
                         Scheduled appointments from your database
                       </p>
                     </div>
@@ -800,12 +803,12 @@ export default function AdminHome() {
                       <div className="rounded-xl border border-dashed border-[#d8c8a7] bg-[#fffdf8] px-5 py-10 text-center">
                         <CalendarDays
                           size={30}
-                          className="mx-auto mb-3 text-[#987237]"
+                          className="mx-auto mb-3 text-[#62543F]"
                         />
                         <p className="text-sm font-medium text-black">
                           No upcoming consultations returned
                         </p>
-                        <p className="mt-2 text-xs text-[#625b4e]">
+                        <p className="mt-2 text-xs text-[#62543F]">
                           Refresh the dashboard or open appointments to review
                           records.
                         </p>
@@ -816,14 +819,14 @@ export default function AdminHome() {
 
                 <section className={`${panel} p-5 sm:p-7`}>
                   <div className="flex items-center gap-3">
-                    <div className="rounded-lg border border-[#e0cfaa] bg-[#faf3e4] p-2 text-[#8b682f]">
+                    <div className="rounded-lg border border-[#e0cfaa] bg-[#faf3e4] p-2 text-[#62543F]">
                       <Activity size={18} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-black">
+                      <h3 className="font-semibold text-[#62543F]">
                         Workspace activity
                       </h3>
-                      <p className="mt-1 text-xs text-[#625b4e]">
+                      <p className="mt-1 text-xs text-[#62543F]">
                         Shortcuts to your records
                       </p>
                     </div>
@@ -855,16 +858,16 @@ export default function AdminHome() {
                         onClick={() => setActiveTab(tab)}
                         className="flex w-full items-center gap-3 rounded-xl border border-[#e7dcc6] bg-[#fffdf8] p-3.5 text-left transition hover:border-[#c6a76e] hover:bg-[#faf3e4]"
                       >
-                        <Icon size={19} className="text-[#987237]" />
+                        <Icon size={19} className="text-[#62543F]" />
                         <div className="flex-1">
                           <p className="text-sm font-medium text-black">
                             {title}
                           </p>
-                          <p className="mt-1 text-xs text-[#625b4e]">
+                          <p className="mt-1 text-xs text-[#62543F]">
                             {desc}
                           </p>
                         </div>
-                        <ChevronRight size={16} className="text-[#8b682f]" />
+                        <ChevronRight size={16} className="text-[#62543F]" />
                       </button>
                     ))}
                   </div>
@@ -882,7 +885,7 @@ export default function AdminHome() {
               />
 
               {filteredEnquiries.length === 0 ? (
-                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#625b4e]">
+                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#62543F]">
                   {dataLoading
                     ? 'Loading enquiries...'
                     : 'No matching enquiries found.'}
@@ -891,7 +894,7 @@ export default function AdminHome() {
                 <div className="overflow-x-auto">
                   <table className="w-full min-w-[850px] text-left text-sm">
                     <thead>
-                      <tr className="border-b border-[#e5d9c2] text-xs uppercase tracking-wide text-[#625b4e]">
+                      <tr className="border-b border-[#e5d9c2] text-xs uppercase tracking-wide text-[#62543F]">
                         <th className="p-3">Client</th>
                         <th className="p-3">Property</th>
                         <th className="p-3">Received</th>
@@ -915,7 +918,7 @@ export default function AdminHome() {
                               <p className="font-medium text-black">
                                 {getValue(item, 'name', 'full_name')}
                               </p>
-                              <p className="mt-1 text-xs text-[#625b4e]">
+                              <p className="mt-1 text-xs text-[#62543F]">
                                 {getValue(
                                   item,
                                   'contact',
@@ -929,11 +932,11 @@ export default function AdminHome() {
                               <p>
                                 {getValue(item, 'propertyType', 'property_type')}
                               </p>
-                              <p className="mt-1 max-w-52 text-xs text-[#625b4e]">
+                              <p className="mt-1 max-w-52 text-xs text-[#62543F]">
                                 {getValue(item, 'location', 'property_location')}
                               </p>
                             </td>
-                            <td className="p-3 text-xs text-[#625b4e]">
+                            <td className="p-3 text-xs text-[#62543F]">
                               {formatDate(
                                 getValue(item, 'created_at', 'createdAt')
                               )}
@@ -982,7 +985,7 @@ export default function AdminHome() {
               />
 
               {filteredClients.length === 0 ? (
-                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#625b4e]">
+                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#62543F]">
                   {dataLoading
                     ? 'Loading clients...'
                     : 'No matching clients found.'}
@@ -1007,7 +1010,7 @@ export default function AdminHome() {
                             <h3 className="truncate font-semibold text-black">
                               {getValue(item, 'name', 'full_name')}
                             </h3>
-                            <p className="text-xs text-[#625b4e]">
+                            <p className="text-xs text-[#62543F]">
                               Client record
                             </p>
                           </div>
@@ -1032,7 +1035,7 @@ export default function AdminHome() {
                         <p className="mt-3 flex items-start gap-2 text-sm text-black">
                           <MapPin
                             size={15}
-                            className="mt-0.5 shrink-0 text-[#987237]"
+                            className="mt-0.5 shrink-0 text-[#62543F]"
                           />
                           {getValue(item, 'location', 'property_location')}
                         </p>
@@ -1053,7 +1056,7 @@ export default function AdminHome() {
               />
 
               {filteredBookings.length === 0 ? (
-                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#625b4e]">
+                <p className="rounded-xl bg-[#faf3e4] p-8 text-center text-sm text-[#62543F]">
                   {dataLoading
                     ? 'Loading appointments...'
                     : 'No matching bookings found.'}
@@ -1080,13 +1083,13 @@ export default function AdminHome() {
                             <h3 className="text-base font-semibold text-black">
                               {getValue(item, 'name', 'client_name')}
                             </h3>
-                            <p className="mt-1 break-all text-sm text-[#625b4e]">
+                            <p className="mt-1 break-all text-sm text-[#62543F]">
                               {getValue(item, 'contact', 'phone', 'email')}
                             </p>
                             <p className="mt-3 flex items-center gap-2 text-sm text-black">
                               <CalendarDays
                                 size={16}
-                                className="text-[#987237]"
+                                className="text-[#62543F]"
                               />
                               {formatDate(
                                 getValue(
@@ -1103,7 +1106,7 @@ export default function AdminHome() {
                               {getValue(item, 'amount', 'price', 'payment_amount')}
                             </p>
                             {getValue(item, 'payment_reference', 'paymentReference') !== '—' && (
-                              <p className="mt-2 break-all text-xs text-[#625b4e]">
+                              <p className="mt-2 break-all text-xs text-[#62543F]">
                                 Payment reference:{' '}
                                 {getValue(item, 'payment_reference', 'paymentReference')}
                               </p>
@@ -1185,7 +1188,7 @@ export default function AdminHome() {
           {/* Packages */}
           {activeTab === 'Packages' && (
             <section className={`${panel} p-6 sm:p-8`}>
-              <Package size={28} className="mb-4 text-[#987237]" />
+              <Package size={28} className="mb-4 text-[#62543F]" />
               <SectionHeading
                 title="Consultation packages"
                 description="Current website package prices."
@@ -1212,7 +1215,7 @@ export default function AdminHome() {
                 ))}
               </div>
 
-              <p className="mt-5 text-xs leading-5 text-[#625b4e]">
+              <p className="mt-5 text-xs leading-5 text-[#62543F]">
                 Package editing is not connected to the admin API yet. Changes
                 here require an API and database update before they can be saved.
               </p>
@@ -1235,7 +1238,7 @@ export default function AdminHome() {
                 <p className="text-sm font-medium text-black">
                   Session security
                 </p>
-                <p className="mt-1 text-sm leading-6 text-[#625b4e]">
+                <p className="mt-1 text-sm leading-6 text-[#62543F]">
                   Your admin session is protected by the existing login API.
                   Account and password changes are not connected to this page.
                 </p>
@@ -1248,7 +1251,7 @@ export default function AdminHome() {
             </section>
           )}
 
-          <p className="mt-8 text-center text-[10px] tracking-[0.18em] text-[#8a7b61]">
+          <p className="mt-8 text-center text-[10px] tracking-[0.18em] ">
             ACHARYA SUNIL MAHATMA · ADMIN WORKSPACE
           </p>
         </div>
