@@ -25,16 +25,22 @@ import {
   Hexagon,
   Circle,
 } from 'lucide-react';
-
 const LAYERS = [
   {
     number: '01',
-    name: 'Basic Vastu balancing',
-    short: 'Structure & flow',
+    name: 'Basic Vastu Balancing',
+    short: 'Fundamental corrections',
     description:
-      'Entrance, toilets, drainage and manholes are reviewed, alongside other structural and functional corrections.',
+      'The fundamental Vastu corrections are addressed first, including entrance, toilet-area, drainage and manhole corrections.',
     detail:
-      'The starting layer considers the existing arrangement of the property and the structural or functional points identified during assessment.',
+      'This layer focuses on essential structural and functional Vastu corrections identified during the property assessment.',
+    points: [
+      'Entrance correction',
+      'Toilet-area correction',
+      'Drainage correction',
+      'Manhole correction',
+      'Other essential structural and functional Vastu corrections',
+    ],
     icon: Compass,
     symbol: 'compass',
     color: '#e8dbd8',
@@ -42,12 +48,17 @@ const LAYERS = [
   },
   {
     number: '02',
-    name: 'Whole-space balancing',
+    name: 'Whole-Space Energy Balancing',
     short: 'The complete space',
     description:
-      'Mahavastu metal studs are used wherever required, according to the assessment of the space.',
+      'The entire space is assessed and balanced through the strategic placement of Mahavastu metal studs, wherever required.',
     detail:
-      'Recommendations for metal studs are based on the findings for the individual property, rather than applied as a universal template.',
+      'Metal studs are considered for selected locations based on the assessment and requirements of the property.',
+    points: [
+      'Whole-space assessment',
+      'Identification of relevant locations',
+      'Strategic placement of Mahavastu metal studs wherever required',
+    ],
     icon: CircleDot,
     symbol: 'orbit',
     color: '#dfeaf0',
@@ -55,12 +66,18 @@ const LAYERS = [
   },
   {
     number: '03',
-    name: 'Vastu Mandal & devta correction',
-    short: 'Mandal & directions',
+    name: 'Vastu Mandal & Devata Correction',
+    short: 'Mandal & divine energies',
     description:
-      'Correction or installation of the Vastu Mandal and devta elements is considered where required.',
+      'The Vastu Mandal Devtas are assessed and appropriate corrections or installations are carried out wherever required.',
     detail:
-      'The traditional Vastu Mandal framework informs consideration of the centre, directional zones and associated devta elements.',
+      'This layer considers the Vastu Mandal framework and the relevant Devta corrections or installations identified during assessment.',
+    points: [
+      'Vastu Mandal assessment',
+      'Devta identification',
+      'Appropriate corrections',
+      'Required installations',
+    ],
     icon: Flower2,
     symbol: 'mandala',
     color: '#eee3ce',
@@ -68,12 +85,18 @@ const LAYERS = [
   },
   {
     number: '04',
-    name: 'Precious stone dust',
-    short: 'Planetary context',
+    name: 'Horoscope-Based Precious Stone Dust',
+    short: 'Individual planetary context',
     description:
-      'Precious stone dust is installed according to the horoscope and identified planetary requirements.',
+      'Precious stone dust is installed at selected locations according to the individual’s horoscope and planetary requirements.',
     detail:
-      'The proposed selection and placement are informed by the consultation’s horoscope-based interpretation.',
+      'The selection and placement of precious stone dust are considered in relation to the individual horoscope and the planetary requirements identified during consultation.',
+    points: [
+      'Horoscope analysis',
+      'Planetary requirements',
+      'Selection of precious stone dust',
+      'Installation at selected locations',
+    ],
     icon: Gem,
     symbol: 'gem',
     color: '#e9def0',
@@ -81,12 +104,18 @@ const LAYERS = [
   },
   {
     number: '05',
-    name: 'Divine forms & imagery',
-    short: 'Forms & placement',
+    name: 'Idols & Picture Frame Placement',
+    short: 'Divine forms & placement',
     description:
-      'Idols, divine representations and picture frames are placed with the individual and the space in mind.',
+      'Appropriate idols, divine representations and picture frames are advised and positioned according to the requirements of the individual and the space.',
     detail:
-      'Recommendations follow the practice’s traditional spiritual framework and consider the individual and the room.',
+      'Recommendations consider the individual, the property and the intended placement within the space.',
+    points: [
+      'Idol placement',
+      'Divine representations',
+      'Picture frame placement',
+      'Personalised placement guidance',
+    ],
     icon: Sun,
     symbol: 'sun',
     color: '#f2dfd1',
@@ -94,12 +123,18 @@ const LAYERS = [
   },
   {
     number: '06',
-    name: 'Palmistry-based directional correction',
+    name: 'Palmistry-Based Directional Correction',
     short: 'Palmistry & direction',
     description:
-      'Palm reading informs the placement of recommended products in specific directions.',
+      'Based on palm reading, suitable products are advised for placement in specific directions to create a personalised directional balance.',
     detail:
-      'Palmistry is incorporated into the practice’s interpretation of personal context and recommended directional placements.',
+      'Palmistry is incorporated into the consultation to guide suitable product recommendations and their directional placement.',
+    points: [
+      'Palm reading',
+      'Personalised product recommendations',
+      'Specific directional placement',
+      'Individual directional balancing',
+    ],
     icon: Waves,
     symbol: 'waves',
     color: '#dce9e6',
@@ -107,19 +142,31 @@ const LAYERS = [
   },
   {
     number: '07',
-    name: 'Planetary, tantra & numerological balancing',
-    short: 'A considered synthesis',
+    name: 'Advanced Planetary, Tantric & Numerological Balancing',
+    short: 'Advanced personalised balancing',
     description:
-      'May include Navadurga, the 10 Mahavidya, precious stone dust, metals and gemstones. Numerology informs suitable rings or pendants and colour correction of house or mobile numbers, phone covers, screens and wallpapers, without changing the numbers.',
+      'Advanced corrections may incorporate Navadurga, the 10 Mahavidya, precious stone dust, metals, gemstones and numerology.',
     detail:
-      'This final layer may bring together the traditional elements identified as relevant to the property and personal consultation.',
+      'Where appropriate, gemstones may be recommended as rings or pendants based on the individual’s numerological requirements. House and mobile number balancing can also be approached through suitable colour combinations without necessarily changing the existing numbers.',
+    points: [
+      '9 Durga (Navadurga)',
+      '10 Mahavidya',
+      'Precious stone dust',
+      'Metals and gemstones',
+      'Numerological balancing',
+      'Gemstones as rings or pendants, where appropriate',
+      'House number colour correction',
+      'Mobile number colour correction',
+      'Mobile back-cover colour',
+      'Mobile screen and wallpaper colour',
+      'Other relevant colour applications',
+    ],
     icon: Orbit,
     symbol: 'star',
     color: '#e7e1d0',
-    accent: '#739f14',
+    accent: '#806020',
   },
 ];
-
 const JOURNEY = [
   {
     number: '01',
@@ -392,15 +439,9 @@ export default function SevenLayersSection() {
                 The balancing framework
               </span>
             </div>
-
-            <h2 className="max-w-3xl font-serif text-5xl font-medium leading-[0.97] tracking-[-0.045em] text-[#292d24] sm:text-6xl lg:text-[5.6rem]">
-              Seven layers.
-              <span className="block italic text-[#a18150]">
-                One personal
-              </span>
-              <span className="block">perspective.</span>
-            </h2>
-
+<p className="text-sm font-bold uppercase tracking-[0.20em] text-[#D4AF62] sm:text-base">
+  THE 7-LAYER ASTRO VASTU BALANCING PROCESS
+</p>
             <p className="mt-7 max-w-2xl text-base leading-8 text-white sm:text-lg">
               In Vastu tradition, a plot is understood through 16 directional
               zones around a centre, the Brahmasthan, and the five elements:
@@ -409,7 +450,7 @@ export default function SevenLayersSection() {
               relation to your actual building.
             </p>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#77776c]">
+            <p className="mt-4 max-w-2xl text-sm leading-7 font-bold text-[#D4AF62]">
               Each layer builds on the foundation assessment. The choice of
               corrections and materials is specific to the findings for your
               property.
@@ -417,7 +458,7 @@ export default function SevenLayersSection() {
 
             <a
               href="#layer-journey"
-              className="group mt-8 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#705832]"
+              className="group mt-8 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#D4AF62]"
             >
               Explore the seven layers
               <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#b18b50]/50 transition group-hover:translate-y-1 group-hover:bg-[#e9dfca]">
@@ -466,7 +507,7 @@ export default function SevenLayersSection() {
         <div id="layer-journey" className="mt-12 scroll-mt-24 sm:mt-16 lg:mt-20">
           <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#947341]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4AF62]">
                 The seven-layer journey
               </span>
               <h3 className="mt-4 font-serif text-4xl font-medium tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -533,11 +574,12 @@ export default function SevenLayersSection() {
 
             <div className="active-layer-copy">
               <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-8 bg-[var(--layer-accent)]" />
-                <span className="text-[9px] font-bold uppercase tracking-[0.24em] text-[var(--layer-accent)]">
-                  Layer {active.number} / 07
-                </span>
-              </div>
+  <span className="h-[2px] w-9 rounded-full bg-[#B18B50]" />
+
+  <span className="inline-flex items-center rounded-full border border-[#B18B50]/50 bg-[#F5EBD4] px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#503817] shadow-sm">
+    Layer {active.number} / 07
+  </span>
+</div>
 
               <h4 className="font-serif text-4xl font-medium leading-[1.05] tracking-tight text-[#292d24] sm:text-5xl lg:text-6xl">
                 {active.name}
@@ -577,14 +619,45 @@ export default function SevenLayersSection() {
                   Next layer
                   <ArrowRight size={15} />
                 </button>
-                <span className="ml-1 text-[10px] tracking-[0.16em] text-[#898575]">
-                  {String(activeLayer + 1).padStart(2, '0')} OF 07
-                </span>
+              <span className="ml-2 text-[11px] font-extrabold tracking-[0.16em] text-[#3D2A12]">
+  {String(activeLayer + 1).padStart(2, '0')} OF 07
+</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* STRICTLY MAHAVASTU PRODUCTS */}
+<div className="relative mx-auto mt-14 max-w-5xl overflow-hidden rounded-2xl border border-[#C49A4A] bg-gradient-to-br from-[#FFF3D2] via-[#E8C779] to-[#C99A45] px-6 py-8 text-center shadow-[0_15px_40px_rgba(0,0,0,0.2)] sm:px-10 sm:py-10">
+
+  <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/30 blur-3xl" />
+
+  <div className="relative">
+    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#80551B] bg-gradient-to-br from-[#4A2F0B] to-[#80551B] text-[#FFE9A8] shadow-lg">
+      <Gem size={23} />
+    </div>
+
+    <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#765016] sm:text-xs">
+      Product & Material Commitment
+    </p>
+
+    <h3 className="mt-3 font-serif text-2xl font-bold tracking-wide text-[#241505] sm:text-3xl">
+      STRICTLY MAHAVASTU PRODUCTS
+    </h3>
+
+    <div className="mx-auto my-5 h-[2px] w-16 rounded-full bg-[#80551B]" />
+
+    <p className="mx-auto max-w-2xl text-sm font-bold leading-7 text-[#38250D] sm:text-base">
+      ALL PRODUCTS & CORRECTIVE MATERIALS USED IN THIS PROCESS
+      ARE STRICTLY FROM MAHAVASTU.
+    </p>
+
+    <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#50391C]">
+      The products and corrective elements are selected according to
+      the specific requirements of the individual, property and consultation.
+    </p>
+  </div>
+</div>
     </section>
   );
 }

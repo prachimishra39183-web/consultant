@@ -72,7 +72,7 @@ export default function PackagesSection() {
     <h3 className="mt-3 font-serif text-3xl font-bold text-[#29251e] sm:text-4xl">
       Consultation & Property Selection
     </h3>
-    <p className="mt-3 text-sm leading-6 text-[#62594b] sm:text-base">
+    <p className="mt-3 text-sm leading-6 text-white sm:text-base">
       Choose a consultation for your concerns or get personalised guidance
       before selecting your next property.
     </p>

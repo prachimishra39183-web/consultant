@@ -250,7 +250,7 @@ async function createConsultationBooking() {
       </p>
 
       <h2 className="mt-5 max-w-xl font-serif text-4xl font-medium leading-[1.08] tracking-tight !text-black sm:text-5xl lg:text-6xl">
-        A personal plan for your property.
+        A personal plan for your prakriti.
       </h2>
 
       <p className="mt-5 max-w-xl text-sm leading-7 !text-black sm:text-base">

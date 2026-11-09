@@ -47,7 +47,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://wa.me/919377740464"
+              href="https://wa.me/91 9377740464"
               target="_blank"
               rel="noreferrer"
               aria-label="WhatsApp"
@@ -93,7 +93,7 @@ const Footer = () => {
           </p>
 
           <a
-            href="https://wa.me/919377740464"
+            href="https://wa.me/91 9377740464"
             target="_blank"
             rel="noreferrer"
             className="footer-cta"

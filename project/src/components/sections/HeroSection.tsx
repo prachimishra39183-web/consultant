@@ -73,12 +73,17 @@ export default function HeroSection() {
               <span />
             </div>
 
-            <p className="astro-hero-description">
-              Personalised guidance from Acharya Sunil Mahatma,
-              bringing Astro Vastu, astrology and numerology
-              together around you and your space.
-            </p>
-
+           <div className="mt-6 max-w-xl rounded-xl border border-[#B18B50]/70 bg-gradient-to-br from-[#F8EBCB] via-[#EBD49B] to-[#D8B66B] px-5 py-4 shadow-[0_8px_24px_rgba(70,48,15,0.18)]">
+  <p className="font-serif text-base font-medium leading-[1.7] tracking-wide text-[#463416] sm:text-lg">
+    Personalised guidance from Acharya Sunil Mahatma,
+    bringing{" "}
+    <span className="font-bold italic text-[#765016]">
+      Astro Vastu, astrology and numerology
+    </span>{" "}
+    together around you and your space.
+  </p>
+</div>
+<br></br>
             <div className="astro-hero-actions">
               <a
                 href="#consultation-enquiry"
