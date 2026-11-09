@@ -291,6 +291,31 @@ export default function AdminHome() {
       String(id)
     );
   }
+  async function rejectPayment(item: RecordData) {
+  const id = getValue(item, 'id', 'booking_id');
+
+  if (id === '—') {
+    setError('This booking has no ID.');
+    return;
+  }
+
+  const reason = window.prompt(
+    'Enter the reason for rejecting this payment:'
+  );
+
+  if (!reason?.trim()) return;
+
+  if (!window.confirm('Are you sure you want to reject this payment?')) {
+    return;
+  }
+
+  await performAction(
+    'reject-payment',
+    { id, reason: reason.trim() },
+    'Payment rejected successfully.',
+    String(id)
+  );
+}
 
   async function updateBooking(item: RecordData, action: string) {
     const id = getValue(item, 'id', 'booking_id');
@@ -1102,8 +1127,7 @@ export default function AdminHome() {
                               )}
                             </p>
                             <p className="mt-2 text-sm text-black">
-                              Amount:{' '}
-                              {getValue(item, 'amount', 'price', 'payment_amount')}
+                              Amount: ₹{getValue(item, 'booking_amount', 'amount', 'price')}
                             </p>
                             {getValue(item, 'payment_reference', 'paymentReference') !== '—' && (
                               <p className="mt-2 break-all text-xs text-[#62543F]">
@@ -1111,6 +1135,30 @@ export default function AdminHome() {
                                 {getValue(item, 'payment_reference', 'paymentReference')}
                               </p>
                             )}
+                            {getValue(item, 'payment_rejection_reason') !== '—' && (
+  <div className="mt-3 rounded-xl border border-red-200 bg-red-50 p-3">
+    <p className="text-xs font-semibold text-red-800">
+      Payment rejection reason
+    </p>
+    <p className="mt-1 text-sm text-red-700">
+      {getValue(item, 'payment_rejection_reason')}
+    </p>
+
+    <p className="mt-2 text-xs text-red-600">
+      Rejected: {formatDate(item.payment_rejected_at)}
+    </p>
+  </div>
+)}
+{getValue(item, 'payment_screenshot_url') !== '—' && (
+  <a
+    href={item.payment_screenshot_url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-3 inline-flex text-xs font-semibold text-[#8A641F] underline"
+  >
+    View payment screenshot
+  </a>
+)}
                           </div>
 
                           <div className="flex flex-wrap gap-2">
@@ -1120,7 +1168,7 @@ export default function AdminHome() {
                         </div>
 
                         <div className="mt-5 flex flex-wrap gap-2 border-t border-[#e9dfcd] pt-4">
-                          {paymentStatus.toLowerCase() !== 'verified' && (
+                          {paymentStatus.toLowerCase() === 'pending' && (
                             <button
                               disabled={isBusy}
                               onClick={() => void verifyPayment(item)}
@@ -1129,8 +1177,18 @@ export default function AdminHome() {
                               <CheckCircle2 size={14} />
                               Verify payment
                             </button>
+                            
                           )}
-
+                             {paymentStatus.toLowerCase() === 'pending' && (
+  <button
+    disabled={isBusy}
+    onClick={() => void rejectPayment(item)}
+    className="inline-flex items-center gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-800 hover:bg-red-100 disabled:opacity-50"
+  >
+    <XCircle size={14} />
+    Reject payment
+  </button>
+)}
                           {bookingStatus.toLowerCase() !== 'confirmed' &&
                             bookingStatus.toLowerCase() !== 'cancelled' &&
                             bookingStatus.toLowerCase() !== 'canceled' &&

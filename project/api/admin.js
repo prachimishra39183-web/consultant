@@ -349,6 +349,44 @@ export default async function handler(req, res) {
         booking: rows[0],
       });
     }
+    // REJECT PENDING PAYMENT
+if (action === 'reject-payment' && req.method === 'POST') {
+  const { id, reason } = body;
+
+  if (
+    !getId(id) ||
+    typeof reason !== 'string' ||
+    !reason.trim() ||
+    reason.trim().length > 500
+  ) {
+    return res.status(400).json({
+      message: 'Booking ID and a valid rejection reason are required.',
+    });
+  }
+
+  const rows = await sql`
+    UPDATE consultation_bookings
+    SET
+      payment_status = 'rejected',
+      payment_rejected_at = NOW(),
+      payment_rejection_reason = ${reason.trim()},
+      updated_at = NOW()
+    WHERE id = ${id}::uuid
+      AND payment_status = 'pending'
+    RETURNING *
+  `;
+
+  if (!rows.length) {
+    return res.status(409).json({
+      message: 'Payment is no longer pending. Refresh and try again.',
+    });
+  }
+
+  return res.status(200).json({
+    message: 'Payment rejected successfully.',
+    booking: rows[0],
+  });
+}
 
     // CONFIRM, CANCEL OR COMPLETE CONSULTATION
     if (action === 'update-booking' && req.method === 'POST') {
@@ -460,6 +498,7 @@ export default async function handler(req, res) {
       'update-enquiry',
       'verify-payment',
       'update-booking',
+      'reject-payment',
     ];
 
     if (knownActions.includes(action)) {
@@ -477,12 +516,22 @@ export default async function handler(req, res) {
     console.error('Admin API error:', error);
 
     if (error?.code === '23505') {
-      return res.status(409).json({
-        message:
-          'This payment reference or appointment slot is already in use.',
-      });
-    }
+  if (error?.constraint === 'unique_confirmed_consultation_slot') {
+    return res.status(409).json({
+      message: 'This appointment slot has just been booked. Choose another slot.',
+    });
+  }
 
+  if (error?.constraint === 'unique_payment_reference') {
+    return res.status(409).json({
+      message: 'This payment reference has already been used.',
+    });
+  }
+
+  return res.status(409).json({
+    message: 'This record conflicts with an existing database record.',
+  });
+}
     return res.status(500).json({
       message:
         'Could not load admin data. Check the database table names and Vercel logs.',

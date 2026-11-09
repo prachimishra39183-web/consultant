@@ -13,70 +13,67 @@ export default async function handler(
   }
 
   try {
-    const {
-      name,
-      contact,
-      propertyType,
-      location,
-      details,
-    } = req.body ?? {};
+    const { enquiryId, bookingType } = req.body ?? {};
 
     if (
-      typeof name !== 'string' || !name.trim() ||
-      typeof contact !== 'string' || !contact.trim() ||
-      typeof propertyType !== 'string' || !propertyType.trim() ||
-      typeof location !== 'string' || !location.trim()
+      typeof enquiryId !== 'string' ||
+      !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(enquiryId)
     ) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide all required enquiry details.',
+        message: 'Invalid enquiry ID.',
       });
     }
 
-    if (
-      name.length > 150 ||
-      contact.length > 150 ||
-      propertyType.length > 100 ||
-      location.length > 2000 ||
-      (details != null &&
-        (typeof details !== 'string' || details.length > 5000))
-    ) {
+    if (!['regular', 'urgent'].includes(bookingType)) {
       return res.status(400).json({
         success: false,
-        message: 'One or more fields exceed the allowed length.',
+        message: 'Invalid consultation type.',
       });
     }
+
+    const amount = bookingType === 'urgent' ? 6100 : 5100;
 
     const result = await sql`
-      INSERT INTO consultation_enquiries (
-        name,
-        contact,
-        property_type,
-        location,
-        details
+      INSERT INTO consultation_bookings (
+        enquiry_id,
+        booking_type,
+        booking_amount,
+        payment_status,
+        booking_status
       )
-      VALUES (
-        ${name.trim()},
-        ${contact.trim()},
-        ${propertyType.trim()},
-        ${location.trim()},
-        ${details?.trim() || null}
-      )
-      RETURNING id, name, contact, created_at
+      SELECT
+        id,
+        ${bookingType},
+        ${amount},
+        'pending',
+        'pending'
+      FROM consultation_enquiries
+      WHERE id = ${enquiryId}
+      RETURNING id, enquiry_id, booking_type,
+                booking_amount, payment_status,
+                booking_status, created_at
     `;
+
+    if (!result.length) {
+      return res.status(404).json({
+        success: false,
+        message: 'Enquiry not found.',
+      });
+    }
 
     return res.status(201).json({
       success: true,
-      message: 'Enquiry submitted successfully.',
-      enquiry: result[0],
+      message: 'Booking created. Payment is pending.',
+      booking: result[0],
     });
 
   } catch (error) {
-    console.error('Enquiry API error:', error);
+    console.error('Booking API error:', error);
 
     return res.status(500).json({
       success: false,
-      message: 'Unable to submit enquiry.',
+      message: 'Unable to create booking.',
     });
   }
 }
