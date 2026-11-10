@@ -1309,9 +1309,7 @@ export default function AdminHome() {
             </section>
           )}
 
-          <p className="mt-8 text-center text-[10px] tracking-[0.18em] ">
-            ACHARYA SUNIL MAHATMA · ADMIN WORKSPACE
-          </p>
+        
         </div>
       </main>
     </div>
